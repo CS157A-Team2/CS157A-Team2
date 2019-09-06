@@ -1,5 +1,6 @@
 \documentclass[titlepage]{article}
 \usepackage{graphicx}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
 
 
@@ -27,17 +28,11 @@
 	\includegraphics[scale=2.0]{3-tier.png}
 	
 	\subsection{Client}
-		The presentation layer will be provided via the following languages/software:
-	\begin{itemize}
-		\item HTML
-		\item CSS/Bootstrap
-		\item JavaScript
-		\item Web Browser 
-	\end{itemize}
+		The presentation layer will be provided via a web browser interface, utilizing languages such as HTML, CSS, and JavaScript. These languages will provide content and interactivity to the database application.
 	\subsection{Middleware}
 		All middleware will be provided via the Node.js Runtime Environment. This includes: 
 	\begin{itemize}
-		\item A server side scripting language (Node.js)
+		\item A server side scripting language (JavaScript)
 		\item Database connection via Node.js MySQL database driver	
 		\item Node.js build-in web server (HTTP module)
 	\end{itemize}
@@ -83,19 +78,19 @@
 
 	\section{Non-functional Issues}
 	\subsection{Graphical User Interface}
-	The GUI of this project is focus on using mouse click and keyboard input to trigger the changes of content that will be displayed to user.
+	The GUI of this project will focus on using mouse and keyboard input to trigger the changes of content that will be displayed to user.
 	\begin{itemize}
 		\item Type of GUI: HTML/JavaScript based
 		\item Software to build: Adobe XD
 	\end{itemize}	
 	\subsection{Access Control}
-	There are two type of user with different access control:
+	There are two type of users with different access control:
 	\begin{itemize}
-		\item Admin: have control of all book contents, can edit, add, and delete books in additional to visitor users access.
-		\item Visitor: Only have read access to website content and edit access to their own account. 
+		\item Admin: has control of all book contents, can edit, add, and delete books in addition to having typical visitor user access.
+		\item Visitor: Only has read access to website content and edit access to their own account. 
 	\end{itemize}
 	\subsection{Security}
-	We planned to use SQL builed-in encryption method to encrypt user's information while storing into database. 
+	We planned to use MySQL built-in encryption method to encrypt user's information while being stored in a database. 
 
 
 
