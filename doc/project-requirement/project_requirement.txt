@@ -1,0 +1,60 @@
+Cover Page(Names, Title="Project Requirements", ProjectTitle)
+-------------------------------------------------------------------------------
+Project Description (Adham):
+	
+
+-------------------------------------------------------------------------------
+System Env (Brett):
+	Structure of System: 
+		[Include Photo]
+		Presentation Layer:
+			HTML:
+				-Purpose: HTML is the markup language supported by all major web-browsers. It allows content to be presented to a readable manner to the end-user. We will take advantage of HTML formatting tools such as hyperlinks, tables, and lists. Further, we will be using HTML forms for user input of email, username, password, search boxes, and comments.
+				-Version: HTML 5
+
+			Cascading Style Sheets (CSS):
+				-Purpose: CSS will be used to improve the user experience of our web application. CSS gives us the ability to make animations, colored content, as well as more control of the appearance of our content.
+				-Version: CSS 3
+
+			JavaScript (Client Side):
+				-Purpose: Provide interactivity such as collection of user input, improve visual responsiveness, and sending alerts to users.
+
+
+		Application Layer:
+			Web Server: Node.js HTTP Module
+				
+				Version:
+			
+			Javascript (Server Side Application Language)
+
+				Version:
+
+			NPM Package Manger:
+				
+				Version:
+	Hardware/ Software Used:
+
+		Client Software requirements:
+				-A web browser supporting the following is required to run the web application:
+					-ECMAScript2016
+					-HTML5
+					-CSS3
+				-Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified.
+			
+				- MySQL and Node.js are available on many Operating Systems: Linux, MacOS, Microsoft Windows, SmartOS, FreeBSD, and OpenBSD.	
+
+		Client Hardware Requirements:
+			- Any hardware with support by the above software will be sufficient to run the web application.
+
+	RDBMS:
+		-MySQL Version:
+	
+	
+-------------------------------------------------------------------------------
+Functional Requirements (Feiyu):
+
+
+-------------------------------------------------------------------------------
+Non-Functional Issues (Feiyu + Brett):
+
+-------------------------------------------------------------------------------
