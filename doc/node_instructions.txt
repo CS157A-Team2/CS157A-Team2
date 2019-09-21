@@ -1,0 +1,20 @@
+Installing node:
+
+1. Install Node.js 10.16.3 LTS
+2. Make sure you have npm installed as well
+
+----------------------------------------------
+
+Running the app:
+
+1. cd to [project directory]/src/web-server
+2. type 'sudo npm install connect' -- Make sure you are in the right directory
+3. run either of the following (depending on your config):
+	'node server.js'
+	'nodejs server.js'
+4. once the server is running, go to localhost:8080 in your browser and confirm it is running
+
+5. once completed, make sure to terminate node correctly, otherwise you will have to restart your computer to get 8080 port back up
+
+6. to kill the web server press ⌘ +C  or CTRL+C, depending on OS
+

@@ -31,7 +31,7 @@ System Env (Brett):
 				-Version: EMCAScript2016
 
 			NPM Package Manger:
-				-Purpose: Provide easy managment of external Node.js libraries such as express js, MySQL connectivity, and http module.
+				-Purpose: Provide easy managment of external Node.js libraries such as express js, sql module, connect module, and http module.
 				Version: 6.9.0 
 	
 
@@ -42,7 +42,7 @@ System Env (Brett):
 					-ECMAScript2016
 					-HTML5
 					-CSS3
-				-Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified.
+				-Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified. 
 			
 				- MySQL and Node.js are available on many operating systemssuch as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD	
 
@@ -81,7 +81,6 @@ Functional Requirements (Feiyu + Brett):
 		-User can register for an account if they want to have the ability to comment and favorite books
 	Login as User:
 		-Once registered, users will have the ability to login using the credentials they have provided during registration
-
 	
 -------------------------------------------------------------------------------
 Non-Functional Issues (Feiyu):

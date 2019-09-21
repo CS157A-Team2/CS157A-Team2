@@ -1,28 +1,28 @@
+//----------------Includes--------------------
+var connect = require('connect')
 var http = require('http')
 var fs = require('fs')
 
-function send404Response(response)
+//-----------------Web Pages------------------
+var home = function(request, response)
 {
-	response.writeHead(200, {"Context-Type": "text/plain"})
-	response.write("404 Error")
-	response.end()
+	response.writeHead(200, {"Context-Type": "text/html"})
+	fs.createReadStream("../content/index.html").pipe(response)
 }
 
-function onRequest(request, response)
+var about = function(request, response)
 {
-	if(request.method == 'GET' &&  request.url == '/')
-	{	
-		response.writeHead(200, {"Context-Type": "text/html"})
-		fs.createReadStream("../content/index.html").pipe(response);
-	}
-	else
-	{
-		send404Response(response)
-	}
+	response.writeHead(200, {"Context-Type": "text/html"})
+	fs.createReadStream("../content/about.html").pipe(response)
 }
 
+//----------------Establish Connection--------
+var app = connect()
 
-http.createServer(onRequest).listen(8080)
-console.log("the server is running")
+app.use('/about', about) // About Page
+app.use('/', home) //Homepage - must be last in this list
+
+http.createServer(app).listen(8080) //port 8080
+console.log('Success') //Server running
 
 
