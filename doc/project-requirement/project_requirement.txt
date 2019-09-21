@@ -22,16 +22,19 @@ System Env (Brett):
 
 		Application Layer:
 			Web Server: Node.js HTTP Module
-				
-				Version:
 			
-			Javascript (Server Side Application Language)
-
-				Version:
+				-Version: 10.6.3 LTS
+			
+			Server Side Application Language: JavaScript
+				
+				-Purpose: Provide communition between the presentation layer and the database layer
+				-Version: EMCAScript2016
 
 			NPM Package Manger:
-				
-				Version:
+				-Purpose: Provide easy managment of external Node.js libraries such as express js, MySQL connectivity, and http module.
+				Version: 6.9.0 
+	
+
 	Hardware/ Software Used:
 
 		Client Software requirements:
@@ -41,20 +44,46 @@ System Env (Brett):
 					-CSS3
 				-Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified.
 			
-				- MySQL and Node.js are available on many Operating Systems: Linux, MacOS, Microsoft Windows, SmartOS, FreeBSD, and OpenBSD.	
+				- MySQL and Node.js are available on many operating systemssuch as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD	
 
 		Client Hardware Requirements:
 			- Any hardware with support by the above software will be sufficient to run the web application.
 
-	RDBMS:
-		-MySQL Version:
+	RDBMS (MySQL):
+		-Purpose: 
+			-This web application will require the use of a relational database managment system (RDBMS), the specifc RDBMS we will use is  MySQL.
+			-We will take advantage of the SQL programming langague for tasks such as data definition, manipulation, query, control,and transaction control.
+			-MySQL RDBMS will take care of concurrency control, and will maintain the ACID principle for our database. 
+		-MySQL Version: 5.7.27
 	
 	
 -------------------------------------------------------------------------------
-Functional Requirements (Feiyu):
+Functional Requirements (Feiyu + Brett):
+	Search Book:
+		Order Search Results:
+			-User can order the search results based on relese date, alphabetical by author, or number of favorites	
+		Filter Search Results:
+			-User can filter the search reslts based on author, title, release date, publisher, or genre
+		Select Book:
+			-Once user finds the desired book, they can select the book for download or view review/ number of favorites
 
+	Read/Download Book:
+		-User can download the book and view it in their web browser.
+	Add Book to Favorites:
+		-Use can add the list to their "favorites", indicating that they enjoyed the book
+	Browse Favorites:
+		-User can browse their list of favorited books, witht the same sorting/filtering mechanisms as noted above
 
+	Leave Comment on Book Profile:
+		-Users can leave comments on the profiles of certain books
+
+	Register as User:
+		-User can register for an account if they want to have the ability to comment and favorite books
+	Login as User:
+		-Once registered, users will have the ability to login using the credentials they have provided during registration
+
+	
 -------------------------------------------------------------------------------
-Non-Functional Issues (Feiyu + Brett):
+Non-Functional Issues (Feiyu):
 
 -------------------------------------------------------------------------------
