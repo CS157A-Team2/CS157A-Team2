@@ -212,28 +212,35 @@
 
 			\subsubsection{Types of Users}
 				\begin{itemize} 
-					\item \textbf{User}
-						
+					\item \textbf{User}		
+						this type of accounts are registered by user themselves 
+
 
 						Users will only have read access to the following:
 						\begin{itemize}
-							\item  Their own personal data
-							\item  Book repositories
+							\item  Their own account profile
+							\item  Book repositories with open access
 						\end{itemize}
 
 
 					 In addition, users will have write access to the following:
 						\begin{itemize}
+							\item  Their own account profile information
 							\item  Their favorites list
-							\item  Reviews left for books
+							\item  Reviews left for books under restrictions
 						\end{itemize}
 
 					\item \textbf{Database Administrator}
+						this type of accounts are created assigned by the system owners
 
-						Database Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. DB admins have read/write access to the following: 			\begin{itemize}
-				\item User details such as name and email, and
-				\item Book repositories
-		  \end{itemize}
+
+						Database Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. DB admins have read/write access to the following: 			
+						\begin{itemize}
+							\item Read user profile
+							\item Modify user profile including password with authentication from user
+							\item Add and delete book repositories
+							\item Delete comments by users that are not under restrictions
+		  			\end{itemize}
 				\end{itemize}
 
 \end{document}
