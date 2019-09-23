@@ -27,6 +27,11 @@
 
 \medskip
         In our application, users will be able to leave reviews on books that they have read, which will be seen by other users and possibly influence their decision on their book. These reviews will contain both a comment section and a star rating system. Users will be able to comment how they either liked or disliked the book and give a star rating from one to five. The average star rating and total number of reviews will be displayed next to the book. Users will also be able to share the book they like with others with a shareable link that they can distribute how they please.
+
+	\subsection{Project Goal}
+	The Goal of this project is to provide a free and open source infrastructure where users can public domain books. We wish to provide an easy-to-use ecosystem, which allows the user to read or review books with ease.
+	\subsection{Benefits to Users}
+	Users will have a community where they can \textbf{read and review books for free}. Right now, websites such as this exists, but they only serve one of the two main functionalities. Websites like gutenberg.org give the users access to free book repositiories, but do not allow for users to read and write reviews on books. Conversely, websites like bookpage.com provide reviews for books, but they are not open to the public, rather only a small number of selected reviwers. Our web application will take the best aspects of both these websites to provide the user an efficent solution for picking and reading online books for free.
         \subsection{Stakeholders and Importance}
         The stakeholders of our applications will be students who want to find free textbook alternative to the paid bookstore alternative, as well as casual and dedicated book readers who can find free books online and download them for instant reading. This application is important because it provides a streamlined way for book-readers to gain easy access to the books they want and get them in a timely manner
 
@@ -105,18 +110,26 @@
 
 
 \section{Functional Requirements}
+		Because this application is to be accessed from a web browser, the \textbf{input} is a keyboard or mouse, while the \textbf{output} is stylized HTML to be displayed on a web browser. 
+
+	\subsection{Comprehensive List of Features}
 	\begin{itemize}
 
 	\item	Search Book:
+
 			-Users can search for books by ISBN, author, or title
 	\item	Order Search Results:
+
 			-User can order the search results based on relese date or number of favorites. Default search behavior is based on the number of favorites a book has received
 
 	\item	Filter Search Results:
+
 			-User can filter the search reslts based on author, title, release date, publisher, or genre
 	\item	Select Book:
+
 			-Once user finds the desired book, they can select the book and view its profile.
 	\item	View Book Profile:
+
 			-A book's profile will consist of the following:
 			\begin{itemize}
 				\item The title of the book,
@@ -129,23 +142,34 @@
 			\end{itemize}
 
 	\item Read/Download Book:
+
 		-User can download the book and view it in their web browser.
 	\item Add Book to Favorites:
+
 		-Use can add the list to their "favorites", indicating that they enjoyed the book
-	\item Favorites:
-		-User can browse their list of favorited books, witht the same sorting/filtering mechanisms as noted above
-	\item Leave Comment on Book Profile:
+	\item View Favorites  \textbf{requires login}:
+
+		-User can browse their list of favorited books, with the same sorting/filtering mechanisms as noted above
+
+	\item Leave Book Review \textbf{-requires login}: 
+
 		-Users can leave comments on the profiles of certain books
 	\item Register as User:
+
 		-User can register for an account if they want to have the ability to comment and favorite books
+
 	\item Login as User:
+
 		-Once registered, users will have the ability to login using the credentials they have provided during registration
 	\item Go to home page:
+
 		-The homepage will have information about the website and recent news regarding the website
-	\item View profile:
+	\item View profile \textbf{-requires login}:
+
 		-All profiles are anonymous because this is \textbf{not a social network}. Users can view their own profile if they would like to see their favorites list or their basic information such as email or username. Users are not allowed to change their username.
 
 	\item Log out:
+
 		-Users will be able to log out by clicking the "Log Out" button on the top right corner of the webpage.
 
 	
@@ -171,14 +195,22 @@
 						\item A password, required to follow the minimum standards set by the system: which is a minimum of 8 characters, 1 uppercase character, 1 lowercase character, 1 numerical character, and 1 special character
 				\end{itemize}
 
-			\subsubsection{SQL injection protection}
+			\subsubsection{SQL Injection Protection}
 				To protect form SQL injections, we will take precautions to inspect all user input and escape any characters which could breach security.
+
+			\subsubsection{Encryption}
+				Any sensitive information collected from users will be encryped fields in the relational database. All passwords will be hashed and we will take advantage of MySQL's build in password functionality.
+
+			\subsubsection{Anonymity}
+				When a user makes a comment, \textbf{only their username will show up}, not their real name. Anonymity protects users from being identified aganist their will, and prevents personal attacks or blackmail. Users on this web application should be allowed to enjoy and review any books they like, and not have to be worried about ramifications.
+		
+		\subsection{Concurrency Control}
+			The Relational Database Management System (RDBMS), MySQL, will take care of all needs relating to concurrency control. From the user's perspective, all transactions can be made concurrently. 
 
 		\subsection{Access Control}
 
 			\subsubsection{Types of Users}
-				\begin{itemize}
-		
+				\begin{itemize} 
 					\item \textbf{User}
 						
 
