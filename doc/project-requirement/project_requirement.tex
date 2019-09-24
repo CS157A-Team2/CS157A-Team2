@@ -117,62 +117,96 @@
 	\begin{itemize}
 
 	\item	Search Book:
-
-			-Users can search for books by ISBN, author, or title
+		\begin{itemize}
+			\item  Users can search for books that on the system database
+			\item  Input: ISBN, author, or title
+			\item  Output: list of books that match with the input information
+		\end{itemize}
 	\item	Order Search Results:
-
-			-User can order the search results based on relese date or number of favorites. Default search behavior is based on the number of favorites a book has received
-
+		\begin{itemize}
+			\item  User can order the book search results. Default search behavior is based on the number of favorites a book has received
+			\item  Input: relese date or number of favorites
+			\item  Output: ordered list of book that has characteristic from input
+		\end{itemize}
 	\item	Filter Search Results:
-
-			-User can filter the search reslts based on author, title, release date, publisher, or genre
+		\begin{itemize}
+			\item  User can filter the search reslts 
+			\item  Input: release date or genre
+			\item  Output: filtered list of book that matched with characteristic from input
+		\end{itemize}
 	\item	Select Book:
-
-			-Once user finds the desired book, they can select the book and view its profile.
+		\begin{itemize}
+			\item  Once user finds the desired book, they can select the book and view its profile.
+			\item  Input: selecting single book
+			\item  Output: book profile that includes book information and comments
+		\end{itemize}
 	\item	View Book Profile:
 
-			-A book's profile will consist of the following:
-			\begin{itemize}
-				\item The title of the book,
-				\item The author,
-				\item the relase date,
-				\item the publisher,
-				\item the ISBN,
-				\item the reviews/comments left for the book,
-				\item the number of "favorites" the book has received
-			\end{itemize}
 
+		A book's profile will consist of the following:
+		\begin{itemize}
+			\item The title of the book,
+			\item The author,
+			\item the relase date,
+			\item the publisher,
+			\item the ISBN,
+			\item the reviews/comments left for the book,
+			\item the number of "favorites" the book has received
+		\end{itemize}
 	\item Read/Download Book:
-
-		-User can download the book and view it in their web browser.
-	\item Add Book to Favorites:
-
-		-Use can add the list to their "favorites", indicating that they enjoyed the book
-	\item View Favorites  \textbf{requires login}:
-
-		-User can browse their list of favorited books, with the same sorting/filtering mechanisms as noted above
-
+		\begin{itemize}
+			\item  User can download the book and view it in their web browser.
+			\item  Input: selecting single book
+			\item  Ouput: reading page or download to local
+		\end{itemize}
+	\item Add/delete book to/from favorites:
+		\begin{itemize}
+			\item  Use can add the list to their "favorites", indicating that they enjoyed the book
+			\item  Input: selecting single book
+			\item  Output: add/delete book to/from the favorited book list that can be viewed on user's profile
+		\end{itemize}
+	\item  View Favorites  \textbf{requires login}:
+		\begin{itemize}
+			\item  User can browse their list of favorited books, with the same sorting/filtering mechanisms as noted above
+			\item  Input: Click view favorite book list in user profile
+			\item  Ouput: list of books that users marked as favorite
+		\end{itemize}
 	\item Leave Book Review \textbf{-requires login}: 
-
-		-Users can leave comments on the profiles of certain books
+		\begin{itemize}
+			\item  Users can leave comments on the profiles of certain books
+			\item  Input: comments that relating to the selected book
+			\item  Output: comments added to the book's repository
+		\end{itemize}
 	\item Register as User:
-
-		-User can register for an account if they want to have the ability to comment and favorite books
-
+		\begin{itemize}
+			\item  User can register for an account if they want to have the ability to comment and favorite books
+			\item  Input: user information includes username, password, email
+			\item  Output: user' account created
+		\end{itemize}
 	\item Login as User:
-
-		-Once registered, users will have the ability to login using the credentials they have provided during registration
+		\begin{itemize}
+			\item  Once registered, users will have the ability to login using the credentials they have provided during registration
+			\item  Input: email and password
+			\item  Ouput: login successfully give the access to login user's profile 
+		\end{itemize}
 	\item Go to home page:
-
-		-The homepage will have information about the website and recent news regarding the website
+		\begin{itemize}
+			\item  The homepage will have information about the website and recent news regarding the website
+			\item  Input: clicked website logo on navigator bar 
+			\item  Output: redirect user to homepage
+		\end{itemize}
 	\item View profile \textbf{-requires login}:
-
-		-All profiles are anonymous because this is \textbf{not a social network}. Users can view their own profile if they would like to see their favorites list or their basic information such as email or username. Users are not allowed to change their username.
-
+		\begin{itemize}
+			\item  All profiles are anonymous because this is \textbf{not a social network}. Users are not allowed to change their username.
+			\item  Input: successfully login
+			\item  Output: Profile page includes username and email information, favorites book list
+		\end{itemize}
 	\item Log out:
-
-		-Users will be able to log out by clicking the "Log Out" button on the top right corner of the webpage.
-
+		\begin{itemize}
+			\item  login user exits login condition, become vistor to the website
+			\item  Input: login user clicks "Log Out" button
+			\item  Output: becomes vistor and no longer has access to profile page, return to homepage if logout successfully
+		\end{itemize}
 	
 	\end{itemize}	
 		
