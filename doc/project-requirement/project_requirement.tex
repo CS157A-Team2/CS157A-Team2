@@ -32,7 +32,7 @@
 	\subsection{Project Goal}
 	The Goal of this project is to provide a free and open source infrastructure where users can read books from the public domain. We wish to provide an easy-to-use ecosystem, which allows the user to read or review books with ease.
 	\subsection{Benefits to Users}
-	Users will have a community where they can \textbf{read and review books for free}. Right now, websites such as this exists, but they only serve one of the two main functionalities. Websites like gutenberg.org give the users access to free book repositiories, but do not allow for users to read and write reviews on books. Conversely, websites like bookpage.com provide reviews for books, but they are not open to the public, rather only a small number of selected reviwers. Our web application will take the best aspects of both these websites to provide the user an efficent solution for picking and reading online books for free.
+	Users will have a community where they can \textbf{read and review books for free}. Right now, websites such as this exists, but they only serve one of the two desired functionalities. Websites like gutenberg.org give the users access to free book repositories, but do not allow for users to read and write reviews on books. Conversely, websites like bookpage.com provide reviews for books, but they do not provide free access to such books. Our web application will take the best aspects of both these websites to provide the user an efficient solution for picking and reading online books for free.
     \subsection{Stakeholders and Importance}
     The stakeholders of our applications will be students who want to find free textbook alternative to the paid bookstore alternative, as well as casual and dedicated book readers who can find free books online and download them for instant reading. This application is important because it provides a streamlined way for book-readers to gain easy access to the books they want and get them in a timely manner.
 
@@ -51,6 +51,7 @@
 			\begin{itemize}	
 				\item Purpose: CSS will be used to improve the user experience of our web application. CSS gives us the ability to make animations, colored content, as well as more control of the appearance of our content.
 				\item Version: CSS 3
+				\item Framework: Bootstrap
 			\end{itemize}
 			\item	JavaScript (Client Side):
 				\begin{itemize}
@@ -67,8 +68,8 @@
 			
 			\item Server Side Application Language: JavaScript
 				
-				-Purpose: Provide communition between the presentation layer and the database layer
-				-Version: EMCAScript2016
+				-Purpose: Provide commination between the presentation layer and the database layer
+				-Version: EMCAScript 2016
 
 			\item	NPM Package Manger:
 
@@ -100,7 +101,7 @@
 					\end{itemize}
 			\item Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified. 
 			
-			\item  MySQL and Node.js are available on many operating systemssuch as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD	
+			\item  MySQL and Node.js are available on many operating systems such as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD	
 			\end{itemize}
 
 		\item Client Hardware Requirements:
@@ -141,7 +142,6 @@
 			\item  Output: book profile that includes book information and comments
 		\end{itemize}
 	\item	View Book Profile:
-
 
 		A book's profile will consist of the following:
 		\begin{itemize}
@@ -213,12 +213,12 @@
 		
 	\section{Non-Functional Issues}
 
-		\subsection{Graphical User Interace}
-			The Graphical interface of the sytem will have the following qualities: attractivness, usability, and responsivness
-			\subsubsection{Attractivness}
-				The GUI will have a color palate which makes the system attractive to users. We will use high quality fonts and images where appliciple. The GUI as a whole will have a coherent and consistent theme. 
+		\subsection{Graphical User Interface}
+			The Graphical interface of the system will have the following qualities: attractiveness, usability, and responsiveness
+			\subsubsection{Attractiveness}
+				The GUI will have a color palate which makes the system attractive to users. We will use high quality fonts and images where applicable. The GUI as a whole will have a coherent and consistent theme. 
 			\subsubsection{Usability}
-				The GUI will be intuitive. Users will not have to read documenation on how to use the system in order to use it. Options availible to the user will be kept to a minimum as to encourage simplicity.
+				The GUI will be intuitive. Users will not have to read documentation on how to use the system in order to use it. Options available to the user will be kept to a minimum as to encourage simplicity.
 			\subsubsection{Responsiveness}
 				Users will be aware that their requests have been recorded. For example, a user clicks a button, there will be an indication that the button has been successfully clicked, such as a change in color. We will keep bloat to a minimum, such as animations and videos, as to encourage responsiveness for older hardware.
 
@@ -234,10 +234,10 @@
 				To protect form SQL injections, we will take precautions to inspect all user input and escape any characters which could breach security.
 
 			\subsubsection{Encryption}
-				Any sensitive information collected from users will be encryped fields in the relational database. All passwords will be hashed and we will take advantage of MySQL's build in password functionality.
+				Any sensitive information collected from users will be encrypted fields in the relational database. All passwords will be hashed and we will take advantage of MySQL's build in password functionality.
 
 			\subsubsection{Anonymity}
-				When a user makes a comment, \textbf{only their username will show up}, not their real name. Anonymity protects users from being identified aganist their will, and prevents personal attacks or blackmail. Users on this web application should be allowed to enjoy and review any books they like, and not have to be worried about ramifications.
+				When a user makes a comment, \textbf{only their username will show up}, not their real name. Anonymity protects users from being identified against their will, and prevents personal attacks or blackmail. Users on this web application should be allowed to enjoy and review any books they like, and not have to be worried about ramifications.
 		
 		\subsection{Concurrency Control}
 			The Relational Database Management System (RDBMS), MySQL, will take care of all needs relating to concurrency control. From the user's perspective, all transactions can be made concurrently. 
