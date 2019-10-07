@@ -38,7 +38,6 @@ app.get('/', function (req, res) {
 
 app.get('/about', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../content/about.html'))
-		
 })
 
 app.get('/users', function(req, res){
@@ -50,6 +49,10 @@ app.get('/users', function(req, res){
 				res.send('<h1> users <hr>' + table + '</h1>')
 				
 		})
+})
+
+app.get('/auth', function (req, res) {
+	res.sendFile(path.join(__dirname + '/../content/auth.html'))
 })
 
 app.listen('8080', () => {
