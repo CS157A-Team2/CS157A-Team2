@@ -45,7 +45,7 @@ app.get('/users', function(req, res){
 		let query = database.query(sql, (err, results) => {
 				table = ''
 				for(i=0; i < results.length; i++)
-					table += results[i].id + ' ' + results[i].name + '<br>';
+					table += results[i].user_id + ' ' + results[i].username + ' ' + results[i].type + '<br>';
 				res.send('<h1> users <hr>' + table + '</h1>')
 				
 		})
