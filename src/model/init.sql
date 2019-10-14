@@ -29,5 +29,24 @@ CREATE TABLE Content ( content_id INTEGER AUTO_INCREMENT,
 	title VARCHAR(40),
 	publish_date DATE,
 	PRIMARY KEY(content_id)
-	)
+	);
 
+CREATE TABLE Magazine (content_id INT PRIMARY KEY, 
+                        issueNum INT);
+                        
+CREATE TABLE Book (content_id INT PRIMARY KEY, 
+                  ISBN VARCHAR(20), 
+                  author VARCHAR(20), 
+                  publisher VARCHAR(20),  
+                  genre VARCHAR(20));
+
+CREATE TABLE Newspaper (content_id INT PRIMARY KEY, 
+                        locale VARCHAR(20));
+
+CREATE TABLE Article (content_id INT PRIMARY KEY, 
+                      author VARCHAR(20),
+                      publication_name VARCHAR(20));
+
+CREATE TABLE Poem (content_id INT PRIMARY KEY, 
+                      author VARCHAR(20),
+                      poem_type VARCHAR(20));
