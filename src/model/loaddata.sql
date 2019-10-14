@@ -125,3 +125,142 @@ INSERT INTO Content (content_id, title, publish_date) VALUES (74, "A Long Run in
 INSERT INTO Poem (content_id, poem_type, author) VALUES (74, "Ballad", "Frank Renyolds");
 INSERT INTO Content (content_id, title, publish_date) VALUES (75, "A Ballad to James", '1935.11.12');
 INSERT INTO Poem (content_id, poem_type, author) VALUES (75, "Ballad", "J. Renyolds");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("1", "291");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("1", "Snowbaording Magazine", "2018-08-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("2", "292");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("2", "Snowbaording Magazine", "2018-09-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("3", "293");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("3", "Snowbaording Magazine", "2018-10-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("4", "294");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("4", "Snowbaording Magazine", "2018-11-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("5", "295");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("5", "Snowbaording Magazine", "2018-12-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("6", "296");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("6", "Snowbaording Magazine", "2019-01-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("7", "297");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("7", "Snowbaording Magazine", "2019-02-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("8", "298");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("8", "Snowbaording Magazine", "2018-03-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("9", "299");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("9", "Snowbaording Magazine", "2019-04-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("10", "300");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("10", "Snowbaording Magazine", "2019-05-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("11", "301");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("11", "Snowbaording Magazine", "2019-06-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("12", "302");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("12", "Snowbaording Magazine", "2019-07-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("13", "303");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("13", "Snowbaording Magazine", "2019-08-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("14", "304");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("14", "Snowbaording Magazine", "2019-09-1");
+
+INSERT INTO Magazine(content_id, issueNum) 
+            VALUES ("15", "305");
+INSERT INTO Content(content_id, title, publish_date) 
+            VALUES("15", "Snowbaording Magazine", "2019-10-1");
+
+insert into Book (content_id, ISBN, author, publisher, genre) values ("16", '304555343-5', 'Murdoch Cave', 'Leela Buterton', 'Comedy|Crime');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("17", '659196532-7', 'Goldy Aimeric', 'Ali Gaitskell', 'Comedy');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("18", '491743522-6', 'Jelene Fancet', 'Linzy Shelf', 'Comedy|Drama|Romance');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("19", '346181073-8', 'Paulie Ouldcott', 'Adrianna Gresch', 'Adventure');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("20", '868282781-6', 'Taber Deguara', 'Shanta Daouze', 'Horror');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("21", '109670642-3', 'Clareta O''Carran', 'Winifield', 'Sci-Fi');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("22", '239189700-6', 'Osbourne Kingsly', 'Antonella Fancett', 'Crime|Drama');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("23", '671528801-1', 'Stevena Gotling', 'Mabelle MacFaul', 'Drama');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("24", '583092606-7', 'Debi Vala', 'Madelon Croux', 'Drama');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("25", '674056408-6', 'Merilee Blackall', 'Oates Raspison', 'Crime|Drama');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("26", '273454549-7', 'Wanda Morbey', 'Shawn Kosel', 'Crime|Drama|Romance');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("27", '544491903-6', 'Clyde Marginson', 'Jocko Connors', 'Comedy');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("28", '469558624-X', 'Magdaia Killelay', 'Prudence Rudsdell', 'Crime');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("29", '541188048-3', 'Philippa Frays', 'Noel Doerrling', 'Action');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("30", '133956813-6', 'Sharron Earley', 'Roze Sterzaker', 'Comedy');
+insert into Content (content_id, title, publish_date) values ("16", 'In the Electric Mist', '2019-02-01');
+insert into Content (content_id, title, publish_date) values ("17", 'Babylon 5', '2018-04-01');
+insert into Content (content_id, title, publish_date) values ("18", 'Mortuary', '2017-11-11');
+insert into Content (content_id, title, publish_date) values ("19", 'Counterfeit Coin', '2018-06-05');
+insert into Content (content_id, title, publish_date) values ("20", 'Ah, Wilderness!', '2018-10-13');
+insert into Content (content_id, title, publish_date) values ("21", 'Independencia', '2018-10-24');
+insert into Content (content_id, title, publish_date) values ("22", 'Lost Son, The', '2018-11-20');
+insert into Content (content_id, title, publish_date) values ("23", 'Wild Child', '2019-07-14');
+insert into Content (content_id, title, publish_date) values ("24", 'Little Big Soldier', '2018-11-18');
+insert into Content (content_id, title, publish_date) values ("25", 'Medea', '2017-12-16');
+insert into Content (content_id, title, publish_date) values ("26", 'One Fine Spring Day', '2019-07-05');
+insert into Content (content_id, title, publish_date) values ("27", 'Galaxina', '2018-12-18');
+insert into Content (content_id, title, publish_date) values ("28", 'Godzilla 2000', '2017-11-09');
+insert into Content (content_id, title, publish_date) values ("29", 'Free Soul, A', '2019-08-21');
+insert into Content (content_id, title, publish_date) values ("30", 'Attack on the Iron Coast', '2019-04-30');
+
+insert into Newspaper (content_id, locale) values ("31", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("32", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("33", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("34", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("35", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("36", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("37", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("38", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("39", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("40", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("41", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("42", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("43", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("44", "New York City, NY");
+insert into Newspaper (content_id, locale) values ("45", "New York City, NY");
+insert into Content (content_id, title, publish_date) values ("31", "New York Time", '2018-06-28');
+insert into Content (content_id, title, publish_date) values ("32", "New York Time", '2018-04-10');
+insert into Content (content_id, title, publish_date) values ("33", "New York Time", '2018-10-04');
+insert into Content (content_id, title, publish_date) values ("34", "New York Time", '2018-08-30');
+insert into Content (content_id, title, publish_date) values ("35", "New York Time", '2018-05-29');
+insert into Content (content_id, title, publish_date) values ("36", "New York Time", '2019-09-05');
+insert into Content (content_id, title, publish_date) values ("37", "New York Time", '2019-08-16');
+insert into Content (content_id, title, publish_date) values ("38", "New York Time", '2018-12-01');
+insert into Content (content_id, title, publish_date) values ("39", "New York Time", '2018-07-24');
+insert into Content (content_id, title, publish_date) values ("40", "New York Time", '2018-09-07');
+insert into Content (content_id, title, publish_date) values ("41", "New York Time", '2018-09-17');
+insert into Content (content_id, title, publish_date) values ("42", "New York Time", '2019-01-18');
+insert into Content (content_id, title, publish_date) values ("43", "New York Time", '2019-05-13');
+insert into Content (content_id, title, publish_date) values ("44", "New York Time", '2019-10-02');
+insert into Content (content_id, title, publish_date) values ("45", "New York Time", '2018-04-30');
+
+
