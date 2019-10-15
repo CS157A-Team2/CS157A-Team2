@@ -28,9 +28,9 @@
 			\item Favorites(\underline{user\_id}, \underline{content\_id})
 			\item Downloads(\underline{user\_id}, \underline{content\_id} )
 			\item Content(\underline{content\_id}, title, publish\_date)
-			\item Article(\underline{conent\_id}, author, publication\_name)
+			\item Article(\underline{content\_id}, author, publication\_name)
 			\item Magazine(\underline{content\_id}, issueNum)
-			\item Book(\underline{content\_id}, ISBN, author, genre)
+			\item Book(\underline{content\_id}, ISBN, author, genre, publisher)
 			\item Newspaper(\underline{content\_id}, locale)
 			\item Poem(\underline{content\_id}, poem\_type, author)
 		\end{itemize}
@@ -63,9 +63,9 @@
 			Users are defined as those who have a valid account login for the website.
 			The attributes for Users are as follows:
 			\begin{itemize}
-				\item type: A user can be of two types, admin or regular. Admins have special privileges
+				\item user\_type: A user can be of two types, admin or regular. Admins have special privileges
 				\item username: The unique username by which a user logs into the web application
-				\item userID: the unique identifier by which a user's information is tracked
+				\item user\_id: the unique identifier by which a user's information is tracked
 			\end{itemize}
 		\subsection{Content}
 				Content comes in many forms. There are four subclasses of Content, but it possible that there exist an item that is only classifiable as Content and none of its subclasses. 
@@ -74,7 +74,7 @@
 			\begin{itemize}
 				\item content\_id: The unique content identifier
 				\item title: The name/title of the content
-				\item date: The date the content was published, if available
+				\item publish\_date: The date the content was published, if available
 			\end{itemize}
 			\subsection{Books}
 				Books are a special case of Content. They have special attributes which sets them apart; however, books inherit the primary key from content. In addition, books have the following attributes:
@@ -92,26 +92,26 @@
 			\subsection{Newspapers} 
 				Newspapers are a special case of Content. They have special attributes which sets them apart; however, Newspapers inherit the primary key from content. In addition, magazines have the following attributes:
 			\begin{itemize}
-				\item location: the locality of a Newspaper, if available.
-				\item publication: the name of the newspaper publication
+				\item locale: the locality of a Newspaper, if available.
 			\end{itemize}	
 			\subsection{Articles}		
 			Articles are standalone pieces of writing which may, in some cases, be significant enough to publish on the web application as it's own piece of media. Articles inherit the primary key from Content but have additional relationships, as described in the relationships section. Articles also have the following additional attributes:
 			\begin{itemize}
 				\item author: the author of the article
+				\item publication\_name: the name of the publication where the article is from.
 			\end{itemize}
 		\subsection{Poems}		
 			Poems are a specialized form of content, usually artistic in nature. Poems inherit the primary key from Content but have additional attributes, as described in the relationships section. Articles also have the following additional attributes:
 			\begin{itemize}
 				\item author: the author of the poem (if available)
-				\item type: the type of poem (ballad, epic, prose, haiku, etc.)
+				\item poem\_type: the type of poem (ballad, epic, prose, haiku, etc.)
 			\end{itemize}
 					
 			\subsection{Reviews}
 			Reviews are the way by which users rate their satisfaction with a particular piece of content. Reviews are a weak entity set due to the reliance on the primary keys from its relationships with User and Content, as described in the relationship section. Reviews consist of the following attributes:
 			\begin{itemize}
 				\item rating: the star rating given (out of 5)
-				\item comment: the comment left in addition to the rating (optional)
+				\item user\_comment: the comment left in addition to the rating (optional)
 			\end{itemize}
 
 	\section{Relationships}
