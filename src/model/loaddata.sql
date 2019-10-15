@@ -201,17 +201,17 @@ INSERT INTO Magazine(content_id, issueNum)
 INSERT INTO Content(content_id, title, publish_date) 
             VALUES("15", "Snowbaording Magazine", "2019-10-1");
 
-insert into Book (content_id, ISBN, author, publisher, genre) values ("16", '304555343-5', 'Murdoch Cave', 'Leela Buterton', 'Comedy|Crime');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("16", '304555343-5', 'Murdoch Cave', 'Leela Buterton', 'Comedy');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("17", '659196532-7', 'Goldy Aimeric', 'Ali Gaitskell', 'Comedy');
-insert into Book (content_id, ISBN, author, publisher, genre) values ("18", '491743522-6', 'Jelene Fancet', 'Linzy Shelf', 'Comedy|Drama|Romance');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("18", '491743522-6', 'Jelene Fancet', 'Linzy Shelf', 'Comedy');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("19", '346181073-8', 'Paulie Ouldcott', 'Adrianna Gresch', 'Adventure');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("20", '868282781-6', 'Taber Deguara', 'Shanta Daouze', 'Horror');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("21", '109670642-3', 'Clareta O''Carran', 'Winifield', 'Sci-Fi');
-insert into Book (content_id, ISBN, author, publisher, genre) values ("22", '239189700-6', 'Osbourne Kingsly', 'Antonella Fancett', 'Crime|Drama');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("22", '239189700-6', 'Osbourne Kingsly', 'Antonella Fancett', 'Crime');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("23", '671528801-1', 'Stevena Gotling', 'Mabelle MacFaul', 'Drama');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("24", '583092606-7', 'Debi Vala', 'Madelon Croux', 'Drama');
-insert into Book (content_id, ISBN, author, publisher, genre) values ("25", '674056408-6', 'Merilee Blackall', 'Oates Raspison', 'Crime|Drama');
-insert into Book (content_id, ISBN, author, publisher, genre) values ("26", '273454549-7', 'Wanda Morbey', 'Shawn Kosel', 'Crime|Drama|Romance');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("25", '674056408-6', 'Merilee Blackall', 'Oates Raspison', 'Crime');
+insert into Book (content_id, ISBN, author, publisher, genre) values ("26", '273454549-7', 'Wanda Morbey', 'Shawn Kosel', 'Crime');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("27", '544491903-6', 'Clyde Marginson', 'Jocko Connors', 'Comedy');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("28", '469558624-X', 'Magdaia Killelay', 'Prudence Rudsdell', 'Crime');
 insert into Book (content_id, ISBN, author, publisher, genre) values ("29", '541188048-3', 'Philippa Frays', 'Noel Doerrling', 'Action');

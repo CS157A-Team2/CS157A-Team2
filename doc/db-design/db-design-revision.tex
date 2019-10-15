@@ -15,14 +15,51 @@
 }
 
 
-\title{CS157A Team 2 \\ Database Design Documentation \\
+\title{CS157A Team 2 \\ Database Design Documentation Revision \\
         \large A Book Reading and Review Web Application}
 
 \begin{document}
 
   \maketitle
   	\section{Entity-Relationship Diagram}
-	\includegraphics[scale=1]{erd.png}
+	\includegraphics[scale=1]{erd-rev.png}
+	\section{Database Schema}
+		\begin{itemize}
+			\item Users(\underline{user\_id}, username, use\_type)
+			\item Reviews(\underline{user\_id}, \underline{content\_id}, rating, user\_comment)
+			\item Favorites(\underline{user\_id}, \underline{content\_id})
+			\item Downloads(\underline{user\_id}, \underline{content\_id} )
+			\item Content(\underline{content\_id}, title, publish\_date)
+			\item Article(\underline{conent\_id}, author, publication\_name)
+			\item Magazine(\underline{content\_id}, issueNum)
+			\item Book(\underline{content\_id}, ISBN, author, genre)
+			\item Newspaper(\underline{content\_id}, locale)
+			\item Poem(\underline{content\_id}, poem\_type, author)
+		\end{itemize}
+	\section{Database Tables}
+		\subsection{Users}
+			\includegraphics[scale=.5]{users.png}
+		\subsection{Reviews}
+			\includegraphics[scale=.5]{reviews.png}
+		\subsection{Favorites}
+			\includegraphics[scale=.5]{favorites.png}
+		\subsection{Downloads}
+			\includegraphics[scale=.5]{downloads.png}
+		\subsection{Poem}
+			\includegraphics[scale=.45]{poem.png}
+		\subsection{Content}
+			\includegraphics[scale=.7]{content.png}
+		\subsection{Magazine}
+			\includegraphics[scale=.5]{magazine.png}
+		\subsection{Article}
+			\includegraphics[scale=.5]{article.png}
+		\subsection{Newspaper}
+			\includegraphics[scale=.5]{newspaper.png}
+		\subsection{Book}
+			\includegraphics[scale=.5]{book.png}
+
+
+
 	\section{Entities}
 		\subsection{Users}
 			Users are defined as those who have a valid account login for the website.
@@ -65,6 +102,13 @@
 			\begin{itemize}
 				\item author: the author of the article
 			\end{itemize}
+		\subsection{Poems}		
+			Poems are a specialized form of content, usually artistic in nature. Poems inherit the primary key from Content but have additional attributes, as described in the relationships section. Articles also have the following additional attributes:
+			\begin{itemize}
+				\item author: the author of the poem (if available)
+				\item type: the type of poem (ballad, epic, prose, haiku, etc.)
+			\end{itemize}
+					
 			\subsection{Reviews}
 			Reviews are the way by which users rate their satisfaction with a particular piece of content. Reviews are a weak entity set due to the reliance on the primary keys from its relationships with User and Content, as described in the relationship section. Reviews consist of the following attributes:
 			\begin{itemize}
@@ -74,16 +118,12 @@
 
 	\section{Relationships}
 		\subsection{User Writes Reviews}
-			A user (admin or regular) is the author of zero or many reviews. The weak entity set Review borrows the primary key username of User.
+			A user (admin or regular) is the author of zero or many reviews. The weak entity set Review borrows the primary key username of User. This is a supporting relationship for the Review entity set.
 		\subsection{Review Written for Content}
-			A piece of content can obtain many reviews, but each review only belongs to one particular piece of content. The weak entity set Review borrows the primary key id from Content.
+			A piece of content can obtain many reviews, but each review only belongs to one particular piece of content. The weak entity set Review borrows the primary key id from Content. This is a supporting relationship for the Review entity set.
 		\subsection{User Favorites Content}
 			A user can favorite content, which allows them to keep track of their favorite items. Content can be favorited by zero or many users. Users can favorite zero or many pieces of content.	
-		\subsection{User Reads Content}
-			A user can read zero or many pieces of content, and a piece of content may be read by zero or many users.
-		\subsection{Article is in Newspaper}
-			If a standalone article is posted, it may have originally existed within a particular newspaper publication.
-		\subsection{Article is in Magazine}
-			If a standalone article is posted, it may have originally existed within a particular magazine.
+		\subsection{User Downloads Content}
+			We would like to keep track of user's download history. A user can download zero or many pieces of content, and a piece of content may be downloaded by zero or many users.
 \end{document}
 
