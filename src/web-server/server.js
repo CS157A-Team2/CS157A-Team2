@@ -41,8 +41,32 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../content/about.html'))
+	res.render('pages/about')
 })
+
+app.get('/content', function (req, res) {
+	res.render('pages/content')
+})
+app.get('/books', function (req, res) {
+	res.render('pages/books')
+})
+
+app.get('/newspapers', function (req, res) {
+	res.render('pages/newspapers')
+})
+
+app.get('/poems', function (req, res) {
+	res.render('pages/poems')
+})
+
+app.get('/artices', function (req, res) {
+	res.render('pages/articles')
+})
+
+app.get('/magazines', function (req, res) {
+	res.render('pages/magazines')
+})
+
 
 app.get('/users', function(req, res){
 		let sql = "SELECT * FROM Users"
@@ -59,7 +83,7 @@ app.get('/auth', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../content/auth.html'))
 })
 
-app.listen('8080', () => {
-	console.log('server started on port 8080')
+app.listen('8881', () => {
+	console.log('server started on port 8881')
 })
 
