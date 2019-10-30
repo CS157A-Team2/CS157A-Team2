@@ -30,11 +30,15 @@ const app = express()
 
 //----------------Define Webpages---------------------------
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
-app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../content/index.html'))
-		
-})
+// use res.render to load up an ejs view file
+
+// index page 
+app.get('/', function(req, res) {
+    res.render('pages/index');
+});
 
 app.get('/about', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../content/about.html'))
@@ -58,3 +62,4 @@ app.get('/auth', function (req, res) {
 app.listen('8080', () => {
 	console.log('server started on port 8080')
 })
+

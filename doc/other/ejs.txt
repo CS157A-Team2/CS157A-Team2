@@ -1,0 +1,9 @@
+HOW TO USE EJS:
+	https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+
+Why are we using EJS:
+	It allows us to display dynamic DB content. That's about all I know right now. Basically it provides templating for us to insert data into html. Please read up on it! The provided link explains all of the basics (its very simple even for someone like me who doesn't know anything about web development
+
+
+
+
