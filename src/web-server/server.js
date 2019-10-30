@@ -41,11 +41,11 @@ app.get('/about', function (req, res) {
 })
 
 app.get('/users', function(req, res){
-		let sql = "SELECT * FROM users"
+		let sql = "SELECT * FROM Users"
 		let query = database.query(sql, (err, results) => {
 				table = ''
 				for(i=0; i < results.length; i++)
-					table += results[i].user_id + ' ' + results[i].username + ' ' + results[i].type + '<br>';
+					table += results[i].user_id + ' ' + results[i].username + ' ' + results[i].user_type + '<br>';
 				res.send('<h1> users <hr>' + table + '</h1>')
 				
 		})
