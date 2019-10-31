@@ -57,15 +57,14 @@ app.get('/newspapers', function (req, res) {
 
 const con = database
 rows = ''
-getPoemRows = function()
+getRows = function()
 {
 	return rows
 }
-
 app.get('/poems', function (req, res) {
-	database.connect(function (err) {
+	con.connect(function (err) {
         let sql = "SELECT c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id";
-        database.query(sql, function (err, results) {
+        con.query(sql, function (err, results) {
 				for(i=0; i < results.length; i++)
 					rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].author + ' </td><td> ' + results[i].poem_type +  '</td></tr>\n ';
                 res.render('pages/poems');
