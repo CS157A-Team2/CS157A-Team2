@@ -5,6 +5,10 @@ const fs = require('fs')
 const express = require('express')
 const mysql = require('mysql')
 const path = require('path');
+
+//--------------routes-------------------------
+const auth = require('./routes/auth')
+
 const database = mysql.createConnection({
 	host	: 'localhost',
 	user	: 'root',
@@ -146,8 +150,13 @@ app.get('/users', function(req, res){
 		})
 })
 
-app.get('/auth', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../content/auth.html'))
+app.use('/auth', auth)
+app.get('/auth/signup', function(req, res) {
+	res.redirect('/auth/signup')
+})
+
+app.get('/auth/login', function(req, res) {
+	res.redirect('/auth/login')
 })
 
 app.listen('8080', () => {
