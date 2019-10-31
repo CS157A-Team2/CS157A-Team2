@@ -1,0 +1,46 @@
+<!-- views/pages/login.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="container">
+      <h4 class="text-center">Log in to your account</h4>
+      <form action='/auth/login/submit' , method="POST" style="align-items: center;">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-5">
+            <div class="form-group input-group">
+              <input name="email" class="form-control" placeholder="Email address" type="email" required>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+              <input name="password" class="form-control" placeholder="Create password" type="password" required>
+            </div> <!-- form-group// -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+              <button type="submit" value="submit" class="btn btn-primary btn-block"> Log In </button>
+            </div> <!-- form-group// -->
+          </div>
+        </div>
+        <p class="text-center" style="color: black;">Don't have an account yet? <a href="/auth/signup">Sign up</a> </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
