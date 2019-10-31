@@ -5,6 +5,7 @@ const fs = require('fs')
 const express = require('express')
 const mysql = require('mysql')
 const path = require('path');
+const bodyParser = require('body-parser')
 
 //--------------routes-------------------------
 const auth = require('./routes/auth')
@@ -150,6 +151,14 @@ app.get('/users', function(req, res){
 		})
 })
 
+//------------body-parser-----------------------
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+//------------auth-------------------------------
 app.use('/auth', auth)
 app.get('/auth/signup', function(req, res) {
 	res.redirect('/auth/signup')
