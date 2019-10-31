@@ -13,13 +13,33 @@
 
 <main>
     <div class="jumbotron">
-        <h1>About.</h1>
-        <p>OpenBooks is maintained by the following dedicated volunteers</p>
-	<ul>
-		<li>Feiyu</li>
-		<li>Brett</li>
-		<li>Adham</li>
-	</ul>
+        <h1>Magazines.</h1>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort By...
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/magazines/title">Title</a><br>
+            <a class="dropdown-item" href="/magazines/issueNum">Issue Number</a><br>
+            <a class="dropdown-item" href="/magazines/publishDate">Publication Date</a><br>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Issue Number</th>
+                    <th>Publish Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%- getRows() %>
+                <tr>
+                </tr>      
+             </tbody>
+        </table>
+    </div>
     </div>
 </main>
 

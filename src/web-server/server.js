@@ -64,7 +64,7 @@ app.get('/book-profile/*', function(req, res){
 })
 
 app.get('/magazines', function (req, res){
-	let sql = "SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id"
+	let sql = "SELECT c.content_id, c.title, c.publish_date, m.issueNum FROM Magazine m INNER JOIN Content c on c.content_id = m.content_id"
 	processMagazines(req, res, sql)
 });
 
@@ -190,6 +190,31 @@ function processArticles(req,res,sql)
 app.get('/magazines', function (req, res) {
 	res.render('pages/magazines')
 })
+
+function processMagazines(req,res,sql)
+{
+	rows = ''	
+    database.query(sql, function (err, results) {
+	for(i=0; i < results.length; i++)
+		rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].issueNum + ' </td><td> ' + results[i].publish_date + '</td></tr>\n ';
+        res.render('pages/magazines');
+    });
+}
+
+app.get('/magazines/title', function (req, res){
+	let sql = "SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY c.title";
+	processMagazines(req, res, sql)
+});
+
+app.get('/magazines/issueNum', function (req, res){
+	let sql = "SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY m.issueNum";
+	processMagazines(req, res, sql)
+});
+
+app.get('/magazines/publishDate', function (req, res){
+	let sql = "SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY c.publish_date";
+	processMagazines(req, res, sql)
+});
 
 app.get('/users', function(req, res){
 		let sql = "SELECT c.content_id, * FROM Users"
