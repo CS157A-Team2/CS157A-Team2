@@ -5,7 +5,7 @@ const fs = require('fs')
 const express = require('express')
 const mysql = require('mysql')
 const path = require('path');
-
+hello = 'hi'
 const database = mysql.createConnection({
 	host	: 'localhost',
 	user	: 'root',
@@ -55,12 +55,26 @@ app.get('/newspapers', function (req, res) {
 	res.render('pages/newspapers')
 })
 
+const con = database
+rows = ''
+getPoemRows = function()
+{
+	return rows
+}
+
 app.get('/poems', function (req, res) {
-	res.render('pages/poems')
-})
+	database.connect(function (err) {
+        let sql = "SELECT c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id";
+        database.query(sql, function (err, results) {
+				for(i=0; i < results.length; i++)
+					rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].author + ' </td><td> ' + results[i].poem_type +  '</td></tr>\n ';
+                res.render('pages/poems');
+            });
+        });
+    });
 
 app.get('/artices', function (req, res) {
-	res.render('pages/articles')
+	 res.render('pages/articles')
 })
 
 app.get('/magazines', function (req, res) {
@@ -75,7 +89,6 @@ app.get('/users', function(req, res){
 				for(i=0; i < results.length; i++)
 					table += results[i].user_id + ' ' + results[i].username + ' ' + results[i].user_type + '<br>';
 				res.send('<h1> users <hr>' + table + '</h1>')
-				
 		})
 })
 
@@ -83,7 +96,31 @@ app.get('/auth', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../content/auth.html'))
 })
 
-app.listen('8881', () => {
-	console.log('server started on port 8881')
+app.listen('8888', () => {
+	console.log('server started on port 8080')
 })
+
+getBookRows = function(	)
+{
+		let sql = "SELECT c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id"
+		database.query(sql, (err, results) => {
+				bookRows = ''
+				for(i=0; i < results.length; i++)
+					bookRows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].author + ' </td><td> ' + results[i].genre + ' </td><td> ' + results[i].publisher + '</td></tr>\n ';
+		})
+		return  bookRows
+}
+
+getPoemRows = function(	)
+{
+		let sql = "SELECT c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c on p.content_id = c.content_id"
+		poemRows=''
+		let query = database.query(sql, (err, results) => {
+
+				for(i=0; i < results.length; i++)
+					poemRows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].author + ' </td><td> ' + results[i].poem_type +  '</td></tr>\n ';
+						
+				})
+		return  poemRows
+}
 
