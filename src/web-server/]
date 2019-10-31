@@ -1,0 +1,49 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+    <div class="jumbotron">
+		<h1>Newspaper.</h1>
+		<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Sort By...
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  <a class="dropdown-item" href="/books/location">Location</a><br>
+				  <a class="dropdown-item" href="/books/date">Date</a><br>
+				  <a class="dropdown-item" href="/books/publication">Publicationr</a>
+				</div>
+			  </div>
+	<div class="container">
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>Publicatoin Name</th>
+	        <th>Locale</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<%- getRows() %>
+	      <tr>
+	      </tr>      
+	   </tbody>
+	  </table>
+</div>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

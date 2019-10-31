@@ -44,19 +44,14 @@ app.get('/content', function (req, res) {
 	res.render('pages/content')
 })
 
-app.get('/newspapers', function (req, res) {
-	res.render('pages/newspapers')
-})
-
 getRows = function()
 {
 	return rows
 }
-//how to get wildcard number??.............
+
 app.get('/book-profile/*', function(req, res){
 	bookNum = req.url.replace(/[^0-9]/g, '')
 	let sql = "SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " + bookNum
-	console.log(sql)
 	database.query(sql, function (err, results) {
 		currentBook.content_id = results[0].content_id
 		currentBook.title = results[0].title
@@ -66,6 +61,42 @@ app.get('/book-profile/*', function(req, res){
 		res.render('pages/book-profile');
     });	
 })
+
+app.get('/magazines', function (req, res){
+	let sql = "SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id"
+	processMagazines(req, res, sql)
+});
+
+
+app.get('/articles', function (req, res){
+	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id"
+	processArticles(req, res, sql)
+});
+
+
+app.get('/newspapers', function (req, res){
+	let sql = "SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id"
+	processNewspaper(req, res, sql)
+});
+
+
+app.get('/newspapers/date', function (req, res){
+	let sql = "SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY publish_date"
+	processNewspaper(req, res, sql)
+});
+
+
+app.get('/newspapers/location', function (req, res){
+	let sql = "SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY locale"
+	processNewspaper(req, res, sql)
+});
+
+
+app.get('/newspapers/publication', function (req, res){
+	let sql = "SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY title"
+	processNewspaper(req, res, sql)
+});
+
 
 app.get('/books', function (req, res){
 	let sql = "SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id"
@@ -91,6 +122,18 @@ app.get('/books/genre', function (req, res){
 	let sql = "SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre"
 	processBooks(req, res, sql)
 });
+
+function processNewspaper(req, res, sql)
+{
+	rows = ''
+    database.query(sql, function (err, results) {
+	for(i=0; i < results.length; i++)
+		rows += '<tr><td>'+ results[i].title + ',  ' + results[i].publish_date.toString().substring(0,15) + '</a></td><td> ' + results[i].locale +'</td></tr>\n';
+		//Once pages are set up: rows += '<tr><td><a href=/newspaper-profile/'  +results[i].content_id + '>' + results[i].title + ',  ' + results[i].publish_date.toString().substring(0,15) + '</a></td><td> ' + results[i].locale +'</td></tr>\n';
+    res.render('pages/newspapers');
+    });
+}
+
 
 function processBooks(req, res, sql)
 {
@@ -132,9 +175,16 @@ function processPoems(req, res, sql)
     });
 }
 
-app.get('/artices', function (req, res) {
-	 res.render('pages/articles')
-})
+
+function processArticles(req,res,sql)
+{
+	rows = ''	
+    database.query(sql, function (err, results) {
+	for(i=0; i < results.length; i++)
+		rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].author + ' </td><td> ' + results[i].publication_name +   ' </td><td> ' + results[i].publish_date + '</td></tr>\n ';
+        res.render('pages/articles');
+    });
+}
 
 app.get('/magazines', function (req, res) {
 	res.render('pages/magazines')
