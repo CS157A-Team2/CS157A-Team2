@@ -13,7 +13,16 @@
 <main>
     <div class="jumbotron">
 		<h1>Poems.  </h1>
-
+		<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Sort By...
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  <a class="dropdown-item" href="/poems/title">Title</a><br>
+				  <a class="dropdown-item" href="/poems/author">Author</a><br>
+				  <a class="dropdown-item" href="/poems/poem_type">Poem Type</a><br>
+				</div>
+		</div>
 	<div class="container">
 	  <table class="table">
 	    <thead>
