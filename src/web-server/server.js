@@ -23,6 +23,7 @@ database.connect((err) => {
 })
 
 const app = express()
+app.use(express.static('public'))
 app.set('view engine', 'ejs');
 rows = ''
 currentBook = {author: null, title: null, publisher: null, reviews: null, genre: null}
@@ -92,7 +93,7 @@ function processBooks(req, res, sql)
 	rows = ''
     database.query(sql, function (err, results) {
 	for(i=0; i < results.length; i++)
-		rows += '<tr><td><a href=book-profile/' + results[i].content_id + '>' + results[i].title +'</a></td><td> ' + results[i].author + ' </td><td> ' + results[i].genre + ' </td><td> ' + results[i].publisher +   '</td></tr>\n';
+		rows += '<tr><td><a href=/book-profile/' + results[i].content_id + '>' + results[i].title +'</a></td><td> ' + results[i].author + ' </td><td> ' + results[i].genre + ' </td><td> ' + results[i].publisher +   '</td></tr>\n';
     res.render('pages/books');
     });
 }
