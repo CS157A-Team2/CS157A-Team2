@@ -69,6 +69,30 @@ app.get('/magazines', function (req, res){
 });
 
 
+app.get('/articles/title', function (req, res){
+	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY c.title"
+	processArticles(req, res, sql)
+});
+
+
+app.get('/articles/author', function (req, res){
+	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY a.author"
+	processArticles(req, res, sql)
+});
+
+
+app.get('/articles/date', function (req, res){
+	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY c.publish_date"
+	processArticles(req, res, sql)
+});
+
+
+app.get('/articles/publication', function (req, res){
+	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY a.publication_name"
+	processArticles(req, res, sql)
+});
+
+
 app.get('/articles', function (req, res){
 	 let sql = " SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id"
 	processArticles(req, res, sql)
@@ -196,7 +220,7 @@ function processMagazines(req,res,sql)
 	rows = ''	
     database.query(sql, function (err, results) {
 	for(i=0; i < results.length; i++)
-		rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].issueNum + ' </td><td> ' + results[i].publish_date + '</td></tr>\n ';
+		rows += '<tr><td>' +results[i].title + '</td><td> ' + results[i].issueNum + ' </td><td> ' + results[i].publish_date.toString().substring(0,15) + '</td></tr>\n ';
         res.render('pages/magazines');
     });
 }
