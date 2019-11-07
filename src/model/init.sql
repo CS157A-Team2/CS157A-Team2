@@ -2,9 +2,9 @@ DROP DATABASE bookstore;
 CREATE DATABASE bookstore;
 USE bookstore;
 
-CREATE TABLE Users (user_id VARCHAR(20),
+CREATE TABLE Users (user_id VARCHAR(40),
 	username VARCHAR(20),
-       	user_type VARCHAR(20), 
+       	user_type VARCHAR(20) DEFAULT 'regular', 
 	PRIMARY KEY(user_id)
 );
 

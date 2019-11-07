@@ -9,6 +9,13 @@ const bodyParser = require("body-parser");
 
 //--------------routes-------------------------
 const auth = require("./routes/auth");
+firebase = auth.firebase;
+
+currentUser = {
+	username: null,
+	email: null,
+	user_type: null,
+}
 
 const database = mysql.createConnection({
 	host: "localhost",
@@ -47,7 +54,20 @@ currentContent = {
 };
 
 app.get("/", function (req, res) {
-	res.render("pages/index");
+	if(firebase.auth().currentUser == null)
+		res.render("pages/index");
+	else
+	{
+	sql = 'SELECT username, user_type, user_id FROM Users WHERE user_id = ' + "'" + firebase.auth().currentUser.uid  +  "'"
+	database.query(sql, function(err, results){
+		console.log(results[0].username)
+		console.log(firebase.auth().currentUser.uid)
+		currentUser.username = results[0].username
+		currentUser.user_id = results[0].user_id
+		currentUser.user_type = results[0].user_type
+		res.render("pages/index");
+	})
+	}	
 });
 
 app.get("/about", function (req, res) {
@@ -398,3 +418,6 @@ app.get("/auth/login", function (req, res) {
 app.listen("8080", () => {
 	console.log("server started on port 8080");
 });
+
+
+module.exports.database = database
