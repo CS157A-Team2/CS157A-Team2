@@ -46,16 +46,26 @@ router.post('/login/submit', function (req, res) {
   const password = req.body.password;
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then (function(response) {
-    console.log(firebase.auth().currentUser.email)
-    server.initSession()
     res.redirect('/')
   })
   .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
     var errorMessage = error.message;
-    // ...
+    res.render("pages/login", {error: error});
   });
 });
+
+router.get('/logout', function (req, res) { 
+  currentUser.username = null
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    console.log('success')
+  }, function(error) {
+    // An error happened.
+    console.log('faileu')
+  }); 
+  res.render('pages/index', {message: 'Log Out Successful'})
+});
+
+
 module.exports = router
 module.exports.firebase = firebase

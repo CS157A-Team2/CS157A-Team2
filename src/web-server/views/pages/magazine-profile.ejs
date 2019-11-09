@@ -11,7 +11,10 @@
 </header>
 
 <main>
-    <div class="jumbotron">
+    <div class="jumbotron">      
+          <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
         <h2><%=currentUser.currentContent.title + ", issue #" + currentUser.currentContent.issueNum %></h2>
         <h3><i><%= "Published on: " + currentUser.currentContent.publish_date.toString().substring(0,15) %></i></h3>
         <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>

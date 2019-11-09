@@ -13,6 +13,9 @@
 <main>
     <div class="jumbotron">
         <h2><%= currentUser.currentContent.title %></h2>
+        <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
         <h3>Written by <i><%= currentUser.currentContent.author %></i></h3>
         <h3>Poem Type: <i><%= currentUser.currentContent.poem_type %></i></h3>
         <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>

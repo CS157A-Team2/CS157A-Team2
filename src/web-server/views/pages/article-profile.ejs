@@ -12,6 +12,9 @@
 
 <main>
     <div class="jumbotron">
+        <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
         <h2><%= currentUser.currentContent.title %></h2>
         <h3>Written by <i><%= currentUser.currentContent.author %></i></h3>
         <h3>Published by <i><%= currentUser.currentContent.publication_name %></i></h3>

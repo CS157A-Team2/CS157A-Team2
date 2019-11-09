@@ -15,12 +15,13 @@ CREATE TABLE Reviews( user_id VARCHAR(20),
 	PRIMARY KEY(user_id, content_id)
 );
 
-CREATE TABLE Favorites( user_id VARCHAR(20),
+CREATE TABLE Favorites( 
+	user_id VARCHAR(50),
 	content_id INTEGER,
 	PRIMARY KEY (user_id, content_id)
 );
 
-CREATE TABLE Downloads( user_id VARCHAR(20),
+CREATE TABLE Downloads( user_id VARCHAR(50),
 	content_id INTEGER,
 	PRIMARY KEY (user_id, content_id)
 );
@@ -28,6 +29,7 @@ CREATE TABLE Downloads( user_id VARCHAR(20),
 CREATE TABLE Content ( content_id INTEGER AUTO_INCREMENT,
 	title VARCHAR(40),
 	publish_date DATE,
+	content_type VARCHAR(20),
 	PRIMARY KEY(content_id)
 	);
 
