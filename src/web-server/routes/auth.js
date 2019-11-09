@@ -34,7 +34,10 @@ router.post('/signup/submit', function (req, res) {
       var errorMessage = error.message;
       // ...
     }); */
-    res.redirect("/")
+      res.redirect("/")
+      })
+      .catch( function(error) {
+        console.log(error.message)
       })
   }
 });
