@@ -12,9 +12,9 @@
 
 <main>
     <div class="jumbotron">
-        <h2><%= currentContent.title + ", " + currentContent.publish_date.toString().substring(0, 15) %></h2>
-        <h3><i><%= currentContent.locale %></i></h3>
-        <a href="/files/<%= currentContent.content_id %>.txt" download>Download</a>
+        <h2><%= currentUser.currentContent.title + ", " + currentUser.currentContent.publish_date.toString().substring(0, 15) %></h2>
+        <h3><i><%= currentUser.currentContent.locale %></i></h3>
+        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
 </main>
 
 <footer>
