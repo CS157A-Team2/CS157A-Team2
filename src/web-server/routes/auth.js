@@ -27,15 +27,17 @@ router.post('/signup/submit', function (req, res) {
       {
          console.log(results)
          console.log(err)
-      })/*
-      .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-    }); */
-    res.redirect("/")
       })
+      res.redirect("/")
+      })
+      .catch(function(error)
+      {
+        console.log(error.message)
+        res.render("pages/signup", {error: error.message})
+      })
+  }
+  else{
+    res.render("pages/signup", {error: "Passwords do not match."})
   }
 });
 
