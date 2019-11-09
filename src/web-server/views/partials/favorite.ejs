@@ -1,0 +1,11 @@
+
+<h2>
+    <% if(!currentUser.currentContent.isFavorite) { %>   
+        <% str = '<form action="/add-favorite"> <button type="submit" class="btn btn-danger btn-lg"> <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Favorite</button> </form>' %>
+        <%- str%>
+    <%} else{ %>   
+        <% str = '<form action="/del-favorite"> <button type="submit" class="btn btn-warning btn-lg"> <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> Remove Favorite</button> </form>' %>
+        <%- str%>
+    <% } %>
+
+</h2>

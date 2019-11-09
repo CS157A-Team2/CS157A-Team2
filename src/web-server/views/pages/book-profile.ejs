@@ -12,10 +12,13 @@
 
 <main>
     <div class="jumbotron">
-        <h2><%= currentContent.title %></h2>
-        <h3>Written by <i><%= currentContent.author %></i></h3>
-        <h3>Published by <i><%= currentContent.publisher %></i></h3>
-        <a href="/files/<%= currentContent.content_id %>.txt" download>Download</a>
+        <h2><%= currentUser.currentContent.title %></h2>
+        <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
+        <h3>Written by <i><%= currentUser.currentContent.author %></i></h3>
+        <h3>Published by <i><%= currentUser.currentContent.publisher %></i></h3>
+        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
 </main>
 
 <footer>

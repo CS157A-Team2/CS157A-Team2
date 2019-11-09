@@ -14,6 +14,10 @@
   </header>
 
   <main>
+
+     <% if(locals.error){ %>
+        <%-'<div class="alert alert-danger" role="alert">' + error + '</div>'%>
+     <%}%> 
     <div class="container">
       <h4 class="text-center">Log in to your account</h4>
       <form action='/auth/login/submit' , method="POST" style="align-items: center;">
