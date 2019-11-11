@@ -11,31 +11,31 @@ const database = mysql.createConnection({
 
 router.get("/", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id";
 	processBooks(req, res, sql);
 });
 
 router.get("/author", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.author";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.author";
 	processBooks(req, res, sql);
 });
 
 router.get("/publisher", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.publisher";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.publisher";
 	processBooks(req, res, sql);
 });
 
 router.get("/title", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY c.title";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY c.title";
 	processBooks(req, res, sql);
 });
 
 router.get("/genre", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre";
 	processBooks(req, res, sql);
 });
 
@@ -50,7 +50,8 @@ router.get("/book-profile/*", function (req, res) {
 		currentUser.currentContent.content_type = results[0].content_type
 		currentUser.currentContent.author = results[0].author;
 		currentUser.currentContent.genre = results[0].genre;
-		currentUser.currentContent.publisher = results[0].publisher;
+    currentUser.currentContent.publisher = results[0].publisher;
+    currentUser.currentContent.ISBN = results[0].ISBN;
 		isFavorite(function(){
 		res.render("pages/book-profile");
 		})
@@ -72,7 +73,10 @@ function processBooks(req, res, sql) {
 				results[i].genre +
 				" </td><td> " +
 				results[i].publisher +
-				"</td></tr>\n";
+        "</td></tr>\n";
+        "</td><td> " +
+				results[i].ISBN +
+				" </td></tr>\n";
 		res.render("pages/books");
 	});
 }
