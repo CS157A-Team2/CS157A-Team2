@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1><%= currentUser.currentContent.title %></h1>
+        <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
+        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
+        <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
+        <h3><i><% if(locals.contentInfo){ %>
+            <%- contentInfo %>
+        <% } %>
+        </i></h3>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

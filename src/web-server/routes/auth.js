@@ -18,8 +18,12 @@ router.post('/signup/submit', function (req, res) {
   const email = req.body.email;
   const password = req.body.password;
   const confirm_password = req.body.confirm_password;
-  
-  if (password === confirm_password) {
+
+  if(username.length > 20)
+  {
+    res.render("pages/signup", {error: "Username can be at most 20 units."})
+  }
+  else if (password === confirm_password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(function(user){
       sql = "INSERT INTO Users (user_id, username) VALUES (" +"'" +firebase.auth().currentUser.uid + "'"+ ", " + "'" + username + "'" + ")"
@@ -54,7 +58,7 @@ router.post('/login/submit', function (req, res) {
   });
 });
 
-router.get('/logout', function (req, res) { 
+router.get('/logout', function (req, res) {  
   currentUser.username = null
   firebase.auth().signOut().then(function() {
     // Sign-out successful.

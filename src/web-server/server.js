@@ -62,13 +62,53 @@ app.get("/", function (req, res) {
 	{
 	sql = 'SELECT username, user_type, user_id FROM Users WHERE user_id = ' + "'" + firebase.auth().currentUser.uid  +  "'"
 	database.query(sql, function(err, results){
-		currentUser.username = results[0].username
-		currentUser.user_id = results[0].user_id
-		currentUser.user_type = results[0].user_type
-		res.render("pages/index");
+		if(results.length == 0)
+		{
+			res.render("pages/login", {error: "The email address was not found"})
+		}
+		else
+		{
+			currentUser.username = results[0].username
+			currentUser.user_id = results[0].user_id
+			currentUser.user_type = results[0].user_type
+			res.render("pages/index");
+		}
 	})
 	}	
 });
+
+app.get("/content-profile/", function (req, res) {
+	if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
+	tableName = currentUser.currentContent.content_type.substring(0, 1).toUpperCase() + currentUser.currentContent.content_type.substring(1, currentUser.currentContent.content_type.length)
+	sql = "SELECT * FROM " + tableName  + " o, Content c WHERE o.content_id = " + currentUser.currentContent.content_id  + " AND o.content_id = c.content_id"
+	database.query(sql, function(err, results)
+	{
+		contentInfo = ""
+		switch(tableName)
+		{
+			case "Book":
+				contentInfo =  "<h3>Written by <i>" + currentUser.currentContent.author + "</i></h3>" +
+        "<h3>Published by <i>"  + currentUser.currentContent.publisher + "</i></h3>"
+				break;
+			case "Poem":
+				contentInfo = "<h3>Written by <i>" +currentUser.currentContent.author +  "</i></h3>"+
+        			"<h3>Poem Type: <i>" + currentUser.currentContent.poem_type + "</i></h3>"
+				break;
+			case "Newspaper":
+				contentInfo = "<h3><i>" + currentUser.currentContent.locale + "</i></h3>"
+				break;
+			case "Magazine":
+				contentInfo =  "<h2> Issue #" + currentUser.currentContent.issueNum+ "</h2>"
+				break;
+			case "Article":
+				contentInfo = "<h3>Written by <i>" + currentUser.currentContent.author +"</i></h3>" + 
+        			"<h3>Published by <i> " + currentUser.currentContent.publication_name +  "</i></h3>" 
+				break;
+		}
+		res.render("pages/content-profile", {contentInfo: contentInfo});
+	})
+});
+
 
 app.get("/about", function (req, res) {
 	res.render("pages/about");
@@ -113,7 +153,7 @@ app.get("/newspaper-profile/*", function (req, res) {
 		currentUser.currentContent.publish_date = results[0].publish_date;
 		currentUser.currentContent.locale = results[0].locale;
 		isFavorite(function(){
-		res.render("pages/newspaper-profile");
+		res.redirect("/content-profile");
 		})
 	});
 });
@@ -122,16 +162,17 @@ app.get("/newspaper-profile/*", function (req, res) {
 app.get("/poem-profile/*", function (req, res) {
 	poemNum = req.url.replace(/[^0-9]/g, "");
 	let sql =
-		"SELECT c.content_type, c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c on c.content_id = p.content_id where c.content_id = " +
+		"SELECT c.publish_date, c.content_type, c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c on c.content_id = p.content_id where c.content_id = " +
 		poemNum;
-	database.query(sql, function (err, results) {
+	database.query(sql, function (err, results) { 
 		currentUser.currentContent.content_id = results[0].content_id;
 		currentUser.currentContent.title = results[0].title;
 		currentUser.currentContent.content_type = results[0].content_type
 		currentUser.currentContent.author = results[0].author;
+		currentUser.currentContent.publish_date = results[0].publish_date
 		currentUser.currentContent.poem_type = results[0].poem_type;
 		isFavorite(function(){
-		res.render("pages/poem-profile");
+		res.redirect("/content-profile");
 		})
 	});
 });
@@ -139,16 +180,18 @@ app.get("/poem-profile/*", function (req, res) {
 app.get("/article-profile/*", function (req, res) {
 	bookNum = req.url.replace(/[^0-9]/g, "");
 	let sql =
-		"SELECT c.content_type, c.content_id, c.title, a.author, a.publication_name FROM Article a INNER JOIN Content c on c.content_id = a.content_id where c.content_id = " +
+		"SELECT c.publish_date, c.content_type, c.content_id, c.title, a.author, a.publication_name FROM Article a INNER JOIN Content c on c.content_id = a.content_id where c.content_id = " +
 		bookNum;
 	database.query(sql, function (err, results) {
 		currentUser.currentContent.content_id = results[0].content_id;
+		currentUser.currentContent.publication_name = results[0].publication_name
+		currentUser.currentContent.publish_date = results[0].publish_date
 		currentUser.currentContent.content_type = results[0].content_type
 		currentUser.currentContent.title = results[0].title;
 		currentUser.currentContent.author = results[0].author;
 		currentUser.currentContent.genre = results[0].publication_name;
 		isFavorite(function(){
-		res.render("pages/book-profile");
+		res.redirect("/content-profile");
 		})
 	});
 });
@@ -157,17 +200,19 @@ app.get("/article-profile/*", function (req, res) {
 app.get("/book-profile/*", function (req, res) {
 	bookNum = req.url.replace(/[^0-9]/g, "");
 	let sql =
-		"SELECT c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
+		"SELECT c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher, c.publish_date FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
 		bookNum;
 	database.query(sql, function (err, results) {
 		currentUser.currentContent.content_id = results[0].content_id;
 		currentUser.currentContent.title = results[0].title;
 		currentUser.currentContent.content_type = results[0].content_type
 		currentUser.currentContent.author = results[0].author;
+		currentUser.currentContent.author = results[0].author;
 		currentUser.currentContent.genre = results[0].genre;
 		currentUser.currentContent.publisher = results[0].publisher;
+		currentUser.currentContent.publish_date = results[0].publish_date
 		isFavorite(function(){
-		res.render("pages/book-profile");
+		res.redirect("/content-profile");
 		})
 	});
 });
@@ -435,7 +480,7 @@ app.get("/magazine-profile/*", function (req, res) {
 		currentUser.currentContent.issueNum = results[0].issueNum;
 		currentUser.currentContent.publish_date = results[0].publish_date;
 	isFavorite(function(){
-		res.render("pages/magazine-profile");
+		res.redirect("/content-profile");
  	})});
 });
 
