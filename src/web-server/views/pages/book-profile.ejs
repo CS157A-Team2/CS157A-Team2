@@ -16,6 +16,7 @@
         <% if(firebase.auth().currentUser != null){ %>
         <% include ../partials/favorite %>
         <% } %>
+        <h3>ISBN: <i><%=currentUser.currentContent.ISBN %></i></h3>
         <h3>Written by <i><%= currentUser.currentContent.author %></i></h3>
         <h3>Published by <i><%= currentUser.currentContent.publisher %></i></h3>
         <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>

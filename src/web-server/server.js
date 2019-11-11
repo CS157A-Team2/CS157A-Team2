@@ -157,7 +157,7 @@ app.get("/article-profile/*", function (req, res) {
 app.get("/book-profile/*", function (req, res) {
 	bookNum = req.url.replace(/[^0-9]/g, "");
 	let sql =
-		"SELECT c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
+		"SELECT c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
 		bookNum;
 	database.query(sql, function (err, results) {
 		currentUser.currentContent.content_id = results[0].content_id;
@@ -166,6 +166,7 @@ app.get("/book-profile/*", function (req, res) {
 		currentUser.currentContent.author = results[0].author;
 		currentUser.currentContent.genre = results[0].genre;
 		currentUser.currentContent.publisher = results[0].publisher;
+		currentUser.currentContent.ISBN = results[0].ISBN;
 		isFavorite(function(){
 		res.render("pages/book-profile");
 		})
@@ -234,31 +235,31 @@ app.get("/newspapers/publication", function (req, res) {
 
 app.get("/books", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id";
 	processBooks(req, res, sql);
 });
 
 app.get("/books/author", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.author";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.author";
 	processBooks(req, res, sql);
 });
 
 app.get("/books/publisher", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.publisher";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.publisher";
 	processBooks(req, res, sql);
 });
 
 app.get("/books/title", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY c.title";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY c.title";
 	processBooks(req, res, sql);
 });
 
 app.get("/books/genre", function (req, res) {
 	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre";
+		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher, b.ISBN FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre";
 	processBooks(req, res, sql);
 });
 
@@ -294,7 +295,9 @@ function processBooks(req, res, sql) {
 				results[i].genre +
 				" </td><td> " +
 				results[i].publisher +
-				"</td></tr>\n";
+				"</td><td> " +
+				results[i].ISBN +
+				" </td></tr>\n";
 		res.render("pages/books");
 	});
 }
