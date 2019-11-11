@@ -10,6 +10,9 @@ const bodyParser = require("body-parser");
 //--------------routes-------------------------
 const auth = require("./routes/auth");
 firebase = auth.firebase;
+const books = require("./routes/books")
+const poems = require("./routes/poems")
+const magazines = require("./routes/magazines")
 
 currentUser = {
 	username: null,
@@ -119,7 +122,7 @@ app.get('/del-favorite', function(req, res){
 	database.query(sql, function(err, results)
 	{
 		currentUser.currentContent.isFavorite = false
-		res.redirect('/' + currentUser.currentContent.content_type + '-profile/' + currentUser.currentContent.content_id)
+		res.redirect('/content-profile/')
 	})
 })
 
@@ -129,7 +132,7 @@ app.get('/add-favorite', function(req, res){
 	database.query(sql, function(err, results)
 	{
 		currentUser.currentContent.isFavorite = true
-		res.redirect('/' + currentUser.currentContent.content_type + '-profile/' + currentUser.currentContent.content_id)
+		res.redirect('/content-profile/')
 	})
 })
 
@@ -158,25 +161,6 @@ app.get("/newspaper-profile/*", function (req, res) {
 	});
 });
 
-
-app.get("/poem-profile/*", function (req, res) {
-	poemNum = req.url.replace(/[^0-9]/g, "");
-	let sql =
-		"SELECT c.publish_date, c.content_type, c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c on c.content_id = p.content_id where c.content_id = " +
-		poemNum;
-	database.query(sql, function (err, results) { 
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.publish_date = results[0].publish_date
-		currentUser.currentContent.poem_type = results[0].poem_type;
-		isFavorite(function(){
-		res.redirect("/content-profile");
-		})
-	});
-});
-
 app.get("/article-profile/*", function (req, res) {
 	bookNum = req.url.replace(/[^0-9]/g, "");
 	let sql =
@@ -196,31 +180,10 @@ app.get("/article-profile/*", function (req, res) {
 	});
 });
 
-
-app.get("/book-profile/*", function (req, res) {
-	bookNum = req.url.replace(/[^0-9]/g, "");
-	let sql =
-		"SELECT c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher, c.publish_date FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
-		bookNum;
-	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.genre = results[0].genre;
-		currentUser.currentContent.publisher = results[0].publisher;
-		currentUser.currentContent.publish_date = results[0].publish_date
-		isFavorite(function(){
-		res.redirect("/content-profile");
-		})
-	});
-});
+app.use("/magazines", magazines)
 
 app.get("/magazines", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, c.publish_date, m.issueNum FROM Magazine m INNER JOIN Content c on c.content_id = m.content_id";
-	processMagazines(req, res, sql);
+	res.redirect("/magazines")
 });
 
 app.get("/articles/title", function (req, res) {
@@ -277,35 +240,11 @@ app.get("/newspapers/publication", function (req, res) {
 	processNewspaper(req, res, sql);
 });
 
-app.get("/books", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id";
-	processBooks(req, res, sql);
-});
+app.use("/books", books);
+app.get("/books", function(req, res) {
+	res.redirect("/books")
+})
 
-app.get("/books/author", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.author";
-	processBooks(req, res, sql);
-});
-
-app.get("/books/publisher", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.publisher";
-	processBooks(req, res, sql);
-});
-
-app.get("/books/title", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY c.title";
-	processBooks(req, res, sql);
-});
-
-app.get("/books/genre", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, b.author, b.genre, b.publisher FROM Book b INNER JOIN Content c on c.content_id = b.content_id ORDER BY b.genre";
-	processBooks(req, res, sql);
-});
 
 function processNewspaper(req, res, sql) {
 	rows = "";
@@ -324,68 +263,11 @@ function processNewspaper(req, res, sql) {
 	});
 }
 
-function processBooks(req, res, sql) {
-	rows = "";
-	database.query(sql, function (err, results) {
-		for (i = 0; i < results.length; i++)
-			rows +=
-				"<tr><td><a href=/book-profile/" +
-				results[i].content_id +
-				">" +
-				results[i].title +
-				"</a></td><td> " +
-				results[i].author +
-				" </td><td> " +
-				results[i].genre +
-				" </td><td> " +
-				results[i].publisher +
-				"</td></tr>\n";
-		res.render("pages/books");
-	});
-}
+app.use("/poems", poems);
+app.get("/poems", function(req, res) {
+	res.redirect("/poems")
+})
 
-app.get("/poems", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id";
-	processPoems(req, res, sql);
-});
-
-app.get("/poems/title", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id ORDER BY c.title";
-	processPoems(req, res, sql);
-});
-
-app.get("/poems/author", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id ORDER BY p.author";
-	processPoems(req, res, sql);
-});
-
-app.get("/poems/poem_type", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c ON c.content_id = p.content_id ORDER BY p.poem_type";
-	processPoems(req, res, sql);
-});
-
-function processPoems(req, res, sql) {
-	rows = "";
-	database.query(sql, function (err, results) {
-		for (i = 0; i < results.length; i++) {
-			rows +=
-				"<tr><td><a href=/poem-profile/" +
-				results[i].content_id +
-				">" +
-				results[i].title +
-				"</a></td><td> " +
-				results[i].author +
-				" </td><td> " +
-				results[i].poem_type +
-				"</td></tr>\n ";
-		}
-		res.render("pages/poems");
-	});
-}
 
 function processArticles(req, res, sql) {
 	rows = "";
@@ -450,57 +332,6 @@ isFavorite = function(callback)
 	})
 }
 
-
-function processMagazines(req, res, sql) {
-	rows = "";
-	database.query(sql, function (err, results) {
-		for (i = 0; i < results.length; i++){
-			rows +=
-				"<tr><td><a href=/magazine-profile/" +  results[i].content_id + ">" +
-				results[i].title +
-				", " +
-				results[i].issueNum +
-				" </td><td> " +
-				results[i].publish_date.toString().substring(0, 15) +
-				"</td></tr>\n ";
-		}
-		res.render("pages/magazines");
-	});
-}
-
-app.get("/magazine-profile/*", function (req, res) {	
-	bookNum = req.url.replace(/[^0-9]/g, "");
-	let sql =
-		"SELECT c.content_type, c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = " +
-		bookNum;
-	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.issueNum = results[0].issueNum;
-		currentUser.currentContent.publish_date = results[0].publish_date;
-	isFavorite(function(){
-		res.redirect("/content-profile");
- 	})});
-});
-
-app.get("/magazines/title", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY c.title";
-	processMagazines(req, res, sql);
-});
-
-app.get("/magazines/issueNum", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY m.issueNum";
-	processMagazines(req, res, sql);
-});
-
-app.get("/magazines/publishDate", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.title, m.issueNum, c.publish_date FROM Magazine m INNER JOIN Content c ON c.content_id = m.content_id ORDER BY c.publish_date";
-	processMagazines(req, res, sql);
-});
 
 app.get("/users", function (req, res) {
 	let sql = "SELECT c.content_id, * FROM Users";
