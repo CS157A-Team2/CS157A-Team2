@@ -186,7 +186,7 @@ app.get("/profile", function (req, res) {
 			{
 				for(i = 0; i < results.length; i++)
 				{
-				rows += "<tr><td><a href=/" + results[i].content_type + "-profile/" +
+				rows += "<tr><td><a href="+  results[i].content_type+"s/" + results[i].content_type + "-profile/" +
 				results[i].content_id +
 				">" +
 				results[i].title +
