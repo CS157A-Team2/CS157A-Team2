@@ -13,6 +13,8 @@ firebase = auth.firebase;
 const books = require("./routes/books")
 const poems = require("./routes/poems")
 const magazines = require("./routes/magazines")
+const newspapers = require("./routes/newspapers")
+const articles = require("./routes/articles")
 
 currentUser = {
 	username: null,
@@ -144,100 +146,9 @@ getRows = function () {
 	return rows;
 };
 
-app.get("/newspaper-profile/*", function (req, res) {
-	newspaperNum = req.url.replace(/[^0-9]/g, "");
-	let sql =
-		"SELECT c.content_type, c.content_id, c.title, n.locale, c.publish_date FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id where c.content_id = " +
-		newspaperNum;
-	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.publish_date = results[0].publish_date;
-		currentUser.currentContent.locale = results[0].locale;
-		isFavorite(function(){
-		res.redirect("/content-profile");
-		})
-	});
-});
-
-app.get("/article-profile/*", function (req, res) {
-	bookNum = req.url.replace(/[^0-9]/g, "");
-	let sql =
-		"SELECT c.publish_date, c.content_type, c.content_id, c.title, a.author, a.publication_name FROM Article a INNER JOIN Content c on c.content_id = a.content_id where c.content_id = " +
-		bookNum;
-	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.publication_name = results[0].publication_name
-		currentUser.currentContent.publish_date = results[0].publish_date
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.genre = results[0].publication_name;
-		isFavorite(function(){
-		res.redirect("/content-profile");
-		})
-	});
-});
-
 app.use("/magazines", magazines)
-
 app.get("/magazines", function (req, res) {
 	res.redirect("/magazines")
-});
-
-app.get("/articles/title", function (req, res) {
-	let sql =
-		" SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY c.title";
-	processArticles(req, res, sql);
-});
-
-app.get("/articles/author", function (req, res) {
-	let sql =
-		" SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY a.author";
-	processArticles(req, res, sql);
-});
-
-app.get("/articles/date", function (req, res) {
-	let sql =
-		" SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY c.publish_date";
-	processArticles(req, res, sql);
-});
-
-app.get("/articles/publication", function (req, res) {
-	let sql =
-		" SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id ORDER BY a.publication_name";
-	processArticles(req, res, sql);
-});
-
-app.get("/articles", function (req, res) {
-	let sql =
-		" SELECT a.publication_name, a.author, c.title, c.publish_date, c.content_id FROM Article a INNER JOIN Content c on c.content_id = a.content_id";
-	processArticles(req, res, sql);
-});
-
-app.get("/newspapers", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id";
-	processNewspaper(req, res, sql);
-});
-
-app.get("/newspapers/date", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY publish_date";
-	processNewspaper(req, res, sql);
-});
-
-app.get("/newspapers/location", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY locale";
-	processNewspaper(req, res, sql);
-});
-
-app.get("/newspapers/publication", function (req, res) {
-	let sql =
-		"SELECT c.content_id, c.publish_date, c.title, n.locale FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id ORDER BY title";
-	processNewspaper(req, res, sql);
 });
 
 app.use("/books", books);
@@ -245,51 +156,21 @@ app.get("/books", function(req, res) {
 	res.redirect("/books")
 })
 
-
-function processNewspaper(req, res, sql) {
-	rows = "";
-	database.query(sql, function (err, results) {
-		for (i = 0; i < results.length; i++){
-			rows +=
-				"<tr><td><a href=/newspaper-profile/" + results[i].content_id + ">" +
-				results[i].title +
-				",  " +
-				results[i].publish_date.toString().substring(0, 15) +
-				"</a></td><td> " +
-				results[i].locale +
-				"</td></tr>\n";
-		}
-		res.render("pages/newspapers");
-	});
-}
+app.use("/newspapers", newspapers);
+app.get("/newspapers", function(req, res) {
+	res.redirect("/newspapers")
+})
 
 app.use("/poems", poems);
 app.get("/poems", function(req, res) {
 	res.redirect("/poems")
 })
 
+app.use("/articles", articles);
+app.get("/articles", function(req, res) {
+	res.redirect("/articles")
+})
 
-function processArticles(req, res, sql) {
-	rows = "";
-	database.query(sql, function (err, results) {
-		for (i = 0; i < results.length; i++)
-			rows +=
-				"<tr><td><a href=" + "/article-profile/" + results[i].content_id + ">" +
-				results[i].title +
-				"</td><td> " +
-				results[i].author +
-				" </td><td> " +
-				results[i].publication_name +
-				" </td><td> " +
-				results[i].publish_date +
-				"</td></tr>\n ";
-		res.render("pages/articles");
-	});
-}
-
-app.get("/magazines", function (req, res) {
-	res.render("pages/magazines");
-});
 
 app.get("/profile", function (req, res) {
 	if(currentUser.username == null)
@@ -321,17 +202,6 @@ app.get("/profile", function (req, res) {
 		})
 	}
 });
-
-isFavorite = function(callback)
-{
-	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + currentUser.username + '") AND content_id=' + currentUser.currentContent.content_id
-	database.query(sql, function(err, results){
-		if(results.length == 1){currentUser.currentContent.isFavorite = true}
-		else{currentUser.currentContent.isFavorite = false;}	
-		callback()
-	})
-}
-
 
 app.get("/users", function (req, res) {
 	let sql = "SELECT c.content_id, * FROM Users";
