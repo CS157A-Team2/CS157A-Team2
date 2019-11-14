@@ -11,6 +11,7 @@ const bodyParser = require("body-parser");
 const auth = require("./routes/auth");
 firebase = auth.firebase;
 const books = require("./routes/books")
+const search = require("./routes/search")
 const poems = require("./routes/poems")
 const magazines = require("./routes/magazines")
 const newspapers = require("./routes/newspapers")
@@ -58,7 +59,6 @@ const app = express();
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 rows = "";
-
 
 app.get("/", function (req, res) {	
 	if(firebase.auth().currentUser == null)
@@ -152,6 +152,7 @@ app.get("/magazines", function (req, res) {
 });
 
 app.use("/books", books);
+
 app.get("/books", function(req, res) {
 	res.redirect("/books")
 })
@@ -226,6 +227,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+//---------------search-----------------------
+app.use("/search", search);
+
 //------------auth-------------------------------
 app.use("/auth", auth);
 app.get("/auth/signup", function (req, res) {
@@ -235,7 +239,6 @@ app.get("/auth/signup", function (req, res) {
 app.get("/auth/logout", function (req, res) {
 	res.redirect("/auth/logout");
 });
-
 
 app.get("/auth/login", function (req, res) {
 	res.redirect("/auth/login");

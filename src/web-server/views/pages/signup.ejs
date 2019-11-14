@@ -14,15 +14,16 @@
   </header>
 
   <main>
+    <div class="jumbotron">
      <% if(locals.error){ %>
         <%-'<div class="alert alert-danger" role="alert">' + error + '</div>'%>
      <%}%> 
       <div class="container">
       <h4 class="text-center">Create Account</h4>
       <p class="text-center">Get started with your free account</p>
+            <div class="d-flex h-100">
+          <div class="m-auto">
       <form action='/auth/signup/submit' , method="POST" style="align-items: center;">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-5">
             <div class="form-group input-group">
               <input name="username" class="form-control" placeholder="Username" type="text" required>
             </div> <!-- form-group// -->
@@ -38,13 +39,11 @@
             </div> <!-- form-group// -->
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-            <div class="form-group">
-              <button type="submit" value="submit" class="btn btn-primary btn-block"> Create Account </button>
-            </div> <!-- form-group// -->
-          </div>
-        </div>
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+              <button type="submit" value="submit" class="btn btn-primary btn-default"> Create Account </button> </div> <!-- form-group// --> </div> </div> </div>
+                          </div>
         <p class="text-center" style="color: black;">Have an account? <a href="/auth/login">Log In</a> </p>
       </form>
     </div>
