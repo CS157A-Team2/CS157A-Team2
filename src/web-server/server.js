@@ -110,7 +110,19 @@ app.get("/content-profile/", function (req, res) {
         			"<h3>Published by <i> " + currentUser.currentContent.publication_name +  "</i></h3>" 
 				break;
 		}
-		res.render("pages/content-profile", {contentInfo: contentInfo});
+		reviewSql = "SELECT * FROM Reviews r, Users u WHERE r.content_id = " + currentUser.currentContent.content_id + " AND r.user_id = u.user_id"
+		database.query(reviewSql, function(err, results)
+		{
+			if (err) throw err;
+			comments = ""
+			comments += "<div class=\"list-group\">"
+			results.forEach((Element) => {
+				comments += "<h6 class=\"list-group-item-heading\">Rating: " + Element.rating + " from " + Element.username + "</h6>"
+				comments += "<p class=\"list-group-item-text\">" + Element.user_comment + "</p>" 
+			}) 
+			comments += "</div>"	
+			res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments});
+		})
 	})
 });
 

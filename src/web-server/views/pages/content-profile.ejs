@@ -11,16 +11,23 @@
 
 <main>
     <div class="jumbotron">
+        <div class="container">
         <h1><%= currentUser.currentContent.title %></h1>
         <% if(firebase.auth().currentUser != null){ %>
         <% include ../partials/favorite %>
         <% } %>
         <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
         <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
-        <h3><i><% if(locals.contentInfo){ %>
+        <% if(locals.contentInfo){ %>
             <%- contentInfo %>
         <% } %>
-        </i></h3>
+        </div>
+        <div class="container">
+        <% if(locals.comments){ %>
+            <%- comments %>
+        <% } %>
+        </div>
+    </div>
 </main>
 
 <footer>
