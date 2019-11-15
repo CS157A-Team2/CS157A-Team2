@@ -25,36 +25,38 @@
 
 	<!-- Leave a comment -->
 	<hr>
-	<% if(firebase.auth().currentUser != null){ %> <%}%>
+	<% if(firebase.auth().currentUser != null && !userReviewed()){ %>
 
 	<div class="alert alert-secondary">
 	<h4> Leave a Review </h4>
-	<form>
+	<form action="/content-profile/submit" method="POST">
 		<div class="form-group">
 			<label for="review"> Rating:</label>
 			<div style="padding-bottom: 5px" class="btn-group btn-group-toggle" data-toggle="buttons">
 			  <label class="btn btn-warning active">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 1
+			    <input name="rating" value="1"  type="radio" name="options" id="option1" autocomplete="off" checked> 1
 			  </label>
 			  <label class="btn btn-warning">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 2
+			    <input name="rating" value="2" type="radio" name="options" id="option2" autocomplete="off"> 2
 			  </label>
 			  <label class="btn btn-warning">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 3
+			    <input name="rating"  value="3" type="radio" name="options" id="option3" autocomplete="off"> 3
+			  </label>
+			  <label  class="btn btn-warning">
+			    <input name="rating"  value="4" type="radio" name="options" id="option4" autocomplete="off"> 4
 			  </label>
 			  <label class="btn btn-warning">
-			    <input type="radio" name="options" id="option4" autocomplete="off"> 4
-			  </label>
-			  <label class="btn btn-warning">
-			    <input type="radio" name="options" id="option5" autocomplete="off"> 5
+			    <input name="rating" value="5"  type="radio" name="options" id="option5" autocomplete="off"> 5
 			  </label>
 			</div>
-			 <textarea class="form-control" placeholder="Optional" id="review" rows="3"></textarea>
-			<div style="padding-top:10px" align="right"><button  type="button" class="btn btn-primary">Submit</button></div>
+			 <textarea class="form-control" placeholder="Optional" name="review" rows="3"></textarea>
+			<div style="padding-top:10px" align="right"> <button value="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			</div>
   		</div>
 	</form>
 	</div>
 
+    <%}%>
 
 	<!-- User comments -->
 

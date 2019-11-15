@@ -11,11 +11,12 @@ const bodyParser = require("body-parser");
 const auth = require("./routes/auth");
 firebase = auth.firebase;
 const books = require("./routes/books")
-const search = require("./routes/search")
 const poems = require("./routes/poems")
 const magazines = require("./routes/magazines")
 const newspapers = require("./routes/newspapers")
 const articles = require("./routes/articles")
+const search = require("./routes/search")
+const content = require("./routes/content-profile")
 
 currentUser = {
 	username: null,
@@ -82,54 +83,6 @@ app.get("/", function (req, res) {
 	}	
 });
 
-app.get("/content-profile/", function (req, res) {
-	if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
-	tableName = currentUser.currentContent.content_type.substring(0, 1).toUpperCase() + currentUser.currentContent.content_type.substring(1, currentUser.currentContent.content_type.length)
-	sql = "SELECT * FROM " + tableName  + " o, Content c WHERE o.content_id = " + currentUser.currentContent.content_id  + " AND o.content_id = c.content_id"
-	database.query(sql, function(err, results)
-	{
-		contentInfo = ""
-		switch(tableName)
-		{
-			case "Book":
-				contentInfo =  "<h3>Written by <i>" + currentUser.currentContent.author + "</i></h3>" +
-        "<h3>Published by <i>"  + currentUser.currentContent.publisher + "</i></h3>"
-				break;
-			case "Poem":
-				contentInfo = "<h3>Written by <i>" +currentUser.currentContent.author +  "</i></h3>"+
-        			"<h3>Poem Type: <i>" + currentUser.currentContent.poem_type + "</i></h3>"
-				break;
-			case "Newspaper":
-				contentInfo = "<h3><i>" + currentUser.currentContent.locale + "</i></h3>"
-				break;
-			case "Magazine":
-				contentInfo =  "<h2> Issue #" + currentUser.currentContent.issueNum+ "</h2>"
-				break;
-			case "Article":
-				contentInfo = "<h3>Written by <i>" + currentUser.currentContent.author +"</i></h3>" + 
-        			"<h3>Published by <i> " + currentUser.currentContent.publication_name +  "</i></h3>" 
-				break;
-		}
-		reviewSql = "SELECT * FROM Reviews r, Users u WHERE r.content_id = " + currentUser.currentContent.content_id + " AND r.user_id = u.user_id"
-		database.query(reviewSql, function(err, results)
-		{
-			if (err) throw err;
-			star = "⭐"
-			comments = ""
-			comments += "<div class=\"list-group\">"
-			results.forEach((Element) => {
-				comments += "<div class=\"alert alert-primary\"><h6 class=\"list-group-item-heading\">Rating: " + star.repeat(Element.rating) + "⭐ <div  align=\"right\">Rated by: " + Element.username + "</div></h6>"
-				if(Element.user_comment != null)
-					comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p>" 
-				comments += 'No Comment</div>'
-			}) 
-			comments += "</div>"	
-			res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments});
-		})
-	})
-});
-
-
 app.get("/about", function (req, res) {
 	res.render("pages/about");
 });
@@ -160,6 +113,21 @@ app.get("/content", function (req, res) {
 getRows = function () {
 	return rows;
 };
+
+
+userReviewed = function(){
+	sql = "SELECT * FROM Reviews WHERE user_id = '" + currentUser.user_id + "' AND content_id = " +  currentUser.currentContent.content_id
+	database.query(sql, function (err, results) {
+		if(results.length == 0)
+			console.log("has not revied")
+		else
+			console.log("has reviewed")
+	})
+
+	return false;
+};
+
+
 
 app.use("/magazines", magazines)
 app.get("/magazines", function (req, res) {
@@ -244,6 +212,7 @@ app.use(bodyParser.json());
 
 //---------------search-----------------------
 app.use("/search", search);
+app.use("/content-profile", content);
 
 //------------auth-------------------------------
 app.use("/auth", auth);
@@ -265,4 +234,5 @@ app.listen("8080", () => {
 
 
 module.exports.database = database
+module.exports.currentUser = currentUser
 module.exports.currentUser = this.currentUser

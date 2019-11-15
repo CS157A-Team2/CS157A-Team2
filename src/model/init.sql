@@ -8,20 +8,20 @@ CREATE TABLE Users (user_id VARCHAR(40),
 	PRIMARY KEY(user_id)
 );
 
-CREATE TABLE Reviews( user_id VARCHAR(20),
+CREATE TABLE Reviews( user_id VARCHAR(40),
        	content_id INTEGER,
 	rating INTEGER,
-	user_comment VARCHAR(200),
+	user_comment VARCHAR(2000),
 	PRIMARY KEY(user_id, content_id)
 );
 
 CREATE TABLE Favorites( 
-	user_id VARCHAR(50),
+	user_id VARCHAR(40),
 	content_id INTEGER,
 	PRIMARY KEY (user_id, content_id)
 );
 
-CREATE TABLE Downloads( user_id VARCHAR(50),
+CREATE TABLE Downloads( user_id VARCHAR(40),
 	content_id INTEGER,
 	PRIMARY KEY (user_id, content_id)
 );
