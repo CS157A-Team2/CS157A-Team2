@@ -114,11 +114,14 @@ app.get("/content-profile/", function (req, res) {
 		database.query(reviewSql, function(err, results)
 		{
 			if (err) throw err;
+			star = "⭐"
 			comments = ""
 			comments += "<div class=\"list-group\">"
 			results.forEach((Element) => {
-				comments += "<h6 class=\"list-group-item-heading\">Rating: " + Element.rating + " from " + Element.username + "</h6>"
-				comments += "<p class=\"list-group-item-text\">" + Element.user_comment + "</p>" 
+				comments += "<div class=\"alert alert-primary\"><h6 class=\"list-group-item-heading\">Rating: " + star.repeat(Element.rating) + "⭐ <div  align=\"right\">Rated by: " + Element.username + "</div></h6>"
+				if(Element.user_comment != null)
+					comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p>" 
+				comments += 'No Comment</div>'
 			}) 
 			comments += "</div>"	
 			res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments});

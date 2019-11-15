@@ -21,6 +21,43 @@
         <% if(locals.contentInfo){ %>
             <%- contentInfo %>
         <% } %>
+
+
+	<!-- Leave a comment -->
+	<hr>
+	<% if(firebase.auth().currentUser != null){ %> <%}%>
+
+	<div class="alert alert-secondary">
+	<h4> Leave a Review </h4>
+	<form>
+		<div class="form-group">
+			<label for="review"> Rating:</label>
+			<div style="padding-bottom: 5px" class="btn-group btn-group-toggle" data-toggle="buttons">
+			  <label class="btn btn-warning active">
+			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 1
+			  </label>
+			  <label class="btn btn-warning">
+			    <input type="radio" name="options" id="option2" autocomplete="off"> 2
+			  </label>
+			  <label class="btn btn-warning">
+			    <input type="radio" name="options" id="option3" autocomplete="off"> 3
+			  </label>
+			  <label class="btn btn-warning">
+			    <input type="radio" name="options" id="option4" autocomplete="off"> 4
+			  </label>
+			  <label class="btn btn-warning">
+			    <input type="radio" name="options" id="option5" autocomplete="off"> 5
+			  </label>
+			</div>
+			 <textarea class="form-control" placeholder="Optional" id="review" rows="3"></textarea>
+			<div style="padding-top:10px" align="right"><button  type="button" class="btn btn-primary">Submit</button></div>
+  		</div>
+	</form>
+	</div>
+
+
+	<!-- User comments -->
+
         </div>
         <div class="container">
         <% if(locals.comments){ %>
