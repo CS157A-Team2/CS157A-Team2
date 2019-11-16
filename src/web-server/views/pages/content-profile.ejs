@@ -25,7 +25,7 @@
 
 	<!-- Leave a comment -->
 	<hr>
-	<% if(firebase.auth().currentUser != null && !userReviewed()){ %>
+	<% if(firebase.auth().currentUser != null && !hasReviewed){ %>
 
 	<div class="alert alert-secondary">
 	<h4> Leave a Review </h4>
@@ -57,7 +57,9 @@
 	</div>
 
     <%}%>
-
+			<% if(firebase.auth().currentUser != null && hasReviewed){ %>
+				<div class="alert alert-dark"><h6>You've reviewed this content!</h6></div>
+			<% } %>
 	<!-- User comments -->
 
         </div>

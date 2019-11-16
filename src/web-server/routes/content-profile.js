@@ -40,11 +40,16 @@ router.get("/", function (req, res) {
             results.forEach((Element) => {
                 comments += "<div class=\"alert alert-primary\"><h6 class=\"list-group-item-heading\">Rating: " + star.repeat(Element.rating - 1) + "⭐ <div  align=\"right\">Rated by: " + Element.username + "</div></h6>"
                 if(Element.user_comment != null)
-                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p>"
-                comments += 'No Comment</div>'
+                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p></div>"
+                else comments += 'No Comment</div>'
             })
             comments += "</div>"
-            res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments});
+            let sql = "SELECT * FROM Reviews WHERE user_id = '" + currentUser.user_id + "' AND content_id = " +  currentUser.currentContent.content_id
+            server.database.query(sql, function (err, results) {
+                hasReviewed = results.length != 0
+
+                res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments, hasReviewed: hasReviewed});
+            })
         })
     })
 });
