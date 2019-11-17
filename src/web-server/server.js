@@ -24,20 +24,21 @@ currentUser = {
 	email: null,
 	user_type: null,
 	currentContent: {
-	author: null,
-	content_type: null,
-	title: null,
-	isFavorite: null,
-	publisher: null,
-	reviews: null,
-	genre: null,
-	publication_name: null,
-	publication_date: null,
-	issueNum: null,
-	poem_type: null,
-	locale: null,
-	ISBN: null,
-	content_id: null
+		author: null,
+		content_type: null,
+		title: null,
+		isFavorite: null,
+		isDownload: null,
+		publisher: null,
+		reviews: null,
+		genre: null,
+		publication_name: null,
+		publication_date: null,
+		issueNum: null,
+		poem_type: null,
+		locale: null,
+		ISBN: null,
+		content_id: null
 	}
 }
 
@@ -104,6 +105,15 @@ app.get('/add-favorite', function(req, res){
 	database.query(sql, function(err, results)
 	{
 		currentUser.currentContent.isFavorite = true
+		res.redirect('/content-profile/')
+	})
+})
+
+app.get('/add-download', function(req, res){
+	sql = 'INSERT INTO Downloads (user_id, content_id) VALUES ("'+ currentUser.user_id + '", "' + currentUser.currentContent.content_id + '")'
+	database.query(sql, function(err, results)
+	{
+		currentUser.currentContent.isDownload = true
 		res.redirect('/content-profile/')
 	})
 })
