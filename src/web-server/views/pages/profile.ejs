@@ -12,24 +12,38 @@
 </header>
 <main>
     <div class="jumbotron">
-		<h1> <%- currentUser.username %>'s Profile </h1>
-		<hr>
-		<h2>Favorites</h2>
+			<h1> <%- currentUser.username %>'s Profile </h1>
+			<hr>
+			<h2>Favorites</h2>
 
-	<div class="container">
-	  <table class="table">
-	    <thead>
-	      <tr>
-	        <th>Title</th>
-	        <th>Content Type</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-			<%- getRows() %>    
-	   </tbody>
-	  </table>
-</div>
-    </div>
+			<div class="container">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Content Type</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%- getRows() %>    
+					</tbody>
+				</table>
+			</div>
+			<h2>Downloads</h2>
+			<div class="container">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Content Type</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%- getRows() %>    
+					</tbody>
+				</table>
+			</div>
+		</div>
 </main>
 
 <footer>
