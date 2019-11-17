@@ -1,4 +1,6 @@
 # CS157A-Team2
+[Link to Database Design  REVISION Documentation](https://github.com/CS157A-Team2/CS157A-Team2/blob/master/doc/db-design/db-design-revision.pdf)
+
 
 [Link to Database Design  Documentation](https://github.com/CS157A-Team2/CS157A-Team2/blob/master/doc/db-design/db-design.pdf)
 

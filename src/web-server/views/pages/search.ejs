@@ -1,0 +1,57 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+	<% if(locals.message){ %>
+		<%-'<div class="alert alert-success" role="alert">' + message +  '</div>'  %>
+	<% } %>	
+    <div class="jumbotron">
+		<h1>Search Results for "<%= q %>" </h1>
+
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Sort By...
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<form action="/search/find/reviews.avg_rating" method="post"><button class="dropdown-item" type="submit" name="your_name" value="your_value" class="btn-link">Rating</button><br></form>
+				<form action="/search/find/favorites.num_favorites" method="post"><button class="dropdown-item" type="submit" name="your_name" value="your_value" class="btn-link">Favorites</button></form><br>
+				<form action="/search/find/downloads.num_downloads" method="post"><button class="dropdown-item" type="submit" name="your_name" value="your_value" class="btn-link">Downloads</button></form>
+			</div>
+		</div>
+
+		<div class="container">
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>Title</th>
+	        <th>Content Type</th>
+			<th>Downloads</th>
+			<th>Favorites</th>
+			<th>Rating</th>
+		  </tr>
+	    </thead>
+	    <tbody>
+			<%- rows %>    
+	   </tbody>
+	  </table>
+</div>
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <div class="container">
+        <h1><%= currentUser.currentContent.title %></h1>
+        <% if(firebase.auth().currentUser != null){ %>
+        <% include ../partials/favorite %>
+        <% } %>
+        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
+        <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
+        <% if(locals.contentInfo){ %>
+            <%- contentInfo %>
+        <% } %>
+
+
+	<!-- Leave a comment -->
+	<hr>
+	<% if(firebase.auth().currentUser != null && !hasReviewed){ %>
+
+	<div class="alert alert-secondary">
+	<h4> Leave a Review </h4>
+	<form action="/content-profile/submit" method="POST">
+		<div class="form-group">
+			<label for="review"> Rating:</label>
+			<div style="padding-bottom: 5px" class="btn-group btn-group-toggle" data-toggle="buttons">
+			  <label class="btn btn-warning active">
+			    <input name="rating" value="1"  type="radio" name="options" id="option1" autocomplete="off" checked> 1
+			  </label>
+			  <label class="btn btn-warning">
+			    <input name="rating" value="2" type="radio" name="options" id="option2" autocomplete="off"> 2
+			  </label>
+			  <label class="btn btn-warning">
+			    <input name="rating"  value="3" type="radio" name="options" id="option3" autocomplete="off"> 3
+			  </label>
+			  <label  class="btn btn-warning">
+			    <input name="rating"  value="4" type="radio" name="options" id="option4" autocomplete="off"> 4
+			  </label>
+			  <label class="btn btn-warning">
+			    <input name="rating" value="5"  type="radio" name="options" id="option5" autocomplete="off"> 5
+			  </label>
+			</div>
+			 <textarea class="form-control" placeholder="Optional" name="review" rows="3"></textarea>
+			<div style="padding-top:10px" align="right"> <button value="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			</div>
+  		</div>
+	</form>
+	</div>
+
+    <%}%>
+			<% if(firebase.auth().currentUser != null && hasReviewed){ %>
+				<div class="alert alert-dark"><h6>You've reviewed this content!</h6></div>
+			<% } %>
+	<!-- User comments -->
+
+        </div>
+        <div class="container">
+        <% if(locals.comments){ %>
+            <%- comments %>
+        <% } %>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

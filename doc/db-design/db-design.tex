@@ -30,7 +30,7 @@
 			\begin{itemize}
 				\item type: A user can be of two types, admin or regular. Admins have special privileges
 				\item username: The unique username by which a user logs into the web application
-				\item userID: the unique identifier by which a user's information is tracked
+				\item userID: The unique identifier by which a user's information is tracked
 			\end{itemize}
 		\subsection{Content}
 				Content comes in many forms. There are four subclasses of Content, but it possible that there exist an item that is only classifiable as Content and none of its subclasses. 
@@ -44,32 +44,32 @@
 			\subsection{Books}
 				Books are a special case of Content. They have special attributes which sets them apart; however, books inherit the primary key from content. In addition, books have the following attributes:
 			\begin{itemize}
-				\item ISBN: the unique book ISBN number
-				\item publisher: the publisher of the book
+				\item ISBN: The unique book ISBN number
+				\item publisher: The publisher of the book
 				\item author: The author of the book
-				\item genre: the genre of the book
+				\item genre: The genre of the book
 			\end{itemize}
 			\subsection{Magazines}
 				Magazines are a special case of Content. They have special attributes which sets them apart; however, magazines inherit the primary key from content. In addition, magazines have the following attributes:
 			\begin{itemize}
-				\item issueNum: the issue number of the magazine.
+				\item issueNum: The issue number of the magazine.
 			\end{itemize}		
 			\subsection{Newspapers} 
 				Newspapers are a special case of Content. They have special attributes which sets them apart; however, Newspapers inherit the primary key from content. In addition, magazines have the following attributes:
 			\begin{itemize}
-				\item location: the locality of a Newspaper, if available.
-				\item publication: the name of the newspaper publication
+				\item location: The locality of a Newspaper, if available.
+				\item publication: The name of the newspaper publication
 			\end{itemize}	
 			\subsection{Articles}		
 			Articles are standalone pieces of writing which may, in some cases, be significant enough to publish on the web application as it's own piece of media. Articles inherit the primary key from Content but have additional relationships, as described in the relationships section. Articles also have the following additional attributes:
 			\begin{itemize}
-				\item author: the author of the article
+				\item author: The author of the article
 			\end{itemize}
 			\subsection{Reviews}
 			Reviews are the way by which users rate their satisfaction with a particular piece of content. Reviews are a weak entity set due to the reliance on the primary keys from its relationships with User and Content, as described in the relationship section. Reviews consist of the following attributes:
 			\begin{itemize}
-				\item rating: the star rating given (out of 5)
-				\item comment: the comment left in addition to the rating (optional)
+				\item rating: The star rating given (out of 5)
+				\item comment: The comment left in addition to the rating (optional)
 			\end{itemize}
 
 	\section{Relationships}

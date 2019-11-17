@@ -1,0 +1,56 @@
+<!-- views/pages/signup.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+     <% if(locals.error){ %>
+        <%-'<div class="alert alert-danger" role="alert">' + error + '</div>'%>
+     <%}%> 
+      <div class="container">
+      <h4 class="text-center">Create Account</h4>
+      <p class="text-center">Get started with your free account</p>
+            <div class="d-flex h-100">
+          <div class="m-auto">
+      <form action='/auth/signup/submit' , method="POST" style="align-items: center;">
+            <div class="form-group input-group">
+              <input name="username" class="form-control" placeholder="Username" type="text" required>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+              <input name="email" class="form-control" placeholder="Email address" type="email" required>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+              <input name="password" class="form-control" placeholder="Create password" type="password" required>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+              <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password"
+                required>
+            </div> <!-- form-group// -->
+          </div>
+        </div>
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+              <button type="submit" value="submit" class="btn btn-primary btn-default"> Create Account </button> </div> <!-- form-group// --> </div> </div> </div>
+                          </div>
+        <p class="text-center" style="color: black;">Have an account? <a href="/auth/login">Log In</a> </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

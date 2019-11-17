@@ -1,0 +1,27 @@
+<!-- views/partials/header.ejs -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark"> 
+   <div class="container-fluid">
+      <a class="navbar-brand" href="/">OpenBooks</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+       <form  action='/search/find' method="POST" class="form-inline my-2 my-lg-0">
+      <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button value="submit" class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+  <% if(currentUser.username == null){ %>
+  <%- '<li class="nav-item"><a  class="nav-link" href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>' %>
+  <%- '<li class="nav-item"><a  class="nav-link"  href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>' %>
+  <% }else{ %>
+    <%- '<li class="nav-item"><a  class="nav-link" href="/profile"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>' %>
+    <%- '<li class="nav-item"><a  class="nav-link" href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>' %>
+  <% } %>
+   </ul>
+  </div>

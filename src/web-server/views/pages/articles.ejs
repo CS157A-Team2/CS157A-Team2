@@ -1,0 +1,50 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+    <div class="jumbotron">
+		<h1>Articles.  </h1>
+		<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Sort By...
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  <a class="dropdown-item" href="/articles/title">Title</a><br>
+				  <a class="dropdown-item" href="/articles/author">Author</a><br>
+				  <a class="dropdown-item" href="/articles/date">Date</a><br>
+				  <a class="dropdown-item" href="/articles/publication">Publication</a><br>
+				</div>
+		</div>
+	<div class="container">
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>Title</th>
+	        <th>Author</th>
+	        <th>Publication</th>
+	        <th>Date</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<%- getRows() %>    
+	   </tbody>
+	  </table>
+</div>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
