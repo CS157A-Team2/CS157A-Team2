@@ -45,6 +45,7 @@ const database = mysql.createConnection({
 	user: "root",
 	password: "root",
 	database: "bookstore",
+	multipleStatements: true
 });
 
 database.connect(err => {
