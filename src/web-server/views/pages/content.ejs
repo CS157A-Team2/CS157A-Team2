@@ -1,0 +1,59 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+	<% if(locals.message){ %>
+		<%-'<div class="alert alert-success" role="alert">' + message +  '</div>'  %>
+	<% } %>	
+    <div class="jumbotron">
+		<h1>Browse All Content </h1>
+
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Sort By...
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<form action="/content/results.content_id" method="get"><button class="dropdown-item" type="submit" class="btn-link">Title</button><br></form>
+				<form action="/content/content_type" method="get"><button class="dropdown-item" type="submit" class="btn-link">Content Type</button><br></form>
+				<form action="/content/reviews.avg_rating" method="get"><button class="dropdown-item" type="submit" class="btn-link">Rating</button><br></form>
+				<form action="/content/num_favorites" method="get"><button class="dropdown-item" type="submit" class="btn-link">Favorites</button></form><br>
+				<form action="/content/num_downloads" method="get"><button class="dropdown-item" type="submit" class="btn-link">Downloads</button></form>
+			</div>
+		</div>
+
+		<div class="container">
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>Title</th>
+	        <th>Content Type</th>
+			<th>Downloads</th>
+			<th>Favorites</th>
+			<th>Rating</th>
+		  </tr>
+	    </thead>
+	    <tbody>
+			<%- rows %>    
+	   </tbody>
+	  </table>
+</div>
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

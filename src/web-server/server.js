@@ -16,7 +16,8 @@ const magazines = require("./routes/magazines")
 const newspapers = require("./routes/newspapers")
 const articles = require("./routes/articles")
 const search = require("./routes/search")
-const content = require("./routes/content-profile")
+const content_profile = require("./routes/content-profile")
+const content = require("./routes/content")
 
 currentUser = {
 	username: null,
@@ -106,10 +107,6 @@ app.get('/add-favorite', function(req, res){
 		res.redirect('/content-profile/')
 	})
 })
-
-app.get("/content", function (req, res) {
-	res.render("pages/content");
-});
 
 getRows = function () {
 	return rows;
@@ -211,9 +208,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-//---------------search-----------------------
+//---------------other routes-----------------------
 app.use("/search", search);
-app.use("/content-profile", content);
+app.use("/content-profile", content_profile);
+app.use("/content", content);
 
 //------------auth-------------------------------
 app.use("/auth", auth);
