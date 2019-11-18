@@ -40,8 +40,13 @@ router.get("/", function (req, res) {
             results.forEach((Element) => {
                 comments += "<div class=\"alert alert-primary\"><h6 class=\"list-group-item-heading\">Rating: " + star.repeat(Element.rating - 1) + "⭐ <div  align=\"right\">Rated by: " + Element.username + "</div></h6>"
                 if(Element.user_comment != null)
-                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p></div>"
-                else comments += 'No Comment</div>'
+                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p> </br>"
+                else comments += 'No Comment </br>'
+                if (currentUser.user_type === 'admin') {
+                    comments += " <div align=\"right\"> <a href=\"/content-profile/delete?user_id="+ Element.user_id +"&content_id="+ Element.content_id +"\" class=\"list-group-item-text\">Delete</a> </div> </div>";
+                } else {
+                    comments += "</div>"
+                }
             })
             comments += "</div>"
             let sql = "SELECT * FROM Reviews WHERE user_id = '" + currentUser.user_id + "' AND content_id = " +  currentUser.currentContent.content_id
@@ -70,6 +75,20 @@ router.post('/submit', function(req,res){
         res.redirect("/content-profile")//remove later
     })
 
+})
+
+router.get('/delete', function(req, res) {
+    user_id = req.query.user_id;
+    content_id = req.query.content_id;
+    sql = "DELETE FROM Reviews WHERE user_id ='"+ user_id + "' AND content_id='"+ content_id +"'";
+    server.database.query(sql, function(err, results) {
+        if(results) {
+            res.redirect("/content-profile")
+        }
+        if(err) {
+            console.log(err)
+        }
+    })
 })
 
 module.exports = router

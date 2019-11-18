@@ -49,7 +49,6 @@ router.get("/book-profile/*", function (req, res) {
 		currentUser.currentContent.title = results[0].title;
 		currentUser.currentContent.content_type = results[0].content_type
 		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.author = results[0].author;
 		currentUser.currentContent.genre = results[0].genre;
 		currentUser.currentContent.ISBN = results[0].ISBN;
 		currentUser.currentContent.publisher = results[0].publisher;
