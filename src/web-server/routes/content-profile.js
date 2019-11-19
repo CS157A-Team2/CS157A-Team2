@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const server = require('../server')
+const firebase = require('./auth')
+
 
 router.get("/", function (req, res) {
-    if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
+	if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
     tableName = currentUser.currentContent.content_type.substring(0, 1).toUpperCase() + currentUser.currentContent.content_type.substring(1, currentUser.currentContent.content_type.length)
     sql = "SELECT * FROM " + tableName  + " o, Content c WHERE o.content_id = " + currentUser.currentContent.content_id  + " AND o.content_id = c.content_id"
     server.database.query(sql, function(err, results)
@@ -63,11 +65,11 @@ router.post('/submit', function(req,res){
     // insert the comment, reload the page
     let comment = req.body.review;
     let rating = req.body.rating;
-
+	let uid = firebase.firebase.auth().currentUser.uid
     if(comment != '')
-        values = "( '" + server.currentUser.user_id  +  "', '" +  server.currentUser.currentContent.content_id + "', '" + comment + "', " + rating + ");";
+        values = "( '" + uid +  "', '" +  server.currentUser.currentContent.content_id + "', '" + comment + "', " + rating + ");";
     else
-        values = "( '" + server.currentUser.user_id  +  "', '" +  server.currentUser.currentContent.content_id + "', null, " + rating + ");";
+        values = "( '" + uid  +  "', '" +  server.currentUser.currentContent.content_id + "', null, " + rating + ");";
 
     let sql = "INSERT INTO Reviews (user_id, content_id, user_comment, rating) VALUES " + values;
     server.database.query(sql, function (err, results) {

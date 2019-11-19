@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require("mysql");
+const server = require("../server");
 
 const database = mysql.createConnection({
 	host: "localhost",
@@ -45,14 +46,14 @@ router.get("/book-profile/*", function (req, res) {
 		"SELECT b.ISBN, c.content_type, c.content_id, c.title, b.author, b.genre, b.publisher, c.publish_date FROM Book b INNER JOIN Content c on c.content_id = b.content_id where c.content_id = " +
 		bookNum;
 	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.genre = results[0].genre;
-		currentUser.currentContent.ISBN = results[0].ISBN;
-		currentUser.currentContent.publisher = results[0].publisher;
-		currentUser.currentContent.publish_date = results[0].publish_date
+		server.currentUser.currentContent.content_id = results[0].content_id;
+		server.currentUser.currentContent.title = results[0].title;
+		server.currentUser.currentContent.content_type = results[0].content_type
+		server.currentUser.currentContent.author = results[0].author;
+		server.currentUser.currentContent.genre = results[0].genre;
+		server.currentUser.currentContent.ISBN = results[0].ISBN;
+		server.currentUser.currentContent.publisher = results[0].publisher;
+		server.currentUser.currentContent.publish_date = results[0].publish_date
 		isFavorite(function(){
 		res.redirect("/content-profile");
 		})
@@ -85,10 +86,10 @@ function processBooks(req, res, sql) {
 
 isFavorite = function(callback)
 {
-	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + currentUser.username + '") AND content_id=' + currentUser.currentContent.content_id
+	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + server.currentUser.username + '") AND content_id=' + server.currentUser.currentContent.content_id
 	database.query(sql, function(err, results){
-		if(results.length == 1){currentUser.currentContent.isFavorite = true}
-		else{currentUser.currentContent.isFavorite = false;}	
+		if(results.length == 1){server.currentUser.currentContent.isFavorite = true}
+		else{server.currentUser.currentContent.isFavorite = false;}	
 		callback()
 	})
 }
