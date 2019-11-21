@@ -231,6 +231,20 @@ app.listen("8080", () => {
 	console.log("server started on port 8080");
 });
 
+app.get("/download", (req, res)=> {
+	if(currentUser.currentContent == null)
+		return
+	const file = `${__dirname}/public/files/${currentUser.currentContent.content_id}.txt`
+	res.download(file)
+	if(currentUser.user_id != null)
+	{
+		sql = `INSERT INTO Downloads (user_id, content_id) VALUES ('${currentUser.user_id}', ${currentUser.currentContent.content_id})`
+		database.query(sql, function(err, results){
+			console.log(err)
+		})
+	}
+})
+
 
 module.exports.database = database
 module.exports.currentUser = currentUser
