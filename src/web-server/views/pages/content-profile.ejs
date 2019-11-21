@@ -16,7 +16,7 @@
         <% if(firebase.auth().currentUser != null){ %>
         <% include ../partials/favorite %>
         <% } %>
-        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
+        <a href="/download" download>Download</a>
         <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
         <% if(locals.contentInfo){ %>
             <%- contentInfo %>
