@@ -59,27 +59,9 @@ router.post('/login/submit', function (req, res) {
 router.get('/logout', function (req, res) {  
   currentUser.username = null
   firebase.auth().signOut().then(function() {
-    currentUser = {
-      username: null,
-      email: null,
-      user_type: null,
-      currentContent: {
-      author: null,
-      content_type: null,
-      title: null,
-      isFavorite: null,
-      publisher: null,
-      reviews: null,
-      genre: null,
-      publication_name: null,
-      publication_date: null,
-      issueNum: null,
-      poem_type: null,
-      locale: null,
-      ISBN: null,
-      content_id: null
-      }
-    }    
+     currentUser.username = null
+     currentUser.email= null
+     currentUser.user_type= null
     // Sign-out successful.
     console.log('success')
   }, function(error) {

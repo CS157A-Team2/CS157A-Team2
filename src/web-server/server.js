@@ -162,25 +162,40 @@ app.get("/profile", function (req, res) {
 	else
 	{
 	rows = ''
-		sql= "SELECT title, content_type, content_id FROM Content WHERE content_id IN  (SELECT content_id From Favorites WHERE user_id='" + currentUser.user_id + "');"
-		database.query(sql, function (err, results) {
-			if(results != undefined)
-			{
-				for(i = 0; i < results.length; i++)
+		sql= "SELECT title, content_type, content_id FROM Content WHERE content_id IN  (SELECT content_id From Favorites WHERE user_id='" + currentUser.user_id + "'); "
+		sql += "SELECT title, content_type, content_id FROM Content WHERE content_id IN  (SELECT content_id From Downloads WHERE user_id='" + currentUser.user_id + "');"
+		database.query(sql, [1,2] ,function (err, results) {
+		let downloads = ''
+		if(results[1] != undefined)
+		{
+				for(i = 0; i < results[1].length; i++)
 				{
-				rows += "<tr><td><a href="+  results[i].content_type+"s/" + results[i].content_type + "-profile/" +
-				results[i].content_id +
+				downloads += "<tr><td><a href="+  results[1][i].content_type+"s/" + results[1][i].content_type + "-profile/" +
+				results[1][i].content_id +
 				">" +
-				results[i].title +
+				results[1][i].title +
 				"</a></td><td>" +
-				results[i].content_type 	+
+				results[1][i].content_type +
 				"</tr>\n ";
 				}
 		}
-		else{
-			rows = "<tr> <td> No Favorites! Start Reading :) </tr>"
+			
+		if(results[0] != undefined)
+		{
+				for(i = 0; i < results[0].length; i++)
+				{
+				rows += "<tr><td><a href="+  results[0][i].content_type+"s/" + results[0][i].content_type + "-profile/" +
+				results[0][i].content_id +
+				">" +
+				results[0][i].title +
+				"</a></td><td>" +
+				results[0][i].content_type +
+				"</tr>\n ";
+				}
 		}
-		res.render("pages/profile");
+			console.log(results[1] + '\n\n\n\n')
+			console.log(results[0])
+		res.render("pages/profile", {downloads: downloads});
 		})
 	}
 });
