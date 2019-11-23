@@ -12,11 +12,16 @@
 <main>
     <div class="jumbotron">
         <div class="container">
-        <h1><%= currentUser.currentContent.title %></h1>
+        <h1><%= currentUser.currentContent.title %>
         <% if(firebase.auth().currentUser != null){ %>
-        <% include ../partials/favorite %>
-        <% } %>
-        <a href="/download" download>Download</a>
+	<span style="float:right"> <% include ../partials/favorite %> 
+		<a class ='btn btn-primary btn-lg' href="/download" download>Download</a></span></h1>
+	    <% } else{ %>
+	<div class='alert alert-danger'> 
+		<h5>Please login to download, favorite, or review this book!</h5>
+	</div>
+	<% } %>
+	
         <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
         <% if(locals.contentInfo){ %>
             <%- contentInfo %>
