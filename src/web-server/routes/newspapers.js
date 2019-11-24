@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require("mysql");
+const server = require("../server");
 
 const database = mysql.createConnection({
 	host: "localhost",
@@ -39,11 +40,11 @@ router.get("/newspaper-profile/*", function (req, res) {
 		"SELECT c.content_type, c.content_id, c.title, n.locale, c.publish_date FROM Newspaper n INNER JOIN Content c on c.content_id = n.content_id where c.content_id = " +
 		newspaperNum;
 	database.query(sql, function (err, results) {
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.publish_date = results[0].publish_date;
-		currentUser.currentContent.locale = results[0].locale;
+		server.currentUser.currentContent.content_id = results[0].content_id;
+		server.currentUser.currentContent.content_type = results[0].content_type
+		server.currentUser.currentContent.title = results[0].title;
+		server.currentUser.currentContent.publish_date = results[0].publish_date;
+		server.currentUser.currentContent.locale = results[0].locale;
 		isFavorite(function(){
 		res.redirect("/content-profile");
 		})
@@ -69,10 +70,10 @@ function processNewspaper(req, res, sql) {
 
 isFavorite = function(callback)
 {
-	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + currentUser.username + '") AND content_id=' + currentUser.currentContent.content_id
+	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + server.currentUser.username + '") AND content_id=' + server.currentUser.currentContent.content_id
 	database.query(sql, function(err, results){
-		if(results.length == 1){currentUser.currentContent.isFavorite = true}
-		else{currentUser.currentContent.isFavorite = false;}	
+		if(results.length == 1){server.currentUser.currentContent.isFavorite = true}
+		else{server.currentUser.currentContent.isFavorite = false;}	
 		callback()
 	})
 }

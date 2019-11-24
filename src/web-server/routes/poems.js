@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require("mysql");
-
+const server = require("../server");
 const database = mysql.createConnection({
 	host: "localhost",
 	user: "root",
@@ -39,12 +39,12 @@ router.get("/poem-profile/*", function (req, res) {
 		"SELECT c.publish_date, c.content_type, c.content_id, c.title, p.author, p.poem_type FROM Poem p INNER JOIN Content c on c.content_id = p.content_id where c.content_id = " +
 		poemNum;
 	database.query(sql, function (err, results) { 
-		currentUser.currentContent.content_id = results[0].content_id;
-		currentUser.currentContent.title = results[0].title;
-		currentUser.currentContent.content_type = results[0].content_type
-		currentUser.currentContent.author = results[0].author;
-		currentUser.currentContent.publish_date = results[0].publish_date
-		currentUser.currentContent.poem_type = results[0].poem_type;
+		server.currentUser.currentContent.content_id = results[0].content_id;
+		server.currentUser.currentContent.title = results[0].title;
+		server.currentUser.currentContent.content_type = results[0].content_type
+		server.currentUser.currentContent.author = results[0].author;
+		server.currentUser.currentContent.publish_date = results[0].publish_date
+		server.currentUser.currentContent.poem_type = results[0].poem_type;
 		isFavorite(function(){
 		res.redirect("/content-profile");
 		})
@@ -72,10 +72,10 @@ function processPoems(req, res, sql) {
 
 isFavorite = function(callback)
 {
-	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + currentUser.username + '") AND content_id=' + currentUser.currentContent.content_id
+	let sql = 'SELECT * FROM Favorites WHERE user_id= (SELECT user_id FROM Users WHERE username ="' + server.currentUser.username + '") AND content_id=' + server.currentUser.currentContent.content_id
 	database.query(sql, function(err, results){
-		if(results.length == 1){currentUser.currentContent.isFavorite = true}
-		else{currentUser.currentContent.isFavorite = false;}	
+		if(results.length == 1){server.currentUser.currentContent.isFavorite = true}
+		else{server.currentUser.currentContent.isFavorite = false;}	
 		callback()
 	})
 }

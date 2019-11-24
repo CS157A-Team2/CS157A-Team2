@@ -13,6 +13,8 @@ const database = mysql.createConnection({
 router.get('/*', function (req, res) {
 	order_by = 'results.content_id'
 	if(req.url !== "/") order_by = req.url.replace('/', '')
+	let desc = ''
+	if(req.url !== "/") desc = (order_by == 'results.title') ? '' : 'DESC'
 	console.log(order_by)
 	if(req.body.q != undefined)
 		q = req.body.q
@@ -37,7 +39,7 @@ router.get('/*', function (req, res) {
             LEFT JOIN
             (SELECT content_id, COUNT(*) as num_favorites FROM Favorites GROUP BY content_id) favorites
             ON results.content_id = favorites.content_id
-            ORDER BY ${order_by} DESC`
+            ORDER BY ${order_by} ${desc}`
 	rows = ''
 	server.database.query(sql, function(err, results){
 		if( results != undefined && 0 != results.length)

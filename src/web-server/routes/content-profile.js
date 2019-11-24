@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const server = require('../server')
+const firebase = require('./auth')
+
 
 router.get("/", function (req, res) {
-    if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
+
+	if(currentUser.currentContent.content_type == null){res.redirect("/"); return}
     tableName = currentUser.currentContent.content_type.substring(0, 1).toUpperCase() + currentUser.currentContent.content_type.substring(1, currentUser.currentContent.content_type.length)
     sql = "SELECT * FROM " + tableName  + " o, Content c WHERE o.content_id = " + currentUser.currentContent.content_id  + " AND o.content_id = c.content_id"
     server.database.query(sql, function(err, results)
@@ -40,15 +43,51 @@ router.get("/", function (req, res) {
             results.forEach((Element) => {
                 comments += "<div class=\"alert alert-primary\"><h6 class=\"list-group-item-heading\">Rating: " + star.repeat(Element.rating - 1) + "⭐ <div  align=\"right\">Rated by: " + Element.username + "</div></h6>"
                 if(Element.user_comment != null)
-                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p></div>"
-                else comments += 'No Comment</div>'
+                    comments += "<p class=\"list-group-item-text\">User Comments: <br>" + Element.user_comment + "</p> </br>"
+                else comments += 'No Comment </br>'
+                if (currentUser.user_type === 'admin') {
+                    comments += " <div align=\"right\"> <a href=\"/content-profile/delete?user_id="+ Element.user_id +"&content_id="+ Element.content_id +"\" class=\"list-group-item-text\">Delete</a> </div> </div>";
+                } else {
+                    comments += "</div>"
+                }
             })
             comments += "</div>"
             let sql = "SELECT * FROM Reviews WHERE user_id = '" + currentUser.user_id + "' AND content_id = " +  currentUser.currentContent.content_id
             server.database.query(sql, function (err, results) {
                 hasReviewed = results.length != 0
 
+            let dataSQL=` SELECT avg(rating) as rating, count(DISTINCT Downloads.user_id) as downloads, count(DISTINCT Favorites.user_id) as favorites FROM (SELECT * FROM Content WHERE content_id=${currentUser.currentContent.content_id}) content LEFT JOIN Reviews USING(content_id) LEFT JOIN Downloads USING(content_id) LEFT JOIN Favorites USING(content_id) GROUP BY content.content_id;`
+                server.database.query(dataSQL, function(err, results){
+                    if(results != undefined && results.length != 0)
+                    {
+                        
+                        let rating = results[0].rating
+                        if(!rating) 
+                            rating = 'N/A'
+
+                            contentInfo += `<div class='alert alert-dark'>
+                                        <h2>Content Statistics </h2>
+                                     <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>Average Rating</th>
+                                        <th>Number of Downloads</th>
+                                        <th>Number of Favorites</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td> ${rating}  </td>
+                                        <td> ${results[0].downloads}  </td>
+                                        <td> ${results[0].favorites}  </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  </div>`
+                    }
                 res.render("pages/content-profile", {contentInfo: contentInfo, comments: comments, hasReviewed: hasReviewed});
+                })
+                
             })
         })
     })
@@ -58,11 +97,11 @@ router.post('/submit', function(req,res){
     // insert the comment, reload the page
     let comment = req.body.review;
     let rating = req.body.rating;
-
+	let uid = firebase.firebase.auth().currentUser.uid
     if(comment != '')
-        values = "( '" + server.currentUser.user_id  +  "', '" +  server.currentUser.currentContent.content_id + "', '" + comment + "', " + rating + ");";
+        values = "( '" + uid +  "', '" +  server.currentUser.currentContent.content_id + "', '" + comment + "', " + rating + ");";
     else
-        values = "( '" + server.currentUser.user_id  +  "', '" +  server.currentUser.currentContent.content_id + "', null, " + rating + ");";
+        values = "( '" + uid  +  "', '" +  server.currentUser.currentContent.content_id + "', null, " + rating + ");";
 
     let sql = "INSERT INTO Reviews (user_id, content_id, user_comment, rating) VALUES " + values;
     server.database.query(sql, function (err, results) {
@@ -70,6 +109,20 @@ router.post('/submit', function(req,res){
         res.redirect("/content-profile")//remove later
     })
 
+})
+
+router.get('/delete', function(req, res) {
+    user_id = req.query.user_id;
+    content_id = req.query.content_id;
+    sql = "DELETE FROM Reviews WHERE user_id ='"+ user_id + "' AND content_id='"+ content_id +"'";
+    server.database.query(sql, function(err, results) {
+        if(results) {
+            res.redirect("/content-profile")
+        }
+        if(err) {
+            console.log(err)
+        }
+    })
 })
 
 module.exports = router

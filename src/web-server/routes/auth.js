@@ -59,6 +59,9 @@ router.post('/login/submit', function (req, res) {
 router.get('/logout', function (req, res) {  
   currentUser.username = null
   firebase.auth().signOut().then(function() {
+     currentUser.username = null
+     currentUser.email= null
+     currentUser.user_type= null
     // Sign-out successful.
     console.log('success')
   }, function(error) {

@@ -12,13 +12,21 @@
 <main>
     <div class="jumbotron">
         <div class="container">
-        <h1><%= currentUser.currentContent.title %></h1>
+
+		<% if(firebase.auth().currentUser == null){ %>
+			<div class='alert alert-danger'>
+				Please <a href='/login'>login</a> to download, favorite, or review this content.
+			</div>
+		<% } %>
+
+        <h1><%= currentUser.currentContent.title %>
         <% if(firebase.auth().currentUser != null){ %>
-        <% include ../partials/favorite %>
-        <% } %>
-        <a href="/files/<%= currentUser.currentContent.content_id %>.txt" download>Download</a>
+	<span style="float:right"> <% include ../partials/favorite %> 
+		<a class ='btn btn-primary btn-lg' href="/download" download>Download</a></span></h1>
+	    <% } %>
+	
         <h3>Published on <%= currentUser.currentContent.publish_date.toString().substring(0, 15) %></h3>
-        <% if(locals.contentInfo){ %>
+		<% if(locals.contentInfo){ %>
             <%- contentInfo %>
         <% } %>
 
@@ -50,7 +58,7 @@
 			  </label>
 			</div>
 			 <textarea class="form-control" placeholder="Optional" name="review" rows="3"></textarea>
-			<div style="padding-top:10px" align="right"> <button value="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			<div style="padding-top:10px" align="right"> <button value="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Submit</button>
 			</div>
   		</div>
 	</form>
@@ -64,7 +72,8 @@
 
         </div>
         <div class="container">
-        <% if(locals.comments){ %>
+		<% if(locals.comments && comments.length > 30){ %>
+			<h2>Reviews</h2>
             <%- comments %>
         <% } %>
         </div>
