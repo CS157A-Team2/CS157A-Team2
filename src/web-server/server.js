@@ -176,7 +176,7 @@ app.get("/profile", function (req, res) {
 				results[1][i].title +
 				"</a></td><td>" +
 				results[1][i].content_type +
-				"</tr>\n ";
+				"</td></tr>\n ";
 				}
 		}
 			
@@ -190,7 +190,7 @@ app.get("/profile", function (req, res) {
 				results[0][i].title +
 				"</a></td><td>" +
 				results[0][i].content_type +
-				"</tr>\n ";
+				"</td></tr>\n ";
 				}
 		}
 			console.log(results[1] + '\n\n\n\n')
