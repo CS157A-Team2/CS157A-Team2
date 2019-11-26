@@ -10,7 +10,7 @@ const database = mysql.createConnection({
 });
 
 
-router.get('/*', function (req, res) {
+router.post('/*', function (req, res) {
 	order_by = 'results.content_id'
 	if(req.url !== "/") order_by = req.url.replace('/', '')
 	let desc = ''
