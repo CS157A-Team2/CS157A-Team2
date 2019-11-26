@@ -200,22 +200,6 @@ app.get("/profile", function (req, res) {
 	}
 });
 
-app.get("/users", function (req, res) {
-	let sql = "SELECT c.content_id, * FROM Users";
-	let query = database.query(sql, (err, results) => {
-		table = "";
-		for (i = 0; i < results.length; i++)
-			table +=
-				results[i].user_id +
-				" " +
-				results[i].username +
-				" " +
-				results[i].user_type +
-				"<br>";
-		res.send("<h1> users <hr>" + table + "</h1>");
-	});
-});
-
 //------------body-parser-----------------------
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));

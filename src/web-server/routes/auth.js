@@ -62,13 +62,11 @@ router.get('/logout', function (req, res) {
      currentUser.username = null
      currentUser.email= null
      currentUser.user_type= null
-    // Sign-out successful.
-    console.log('success')
+     res.render('pages/index', {message: 'Log Out Successful'})
   }, function(error) {
     // An error happened.
     console.log('faileu')
   }); 
-  res.render('pages/index', {message: 'Log Out Successful'})
 });
 
 
