@@ -301,7 +301,7 @@ The Relational Database Management System (RDBMS), MySQL, will take care of all 
 	\item Reviews(\underline{user\_id}, \underline{content\_id}, rating, user\_comment)
 	\item Favorites(\underline{user\_id}, \underline{content\_id})
 	\item Downloads(\underline{user\_id}, \underline{content\_id})
-	\item Content(\underline{content\_id}, title, publish\_date)
+	\item Content(\underline{content\_id}, title, publish\_date, content\_type)
 	\item Article(\underline{content\_id}, author, publication\_name)
 	\item Magazine(\underline{content\_id}, issueNum)
 	\item Book(\underline{content\_id}, ISBN, author, genre, publisher)
@@ -327,6 +327,7 @@ The attributes for Content are as follows:
 	\item content\_id: The unique content identifier
 	\item title: The name/title of the content
 	\item publish\_date: The date the content was published, if available
+	\item content\_type: the type of content, if applicable.
 \end{itemize}
 \subsubsection{Books}
 Books are a special case of Content. They have special attributes which sets them apart; however, books inherit the primary key from content. In addition, books have the following attributes:
@@ -675,6 +676,27 @@ We would like to keep track of user's download history. A user can download zero
 
 \section{Implementation}
 
+\subsection{Implementation Overview}
+	On the server, our project uses the Node.js runtime environment and express.js framework for routing and  http requests/ responses. Each HTML page is implemented using EJS (Embedded JavaScript) as a templating engine. 
+
+	Here is a general overview of how the application works:
+	\begin{itemize}
+		\item The server is initialized, this includes:
+			\begin{itemize}
+				\item Claiming the 8080 port of local host using express.js | app.listen()
+				\item Establishing a database connection, using the Node.js MySQL module 
+					
+					| mysql.createConnection(JSON obj)
+				\item Defining where all static content is located  (files, photos, etc), using express.js
+					
+					| express.static(/path/to/static/content)
+				\item Initializing all routes/ modules, such as content, auth, and search
+			\end{itemize}
+		\item HTTP requests from the client trigger various database operations such as INSERT and SELECT, which are executing using the MySQL module function database.query(string sql\_code, function callback). Database.query() is an asynchronous function, meaning that there is no guarantee that it will be executed immediately upon calling it. For this reason, we often must wrap our server HTTP responses in the callback function, assuming we want to use data in our webpages which we have just queried.
+		\item Dynamic content queried from the database is then served using EJS templates.
+			EJS allows us to embed server-like JavaScript code into our HTML code. 
+			The templating engine then truncates the js/HTML hybrid into proper HTML code for the browser to parse.
+	\end{itemize}
 
 \section{Project Conclusion}
 
