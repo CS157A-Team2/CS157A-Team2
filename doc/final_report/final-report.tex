@@ -2,8 +2,8 @@
 \usepackage{graphicx}
 \setlength{\parindent}{0pt}
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
-
-
+\usepackage{amssymb}
+\usepackage{amsthm}
 
 
 \author{
@@ -32,260 +32,260 @@
 \maketitle
 \section{Part I | Project Requirements}
 \subsection{Project Description}
-        \subsubsection{Application Overview}
-        Our team will be developing a database application where users can find free books and are able to download them via multiple formats and leave reviews on those books for other customers to see. The books that the user can see will be ranging from textbooks to novels. A user will be given the option to create an account, or if they already registered, login to their account. After this, the user will be able to search for a specific book, whether that is by the title of the book or its ISBN number. If the user does not know the specific book they want to find, they can search for a specific author, or genre. Searches will include various filtering options such as date published, publisher, book length, user favorites, etc. Users can sort search results by the title alphabetically, the author alphabetically, or by book rating.
+\subsubsection{Application Overview}
+Our team will be developing a database application where users can find free books and are able to download them via multiple formats and leave reviews on those books for other customers to see. The books that the user can see will be ranging from textbooks to novels. A user will be given the option to create an account, or if they already registered, login to their account. After this, the user will be able to search for a specific book, whether that is by the title of the book or its ISBN number. If the user does not know the specific book they want to find, they can search for a specific author, or genre. Searches will include various filtering options such as date published, publisher, book length, user favorites, etc. Users can sort search results by the title alphabetically, the author alphabetically, or by book rating.
 
 \medskip
-        In our application, users will be able to leave reviews on books that they have read, which will be seen by other users and possibly influence their decision on their book. These reviews will contain both a comment subsection and a star rating system. Users will be able to comment how they either liked or disliked the book and give a star rating from one to five. The average star rating and total number of reviews will be displayed next to the book. Users will also be able to share the book they like with others with a shareable link that they can distribute how they please.
-	\subsubsection{Project Motivation}
-	The motivation behind this project is that as college students, we find ourselves paying several hundreds of dollars on college textbooks alone every semester, only to have them sitting on a shelf afterwards not being opened. Those hundreds of dollars spent on semester long textbooks could have been better utilized for students on other needs such as groceries or rent. We want to make a website to give students that option, giving them a website where they can download their desired textbooks for free.
-	\subsubsection{Project Goal}
-	The Goal of this project is to provide a free and open source infrastructure where users can read books from the public domain. We wish to provide an easy-to-use ecosystem, which allows the user to read or review books with ease.
-	\subsubsection{Benefits to Users}
-	Users will have a community where they can \textbf{read and review books for free}. Right now, websites such as this exists, but they only serve one of the two desired functionalities. Websites like gutenberg.org give the users access to free book repositories, but do not allow for users to read and write reviews on books. Conversely, websites like bookpage.com provide reviews for books, but they do not provide free access to such books. Our web application will take the best aspects of both these websites to provide the user an efficient solution for picking and reading online books for free.
-    \subsubsection{Stakeholders and Importance}
-    The stakeholders of our applications will be students who want to find free textbook alternative to the paid bookstore alternative, as well as casual and dedicated book readers who can find free books online and download them for instant reading. This application is important because it provides a streamlined way for book-readers to gain easy access to the books they want and get them in a timely manner.
+In our application, users will be able to leave reviews on books that they have read, which will be seen by other users and possibly influence their decision on their book. These reviews will contain both a comment subsection and a star rating system. Users will be able to comment how they either liked or disliked the book and give a star rating from one to five. The average star rating and total number of reviews will be displayed next to the book. Users will also be able to share the book they like with others with a shareable link that they can distribute how they please.
+\subsubsection{Project Motivation}
+The motivation behind this project is that as college students, we find ourselves paying several hundreds of dollars on college textbooks alone every semester, only to have them sitting on a shelf afterwards not being opened. Those hundreds of dollars spent on semester long textbooks could have been better utilized for students on other needs such as groceries or rent. We want to make a website to give students that option, giving them a website where they can download their desired textbooks for free.
+\subsubsection{Project Goal}
+The Goal of this project is to provide a free and open source infrastructure where users can read books from the public domain. We wish to provide an easy-to-use ecosystem, which allows the user to read or review books with ease.
+\subsubsection{Benefits to Users}
+Users will have a community where they can \textbf{read and review books for free}. Right now, websites such as this exists, but they only serve one of the two desired functionalities. Websites like gutenberg.org give the users access to free book repositories, but do not allow for users to read and write reviews on books. Conversely, websites like bookpage.com provide reviews for books, but they do not provide free access to such books. Our web application will take the best aspects of both these websites to provide the user an efficient solution for picking and reading online books for free.
+\subsubsection{Stakeholders and Importance}
+The stakeholders of our applications will be students who want to find free textbook alternative to the paid bookstore alternative, as well as casual and dedicated book readers who can find free books online and download them for instant reading. This application is important because it provides a streamlined way for book-readers to gain easy access to the books they want and get them in a timely manner.
 
 
 \subsection{System Environment}
-	
-			\includegraphics[scale=.66]{3-tier.png}
-			\subsubsection{Presentation Layer}
-			\begin{itemize}
-			 \item HTML
-				\begin{itemize}
-					\item Purpose: HTML is the markup language supported by all major web-browsers. It allows content to be presented to a readable manner to the end-user. We will take advantage of HTML formatting tools such as hyperlinks, tables, and lists. Further, we will be using HTML forms for user input of email, username, password, search boxes, and comments.
-					\item Version: HTML 5
-				\end{itemize}
-			\item Cascading Style Sheets (CSS)
-			\begin{itemize}	
-				\item Purpose: CSS will be used to improve the user experience of our web application. CSS gives us the ability to make animations, colored content, as well as more control of the appearance of our content.
-				\item Version: CSS 3
-				\item Framework: Bootstrap
-			\end{itemize}
-			\item	JavaScript (Client Side):
-				\begin{itemize}
-					\item	Purpose: Provide interactivity such as collection of user input, improve visual responsiveness, and sending alerts to users.
-					\item Version: ECMA2016
-				\end{itemize}
-			\end{itemize}
 
-		\subsubsection{Application Layer}
-		\begin{itemize}
-			\item Web Server: Node.js HTTP Module
-			
-				-Version: 10.6.3 LTS
-			
-			\item Server Side Application Language: JavaScript
-				
-				-Purpose: Provide commination between the presentation layer and the database layer
-				-Version: EMCAScript 2016
+\includegraphics[scale=.66]{3-tier.png}
+\subsubsection{Presentation Layer}
+\begin{itemize}
+	\item HTML
+	      \begin{itemize}
+		      \item Purpose: HTML is the markup language supported by all major web-browsers. It allows content to be presented to a readable manner to the end-user. We will take advantage of HTML formatting tools such as hyperlinks, tables, and lists. Further, we will be using HTML forms for user input of email, username, password, search boxes, and comments.
+		      \item Version: HTML 5
+	      \end{itemize}
+	\item Cascading Style Sheets (CSS)
+	      \begin{itemize}
+		      \item Purpose: CSS will be used to improve the user experience of our web application. CSS gives us the ability to make animations, colored content, as well as more control of the appearance of our content.
+		      \item Version: CSS 3
+		      \item Framework: Bootstrap
+	      \end{itemize}
+	\item	JavaScript (Client Side):
+	      \begin{itemize}
+		      \item	Purpose: Provide interactivity such as collection of user input, improve visual responsiveness, and sending alerts to users.
+		      \item Version: ECMA2016
+	      \end{itemize}
+\end{itemize}
 
-			\item	NPM Package Manger:
+\subsubsection{Application Layer}
+\begin{itemize}
+	\item Web Server: Node.js HTTP Module
 
-				-Purpose: Provide easy managment of external Node.js libraries such as express js, sql module, connect module, and http module.
+	      -Version: 10.6.3 LTS
 
-				-Version: 6.9.0 
-		\end{itemize}	
-		\subsubsection{Data Layer}
-		
-			\begin{itemize}
-			
-			\item	This web application will require the use of a relational database management system (RDBMS), the specific RDBMS we will use is  MySQL.
-			\item We will take advantage of the SQL programming language for tasks such as data definition, manipulation, query, control,and transaction control.
-			\item MySQL RDBMS will take care of concurrency control, and will maintain the ACID principle for our database. 
-			\item MySQL Version: 5.7.27
-			\item Query Language: SQL
-			\end{itemize}
-		\subsubsection{Hardware/ Software Used}
-		
-		\begin{itemize}
+	\item Server Side Application Language: JavaScript
 
-			\item Client Software Requirements
-			\begin{itemize}
-				\item A web browser supporting the following is required to run the web application:
-					\begin{itemize}
-						\item ECMAScript2016
-						\item HTML5
-						\item CSS3
-					\end{itemize}
-			\item Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified. 
-			
-			\item  MySQL and Node.js are available on many operating systems such as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD	
-			\end{itemize}
+	      -Purpose: Provide commination between the presentation layer and the database layer
+	      -Version: EMCAScript 2016
 
-		\item Client Hardware Requirements:
-			\begin{itemize}	
-				\item Any hardware with support by the above software will be sufficient to run the web application.
-			\end{itemize}
-		\end{itemize}
+	\item	NPM Package Manger:
+
+	      -Purpose: Provide easy managment of external Node.js libraries such as express js, sql module, connect module, and http module.
+
+	      -Version: 6.9.0
+\end{itemize}
+\subsubsection{Data Layer}
+
+\begin{itemize}
+
+	\item	This web application will require the use of a relational database management system (RDBMS), the specific RDBMS we will use is  MySQL.
+	\item We will take advantage of the SQL programming language for tasks such as data definition, manipulation, query, control,and transaction control.
+	\item MySQL RDBMS will take care of concurrency control, and will maintain the ACID principle for our database.
+	\item MySQL Version: 5.7.27
+	\item Query Language: SQL
+\end{itemize}
+\subsubsection{Hardware/ Software Used}
+
+\begin{itemize}
+
+	\item Client Software Requirements
+	      \begin{itemize}
+		      \item A web browser supporting the following is required to run the web application:
+		            \begin{itemize}
+			            \item ECMAScript2016
+			            \item HTML5
+			            \item CSS3
+		            \end{itemize}
+		      \item Since the 3-tier architecture will only be virtual, (no remote web server or DMBS), the client will be required to install the proper versions of Node.js as well as MySQL as specified.
+
+		      \item  MySQL and Node.js are available on many operating systems such as Linux, MacOS, Microsoft Windows, FreeBSD, and OpenBSD
+	      \end{itemize}
+
+	\item Client Hardware Requirements:
+	      \begin{itemize}
+		      \item Any hardware with support by the above software will be sufficient to run the web application.
+	      \end{itemize}
+\end{itemize}
 
 
 \subsection{Functional Requirements}
-		Because this application is to be accessed from a web browser, the \textbf{input} is a keyboard or mouse, while the \textbf{output} is stylized HTML to be displayed on a web browser. 
+Because this application is to be accessed from a web browser, the \textbf{input} is a keyboard or mouse, while the \textbf{output} is stylized HTML to be displayed on a web browser.
 
-	\subsubsection{Comprehensive List of Features}
-	\begin{itemize}
+\subsubsection{Comprehensive List of Features}
+\begin{itemize}
 
 	\item	Search Book:
-		\begin{itemize}
-			\item  Users can search for books that on the system database
-			\item  Input: ISBN, author, or title
-			\item  Output: list of books that match with the input information
-		\end{itemize}
+	      \begin{itemize}
+		      \item  Users can search for books that on the system database
+		      \item  Input: ISBN, author, or title
+		      \item  Output: list of books that match with the input information
+	      \end{itemize}
 	\item	Order Search Results:
-		\begin{itemize}
-			\item  User can order the book search results. Default search behavior is based on the number of favorites a book has received
-			\item  Input: relese date or number of favorites
-			\item  Output: ordered list of book that has characteristic from input
-		\end{itemize}
+	      \begin{itemize}
+		      \item  User can order the book search results. Default search behavior is based on the number of favorites a book has received
+		      \item  Input: relese date or number of favorites
+		      \item  Output: ordered list of book that has characteristic from input
+	      \end{itemize}
 	\item	Filter Search Results:
-		\begin{itemize}
-			\item  User can filter the search reslts 
-			\item  Input: release date or genre
-			\item  Output: filtered list of book that matched with characteristic from input
-		\end{itemize}
+	      \begin{itemize}
+		      \item  User can filter the search reslts
+		      \item  Input: release date or genre
+		      \item  Output: filtered list of book that matched with characteristic from input
+	      \end{itemize}
 	\item	Select Book:
-		\begin{itemize}
-			\item  Once user finds the desired book, they can select the book and view its profile.
-			\item  Input: selecting single book
-			\item  Output: book profile that includes book information and comments
-		\end{itemize}
+	      \begin{itemize}
+		      \item  Once user finds the desired book, they can select the book and view its profile.
+		      \item  Input: selecting single book
+		      \item  Output: book profile that includes book information and comments
+	      \end{itemize}
 	\item	View Book Profile:
 
-		A book's profile will consist of the following:
-		\begin{itemize}
-			\item The title of the book,
-			\item The author,
-			\item the relase date,
-			\item the publisher,
-			\item the ISBN,
-			\item the reviews/comments left for the book,
-			\item the number of "favorites" the book has received
-		\end{itemize}
+	      A book's profile will consist of the following:
+	      \begin{itemize}
+		      \item The title of the book,
+		      \item The author,
+		      \item the relase date,
+		      \item the publisher,
+		      \item the ISBN,
+		      \item the reviews/comments left for the book,
+		      \item the number of "favorites" the book has received
+	      \end{itemize}
 	\item Read/Download Book:
-		\begin{itemize}
-			\item  User can download the book and view it in their web browser.
-			\item  Input: selecting single book
-			\item  Ouput: reading page or download to local
-		\end{itemize}
+	      \begin{itemize}
+		      \item  User can download the book and view it in their web browser.
+		      \item  Input: selecting single book
+		      \item  Ouput: reading page or download to local
+	      \end{itemize}
 	\item Add/delete book to/from favorites:
-		\begin{itemize}
-			\item  Use can add the list to their "favorites", indicating that they enjoyed the book
-			\item  Input: selecting single book
-			\item  Output: add/delete book to/from the favorited book list that can be viewed on user's profile
-		\end{itemize}
+	      \begin{itemize}
+		      \item  Use can add the list to their "favorites", indicating that they enjoyed the book
+		      \item  Input: selecting single book
+		      \item  Output: add/delete book to/from the favorited book list that can be viewed on user's profile
+	      \end{itemize}
 	\item  View Favorites  \textbf{requires login}:
-		\begin{itemize}
-			\item  User can browse their list of favorited books, with the same sorting/filtering mechanisms as noted above
-			\item  Input: Click view favorite book list in user profile
-			\item  Ouput: list of books that users marked as favorite
-		\end{itemize}
-	\item Leave Book Review \textbf{-requires login}: 
-		\begin{itemize}
-			\item  Users can leave comments on the profiles of certain books
-			\item  Input: comments that relating to the selected book
-			\item  Output: comments added to the book's repository
-		\end{itemize}
+	      \begin{itemize}
+		      \item  User can browse their list of favorited books, with the same sorting/filtering mechanisms as noted above
+		      \item  Input: Click view favorite book list in user profile
+		      \item  Ouput: list of books that users marked as favorite
+	      \end{itemize}
+	\item Leave Book Review \textbf{-requires login}:
+	      \begin{itemize}
+		      \item  Users can leave comments on the profiles of certain books
+		      \item  Input: comments that relating to the selected book
+		      \item  Output: comments added to the book's repository
+	      \end{itemize}
 	\item Register as User:
-		\begin{itemize}
-			\item  User can register for an account if they want to have the ability to comment and favorite books
-			\item  Input: user information includes username, password, email
-			\item  Output: user' account created
-		\end{itemize}
+	      \begin{itemize}
+		      \item  User can register for an account if they want to have the ability to comment and favorite books
+		      \item  Input: user information includes username, password, email
+		      \item  Output: user' account created
+	      \end{itemize}
 	\item Login as User:
-		\begin{itemize}
-			\item  Once registered, users will have the ability to login using the credentials they have provided during registration
-			\item  Input: email and password
-			\item  Ouput: login successfully give the access to login user's profile 
-		\end{itemize}
+	      \begin{itemize}
+		      \item  Once registered, users will have the ability to login using the credentials they have provided during registration
+		      \item  Input: email and password
+		      \item  Ouput: login successfully give the access to login user's profile
+	      \end{itemize}
 	\item Go to home page:
-		\begin{itemize}
-			\item  The homepage will have information about the website and recent news regarding the website
-			\item  Input: clicked website logo on navigator bar 
-			\item  Output: redirect user to homepage
-		\end{itemize}
+	      \begin{itemize}
+		      \item  The homepage will have information about the website and recent news regarding the website
+		      \item  Input: clicked website logo on navigator bar
+		      \item  Output: redirect user to homepage
+	      \end{itemize}
 	\item View profile \textbf{-requires login}:
-		\begin{itemize}
-			\item  All profiles are anonymous because this is \textbf{not a social network}. Users are not allowed to change their username.
-			\item  Input: successfully login
-			\item  Output: Profile page includes username and email information, favorites book list
-		\end{itemize}
+	      \begin{itemize}
+		      \item  All profiles are anonymous because this is \textbf{not a social network}. Users are not allowed to change their username.
+		      \item  Input: successfully login
+		      \item  Output: Profile page includes username and email information, favorites book list
+	      \end{itemize}
 	\item Log out:
-		\begin{itemize}
-			\item  login user exits login condition, become vistor to the website
-			\item  Input: login user clicks "Log Out" button
-			\item  Output: becomes vistor and no longer has access to profile page, return to homepage if logout successfully
-		\end{itemize}
-	
-	\end{itemize}	
-		
-		
+	      \begin{itemize}
+		      \item  login user exits login condition, become vistor to the website
+		      \item  Input: login user clicks "Log Out" button
+		      \item  Output: becomes vistor and no longer has access to profile page, return to homepage if logout successfully
+	      \end{itemize}
+
+\end{itemize}
+
+
 \subsection{Non-Functional Issues}
 
-		\subsubsection{Graphical User Interface}
-			The Graphical interface of the system will have the following qualities: attractiveness, usability, and responsiveness
-			\subparagraph{Attractiveness}
-				The GUI will have a color palate which makes the system attractive to users. We will use high quality fonts and images where applicable. The GUI as a whole will have a coherent and consistent theme. 
-			\subparagraph{Usability}
-				The GUI will be intuitive. Users will not have to read documentation on how to use the system in order to use it. Options available to the user will be kept to a minimum as to encourage simplicity.
-			\subparagraph{Responsiveness}
-				Users will be aware that their requests have been recorded. For example, a user clicks a button, there will be an indication that the button has been successfully clicked, such as a change in color. We will keep bloat to a minimum, such as animations and videos, as to encourage responsiveness for older hardware.
+\subsubsection{Graphical User Interface}
+The Graphical interface of the system will have the following qualities: attractiveness, usability, and responsiveness
+\subparagraph{Attractiveness}
+The GUI will have a color palate which makes the system attractive to users. We will use high quality fonts and images where applicable. The GUI as a whole will have a coherent and consistent theme.
+\subparagraph{Usability}
+The GUI will be intuitive. Users will not have to read documentation on how to use the system in order to use it. Options available to the user will be kept to a minimum as to encourage simplicity.
+\subparagraph{Responsiveness}
+Users will be aware that their requests have been recorded. For example, a user clicks a button, there will be an indication that the button has been successfully clicked, such as a change in color. We will keep bloat to a minimum, such as animations and videos, as to encourage responsiveness for older hardware.
 
-		\subsubsection{Security}
-			\subparagraph{User Security}
-				To protect user data and privacy, users entities will have the following attributes:
-				\begin{itemize}
-						\item A unique username
-						\item A password, required to follow the minimum standards set by the system: which is a minimum of 8 characters, 1 uppercase character, 1 lowercase character, 1 numerical character, and 1 special character
-				\end{itemize}
+\subsubsection{Security}
+\subparagraph{User Security}
+To protect user data and privacy, users entities will have the following attributes:
+\begin{itemize}
+	\item A unique username
+	\item A password, required to follow the minimum standards set by the system: which is a minimum of 8 characters, 1 uppercase character, 1 lowercase character, 1 numerical character, and 1 special character
+\end{itemize}
 
-			\subparagraph{SQL Injection Protection}
-				To protect form SQL injections, we will take precautions to inspect all user input and escape any characters which could breach security.
+\subparagraph{SQL Injection Protection}
+To protect form SQL injections, we will take precautions to inspect all user input and escape any characters which could breach security.
 
-			\subparagraph{Encryption}
-				Any sensitive information collected from users will be encrypted fields in the relational database. All passwords will be hashed and we will take advantage of MySQL's build in password functionality.
+\subparagraph{Encryption}
+Any sensitive information collected from users will be encrypted fields in the relational database. All passwords will be hashed and we will take advantage of MySQL's build in password functionality.
 
-			\subparagraph{Anonymity}
-				When a user makes a comment, \textbf{only their username will show up}, not their real name. Anonymity protects users from being identified against their will, and prevents personal attacks or blackmail. Users on this web application should be allowed to enjoy and review any books they like, and not have to be worried about ramifications.
-		
-		\subsubsection{Concurrency Control}
-			The Relational Database Management System (RDBMS), MySQL, will take care of all needs relating to concurrency control. From the user's perspective, all transactions can be made concurrently. 
+\subparagraph{Anonymity}
+When a user makes a comment, \textbf{only their username will show up}, not their real name. Anonymity protects users from being identified against their will, and prevents personal attacks or blackmail. Users on this web application should be allowed to enjoy and review any books they like, and not have to be worried about ramifications.
 
-		\subsubsection{Access Control}
+\subsubsection{Concurrency Control}
+The Relational Database Management System (RDBMS), MySQL, will take care of all needs relating to concurrency control. From the user's perspective, all transactions can be made concurrently.
 
-			\subparagraph{Types of Users}
-				\begin{itemize} 
-					\item \textbf{User}		
-						this type of accounts are registered by user themselves 
+\subsubsection{Access Control}
 
-
-						Users will only have read access to the following:
-						\begin{itemize}
-							\item  Their own account profile
-							\item  Book repositories with open access
-						\end{itemize}
+\subparagraph{Types of Users}
+\begin{itemize}
+	\item \textbf{User}
+	      this type of accounts are registered by user themselves
 
 
-					 In addition, users will have write access to the following:
-						\begin{itemize}
-							\item  Their own account profile information
-							\item  Their favorites list
-							\item  Reviews left for books under restrictions
-						\end{itemize}
-
-					\item \textbf{Database Administrator}
-						this type of accounts are created assigned by the system owners
+	      Users will only have read access to the following:
+	      \begin{itemize}
+		      \item  Their own account profile
+		      \item  Book repositories with open access
+	      \end{itemize}
 
 
-						Database Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. DB admins have read/write access to the following: 			
-						\begin{itemize}
-							\item Read user profile
-							\item Modify user profile including password with authentication from user
-							\item Add and delete book repositories
-							\item Delete comments by users that are not under restrictions
-		  			\end{itemize}
-				\end{itemize}
+	      In addition, users will have write access to the following:
+	      \begin{itemize}
+		      \item  Their own account profile information
+		      \item  Their favorites list
+		      \item  Reviews left for books under restrictions
+	      \end{itemize}
+
+	\item \textbf{Database Administrator}
+	      this type of accounts are created assigned by the system owners
+
+
+	      Database Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. DB admins have read/write access to the following:
+	      \begin{itemize}
+		      \item Read user profile
+		      \item Modify user profile including password with authentication from user
+		      \item Add and delete book repositories
+		      \item Delete comments by users that are not under restrictions
+	      \end{itemize}
+\end{itemize}
 
 
 
@@ -294,153 +294,419 @@
 \section{Part II | Database Project Deisgn}
 
 \subsection{Updated Entity-Relationship Diagram}
-	\includegraphics[scale=1]{erd-rev.png}
-	\subsection{Database Schema}
-		\begin{itemize}
-			\item Users(\underline{user\_id}, username, use\_type)
-			\item Reviews(\underline{user\_id}, \underline{content\_id}, rating, user\_comment)
-			\item Favorites(\underline{user\_id}, \underline{content\_id})
-			\item Downloads(\underline{user\_id}, \underline{content\_id})
-			\item Content(\underline{content\_id}, title, publish\_date)
-			\item Article(\underline{content\_id}, author, publication\_name)
-			\item Magazine(\underline{content\_id}, issueNum)
-			\item Book(\underline{content\_id}, ISBN, author, genre, publisher)
-			\item Newspaper(\underline{content\_id}, locale)
-			\item Poem(\underline{content\_id}, poem\_type, author)
-		\end{itemize}
+\includegraphics[scale=1]{erd-rev.png}
+\subsection{Database Schema}
+\begin{itemize}
+	\item Users(\underline{user\_id}, username, use\_type)
+	\item Reviews(\underline{user\_id}, \underline{content\_id}, rating, user\_comment)
+	\item Favorites(\underline{user\_id}, \underline{content\_id})
+	\item Downloads(\underline{user\_id}, \underline{content\_id})
+	\item Content(\underline{content\_id}, title, publish\_date)
+	\item Article(\underline{content\_id}, author, publication\_name)
+	\item Magazine(\underline{content\_id}, issueNum)
+	\item Book(\underline{content\_id}, ISBN, author, genre, publisher)
+	\item Newspaper(\underline{content\_id}, locale)
+	\item Poem(\underline{content\_id}, poem\_type, author)
+\end{itemize}
 
-	\subsection{Entities}
-		\subsubsection{Users}
-			Users are defined as those who have a valid account login for the website.
+\subsection{Entities}
+\subsubsection{Users}
+Users are defined as those who have a valid account login for the website.
 
-			The attributes for Users are as follows:
-			\begin{itemize}
-				\item user\_type: A user can be of two types, admin or regular. Admins have special privileges
-				\item username: The unique username by which a user logs into the web application
-				\item user\_id: the unique identifier by which a user's information is tracked
-			\end{itemize}
-		\subsubsection{Content}
-			Content comes in many forms. There are four subclasses of Content, but it possible that there exist an item that is only classifiable as Content and none of its subclasses. 
-			
-			The attributes for Content are as follows:
-			\begin{itemize}
-				\item content\_id: The unique content identifier
-				\item title: The name/title of the content
-				\item publish\_date: The date the content was published, if available
-			\end{itemize}
-		\subsubsection{Books}
-			Books are a special case of Content. They have special attributes which sets them apart; however, books inherit the primary key from content. In addition, books have the following attributes:
-			\begin{itemize}
-				\item ISBN: the unique book ISBN number
-				\item publisher: the publisher of the book
-				\item author: The author of the book
-				\item genre: the genre of the book
-			\end{itemize}
-		\subsubsection{Magazines}
-			Magazines are a special case of Content. They have special attributes which sets them apart; however, magazines inherit the primary key from content. In addition, magazines have the following attributes:
-			\begin{itemize}
-				\item issueNum: the issue number of the magazine.
-			\end{itemize}		
-		\subsubsection{Newspapers} 
-				Newspapers are a special case of Content. They have special attributes which sets them apart; however, Newspapers inherit the primary key from content. In addition, magazines have the following attributes:
-			\begin{itemize}
-				\item locale: the locality of a Newspaper, if available.
-			\end{itemize}	
-		\subsubsection{Articles}		
-			Articles are standalone pieces of writing which may, in some cases, be significant enough to publish on the web application as it's own piece of media. Articles inherit the primary key from Content but have additional relationships, as described in the relationships subsection. Articles also have the following additional attributes:
-			\begin{itemize}
-				\item author: the author of the article
-				\item publication\_name: the name of the publication where the article is from.
-			\end{itemize}
-		\subsubsection{Poems}		
-			Poems are a specialized form of content, usually artistic in nature. Poems inherit the primary key from Content but have additional attributes, as described in the relationships subsection. Articles also have the following additional attributes:
-			\begin{itemize}
-				\item author: the author of the poem (if available)
-				\item poem\_type: the type of poem (ballad, epic, prose, haiku, etc.)
-			\end{itemize}
+The attributes for Users are as follows:
+\begin{itemize}
+	\item user\_type: A user can be of two types, admin or regular. Admins have special privileges
+	\item username: The unique username by which a user logs into the web application
+	\item user\_id: the unique identifier by which a user's information is tracked
+\end{itemize}
+\subsubsection{Content}
+Content comes in many forms. There are four subclasses of Content, but it possible that there exist an item that is only classifiable as Content and none of its subclasses.
 
-	\subsection{Relationships}
-		\subsubsection{User Reviews Content}
-			A user (admin or regular) is the author of zero or many reviews on zero or many pieces of content. 
+The attributes for Content are as follows:
+\begin{itemize}
+	\item content\_id: The unique content identifier
+	\item title: The name/title of the content
+	\item publish\_date: The date the content was published, if available
+\end{itemize}
+\subsubsection{Books}
+Books are a special case of Content. They have special attributes which sets them apart; however, books inherit the primary key from content. In addition, books have the following attributes:
+\begin{itemize}
+	\item ISBN: the unique book ISBN number
+	\item publisher: the publisher of the book
+	\item author: The author of the book
+	\item genre: the genre of the book
+\end{itemize}
+\subsubsection{Magazines}
+Magazines are a special case of Content. They have special attributes which sets them apart; however, magazines inherit the primary key from content. In addition, magazines have the following attributes:
+\begin{itemize}
+	\item issueNum: the issue number of the magazine.
+\end{itemize}
+\subsubsection{Newspapers}
+Newspapers are a special case of Content. They have special attributes which sets them apart; however, Newspapers inherit the primary key from content. In addition, magazines have the following attributes:
+\begin{itemize}
+	\item locale: the locality of a Newspaper, if available.
+\end{itemize}
+\subsubsection{Articles}
+Articles are standalone pieces of writing which may, in some cases, be significant enough to publish on the web application as it's own piece of media. Articles inherit the primary key from Content but have additional relationships, as described in the relationships subsection. Articles also have the following additional attributes:
+\begin{itemize}
+	\item author: the author of the article
+	\item publication\_name: the name of the publication where the article is from.
+\end{itemize}
+\subsubsection{Poems}
+Poems are a specialized form of content, usually artistic in nature. Poems inherit the primary key from Content but have additional attributes, as described in the relationships subsection. Articles also have the following additional attributes:
+\begin{itemize}
+	\item author: the author of the poem (if available)
+	\item poem\_type: the type of poem (ballad, epic, prose, haiku, etc.)
+\end{itemize}
 
-			The attributes for Reviews are as follows:
-			\begin{itemize}
-				\item rating: a star rating between 1 and 5
-				\item user\_comment: a comment about the piece of content (optional)
-			\end{itemize}
-		\subsubsection{User Favorites Content}
-			A user can favorite content, which allows them to keep track of their favorite items. Content can be favorited by zero or many users. Users can favorite zero or many pieces of content.	
-		\subsubsection{User Downloads Content}
-			We would like to keep track of user's download history. A user can download zero or many pieces of content, and a piece of content may be downloaded by zero or many users.
+\subsection{Relationships}
+\subsubsection{User Reviews Content}
+A user (admin or regular) is the author of zero or many reviews on zero or many pieces of content.
 
-\subsection{Boyce Codd Normal Form (BCNF) Proof}
-		\subsubsection{Users | BCNF Proof }
-		\subsubsection{Reviews | BCNF Proof }
-		\subsubsection{Favorites | BCNF Proof }
-		\subsubsection{Downloads | BCNF Proof }
-		\subsubsection{Poem | BCNF Proof }
-		\subsubsection{Content | BCNF Proof }
-		\subsubsection{Magazine | BCNF Proof }
-		\subsubsection{Article | BCNF Proof }
-		\subsubsection{Newspaper | BCNF Proof }
-		\subsubsection{Book | BCNF Proof }
-	
+The attributes for Reviews are as follows:
+\begin{itemize}
+	\item rating: a star rating between 1 and 5
+	\item user\_comment: a comment about the piece of content (optional)
+\end{itemize}
+\subsubsection{User Favorites Content}
+A user can favorite content, which allows them to keep track of their favorite items. Content can be favorited by zero or many users. Users can favorite zero or many pieces of content.
+\subsubsection{User Downloads Content}
+We would like to keep track of user's download history. A user can download zero or many pieces of content, and a piece of content may be downloaded by zero or many users.
+
+\subsection{Boyce Codd Normal Form (BCNF) Proofs}
+\subsubsection{Users | BCNF Proof }
+
+
+\textit{Claim: the Users relation is in BCNF}
+
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Users} table is:
+
+
+	$ Users(user\_id, user\_type, username) $
+
+
+	The minimal cover of the functional dependencies for Users is:
+
+
+	$ user\_id \rightarrow user\_type, username $
+
+
+	Now, we have to check if $user\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $user\_id$, we find that...
+
+	$user\_id+ = \{user\_id, username, user\_type\}$
+
+	Which means that $user\_id$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Users \in BCNF $
+\end{proof}
+
+\subsubsection{Reviews | BCNF Proof }
+
+
+\textit{Claim: the Reviews relation is in BCNF}
+
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Reviews} table is:
+
+
+	$Reviews(user\_id, content\_id, user\_comment, rating)$
+
+
+	The minimal cover of the functional dependencies for Reviews is:
+
+
+	$ user\_id, content\_id \rightarrow user\_comment, rating $
+
+
+	Now, we have to check if the set of attributes  $\{user\_id, content\_id\}$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $\{user\_id, content\_id\}$, we find that...
+
+	$\{user\_id, content\_id\}+ = \{user\_id, content\_id, user\_comment, rating\} $
+
+	Which means that $\{user\_id, content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Reviews \in BCNF $
+\end{proof}
+
+
+\subsubsection{Favorites | BCNF Proof }
+
+
+
+\textit{Claim: the Favorites relation is in BCNF}
+
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Favorites} table is:
+
+	$Favorites(user\_id, content\_id)$
+
+	There are no non-trival Functional Dependencies in this relation, so it is true that for all non-trivial FD's $\in$ Favorites (none), the left side of the FD is a superkey.
+
+	$\therefore Favorites \in BCNF $
+
+
+\end{proof}
+\subsubsection{Downloads | BCNF Proof }
+
+
+\textit{Claim: the Downloads relation is in BCNF}
+
+
+\begin{proof}
+
+	The relational schema for for the \textbf{Downloads} table is:
+
+	$Downloads(user\_id, content\_id)$
+
+	There are no non-trival Functional Dependencies in this relation, so it is true that for all non-trivial FD's $\in$ Downloads (none), the left side of the FD is a superkey.
+
+	$\therefore Downloads \in BCNF $
+
+\end{proof}
+
+\subsubsection{Poem | BCNF Proof }
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Poem} table is:
+
+
+	$Poem(content\_id, poem\_type, author)$
+
+
+	The minimal cover of the functional dependencies is:
+
+
+	$ content\_id \rightarrow poem\_type, rating $
+
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, author, poem\_type \} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Poem \in BCNF $
+\end{proof}
+
+\subsubsection{Content | BCNF Proof }
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Content} table is:
+
+
+	$Content(content\_id, content\_type, title, date\_published)$
+
+
+	The minimal cover of the functional dependencies is:
+
+
+	$ content\_id \rightarrow content\_type, title, date\_published $
+
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, content\_type, title, date\_published  \} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Content \in BCNF $
+\end{proof}
+
+\subsubsection{Magazine | BCNF Proof }
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Magazine} table is:
+
+
+	$Magazine(content\_id, issueNum)$
+
+
+	The minimal cover of the functional dependencies is:
+
+
+	$ content\_id \rightarrow issueNum $
+
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, issueNum  \} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Magazine \in BCNF $
+
+\end{proof}
+
+\subsubsection{Article | BCNF Proof }
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Artcile} table is:
+
+
+	$Article(content\_id, author, publication\_name)$
+
+
+	The minimal cover of the functional dependencies is:
+
+	$ content\_id \rightarrow author, publication\_name $
+
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, author, publication\_name \} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Article \in BCNF $
+
+\end{proof}
+
+
+
+\subsubsection{Newspaper | BCNF Proof }
+
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Article} table is:
+
+
+	$Newspaper(content\_id, locale)$
+
+
+	The minimal cover of the functional dependencies is:
+
+	$ content\_id \rightarrow locale $
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, locale \} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Newspaper \in BCNF $
+
+\end{proof}
+
+\subsubsection{Book | BCNF Proof }
+\begin{proof}
+
+
+	The relational schema for for the \textbf{Book} table is:
+
+
+	$Book(content\_id, ISBN)$
+
+	The minimal cover of the functional dependencies is:
+
+	$ content\_id \rightarrow ISBN, author, publisher, genre $
+
+	Now, we have to check if the attribute $content\_id$ is a superkey, because it is the left side of our only functional dependency.
+
+	Computing the closure of $\{content\_id\}$, we find that...
+
+	$\{content\_id\}+ = \{content\_id, ISBN, author, publisher, genre\} $
+
+	Which means that $\{content\_id\}$ is a superkey, so the only non-trivial functional dependency in the minimal cover of FDs for this relation does \textbf{not} violate BCNF
+
+	$\therefore Book \in BCNF $
+
+\end{proof}
+
+
 \subsection{Database Table Instances}
-		\subsubsection{Users}
-			\includegraphics[scale=.5]{users.png}
-		\subsubsection{Reviews}
-			\includegraphics[scale=.5]{reviews.png}
-		\subsubsection{Favorites}
-			\includegraphics[scale=.5]{favorites.png}
-		\subsubsection{Downloads}
-			\includegraphics[scale=.5]{downloads.png}
-		\subsubsection{Poem}
-			\includegraphics[scale=.45]{poem.png}
-		\subsubsection{Content}
-			\includegraphics[scale=.6]{content.png}
-		\subsubsection{Magazine}
-			\includegraphics[scale=.5]{magazine.png}
-		\subsubsection{Article}
-			\includegraphics[scale=.5]{article.png}
-		\subsubsection{Newspaper}
-			\includegraphics[scale=.5]{newspaper.png}
-		\subsubsection{Book}
-			\includegraphics[scale=.5]{book.png}
+\subsubsection{Users}
+\includegraphics[scale=.5]{users.png}
+\subsubsection{Reviews}
+\includegraphics[scale=.5]{reviews.png}
+\subsubsection{Favorites}
+\includegraphics[scale=.5]{favorites.png}
+\subsubsection{Downloads}
+\includegraphics[scale=.5]{downloads.png}
+\subsubsection{Poem}
+\includegraphics[scale=.45]{poem.png}
+\subsubsection{Content}
+\includegraphics[scale=.6]{content.png}
+\subsubsection{Magazine}
+\includegraphics[scale=.5]{magazine.png}
+\subsubsection{Article}
+\includegraphics[scale=.5]{article.png}
+\subsubsection{Newspaper}
+\includegraphics[scale=.5]{newspaper.png}
+\subsubsection{Book}
+\includegraphics[scale=.5]{book.png}
 
 \section{Implementation}
 
 
 \section{Project Conclusion}
-	
-	\subsection{Lessons from Project | Teammate Statements}
 
-	\subsubsection{Brett Dispoto}
-		Prior to working on OpenBooks, I had no knowledge of practical database design/ application development. I now understand the following:
-		\begin{itemize}
-			\item The importance of an E/R design and analysis \textbf{prior} to implementing the relational schemas in the DBMS. Because our group put a large amount of work into our relational schema design, the normalization process into BCNF was extremely minimal.
-			\item How to perform database integration on a virtualised 3-tier architecture. This includes 
-					\begin{itemize}
-						\item How to install and configure a local MySQL server, allowing remote access.
-						\item How to use Node.js to perform MySQL database queries, then parsing the JSON output of those queries.
-						\item How to install and configure the MySQL Node.js module.
-					\end{itemize}
-			\item How to use embedded javascript (EJS) to display dynamically generated content using data from a MySQL database.
-			\item How to write SQL (DDL/DML) scripts for automated database setup.
-			\item How to effectively work as a team, where the responsibilities include writing functional specifications,  designing database schemas, and implementing a database application.
-		\end{itemize}
-	\subsubsection{Feiyu Cai}
+\subsection{Lessons from Project | Teammate Statements}
 
-	\subsubsection{Adham Kamel}
+\subsubsection{Brett Dispoto}
+Prior to working on OpenBooks, I had no knowledge of practical database design/ application development. I now understand the following:
+\begin{itemize}
+	\item The importance of an E/R design and analysis \textbf{prior} to implementing the relational schemas in the DBMS. Because our group put a large amount of work into our relational schema design, the normalization process into BCNF was extremely minimal.
+	\item How to perform database integration on a virtualised 3-tier architecture. This includes
+	      \begin{itemize}
+		      \item How to install and configure a local MySQL server, allowing remote access.
+		      \item How to use Node.js to perform MySQL database queries, then parsing the JSON output of those queries.
+		      \item How to install and configure the MySQL Node.js module.
+	      \end{itemize}
+	\item How to use embedded javascript (EJS) to display dynamically generated content using data from a MySQL database.
+	\item How to write SQL (DDL/DML) scripts for automated database setup.
+	\item How to effectively work as a team, where the responsibilities include writing functional specifications,  designing database schemas, and implementing a database application.
+\end{itemize}
+\subsubsection{Feiyu Cai}
 
-	\subsection{Future Improvements | Discussion}
-		A \textit{wishlist} of future improvements for this project would be as follows:
-		\begin{enumerate}
-			\item Deploying the database/ middleware on a remote server, eliminating the virtualised 3-tier architecture we are currently running on in favor of a proper client-server-database architecture. This would allow OpenBooks to be accessed on the web, rather than having to manually install, configure, and deploy on the client's local machine.
-			\item Adding advertisements | the data stored in our tables would be valuable to advertising firms running targeted advertisements. Information such as \textit{"John Doe likes to read the new york times on Tuesday afternoons"} is very useful to such firms, and the revenue gained could be used to help OpenBooks achieve  goal (1) above.
-			\item Add more tables to track user data such as average session time.
-			\item Add more features / customizability user profiles |  such as profile photos, following users, view other user's profile.
-			\item Email notification system | When a new book is released by an author of which a user has favorited their book, the user should receive an email notification.
-			\item Look into the possibility of having tables be 4NF/5NF.
-			\item A terms of service, copyright licence, and privacy policy.
-		\end{enumerate}
+\subsubsection{Adham Kamel}
+
+\subsection{Future Improvements | Discussion}
+A \textit{wishlist} of future improvements for this project would be as follows:
+\begin{enumerate}
+	\item Deploying the database/ middleware on a remote server, eliminating the virtualised 3-tier architecture we are currently running on in favor of a proper client-server-database architecture. This would allow OpenBooks to be accessed on the web, rather than having to manually install, configure, and deploy on the client's local machine.
+	\item Adding advertisements | the data stored in our tables would be valuable to advertising firms running targeted advertisements. Information such as \textit{"John Doe likes to read the new york times on Tuesday afternoons"} is very useful to such firms, and the revenue gained could be used to help OpenBooks achieve  goal (1) above.
+	\item Add more tables to track user data such as average session time.
+	\item Add more features / customizability user profiles |  such as profile photos, following users, view other user's profile.
+	\item Email notification system | When a new book is released by an author of which a user has favorited their book, the user should receive an email notification.
+	\item Look into the possibility of having tables be 4NF/5NF.
+	\item A terms of service, copyright licence, and privacy policy.
+\end{enumerate}
 \end{document}
