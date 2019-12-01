@@ -21,10 +21,11 @@ router.post('/signup/submit', function (req, res) {
   {
     res.render("pages/signup", {error: "Username can be at most 20 units."})
   }
+
   else if (password === confirm_password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(function(user){
-      sql = "INSERT INTO Users (user_id, username) VALUES (" +"'" +firebase.auth().currentUser.uid + "'"+ ", " + "'" + username + "'" + ")"
+      sql = `INSERT INTO Users (user_id, username) VALUES ('${firebase.auth().currentUser.uid}', '${username}')`
       server.database.query(sql, function(err, results)
       {
          console.log(results)

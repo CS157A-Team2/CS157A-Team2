@@ -698,6 +698,16 @@ We would like to keep track of user's download history. A user can download zero
 			The templating engine then truncates the js/HTML hybrid into proper HTML code for the browser to parse.
 	\end{itemize}
 
+\subsection{Detailed Use-case Implementation}
+	\subsection{Use Case: Create Account}
+	For account creation, we use Google Firebase for storing and validatig user credentials. Once we extract the user information from the HTML form, we use the firebase.auth function, createUserWithEmailAndPassword(). If a user is sucessfully created, we can then extract the unique user ID which firebase provides us to store the user in our own MySQl bookstore.User table. Firebase ensures proper password encryption. 
+		%\includegraphics[scale=1.0]{create-account.png}
+
+
+		\includegraphics[scale=0.50]{create-account-code.png}
+\subsection{Project Setup/ Configuration}
+
+
 \section{Project Conclusion}
 
 \subsection{Lessons from Project | Teammate Statements}
