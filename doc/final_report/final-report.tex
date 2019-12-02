@@ -793,13 +793,13 @@ Once logged in, users can view their profile. Users view their profile by clicki
 	If a user is interesting in learning more about a piece of content, they can view the content's profile. The content profile contains extra information about the content such as when it was published, the publisher, the average rating, the number of favorites/downloads, and more. On the server, we query the database to find more information on the content the user is requesting. The user requests the content using an HTTP GET request. When a user clicks on a particular piece of content, first they are redirected to a URL which such as \$CONTENT\_TYPE/\$CONTENT\_ID. From there, we find extra information about the content depending on its subclass, then send all necessary information and redirect to /content-profile.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.33]{content-profile.png}
+		\includegraphics[scale=0.25]{content-profile.png}
 		\caption{client's perspective: viewing content profile}
 	\end{figure}
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.44]{content-profile-code.png}
+		\includegraphics[scale=0.32]{content-profile-code.png}
 		\caption{Server:  querying database for content information}
 	\end{figure}
 
@@ -826,55 +826,41 @@ Once logged in, users can view their profile. Users view their profile by clicki
 
 
 \subsubsection{Use Case: Read Review}
-	
+	On the content profile, we display all reviews left for the content. We get this data using a sequence of simple SELECT and JOIN statements. We format the JSON output from the MySQL Node.js module into HTML divisions to make the review more visually appealing.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.33]{sort.png}
-		\caption{client's perspective: writing review}
+		\includegraphics[scale=0.45]{read-review.png}
+		\caption{client's perspective: reading a review}
 	\end{figure}
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.33]{sort-code.png}
-		\caption{Server: insert reviews}
-	\end{figure}
-
-\newpage
-
-
-\subsubsection{Use Case: Favorite Content}
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.33]{sort.png}
-		\caption{client's perspective: writing review}
-	\end{figure}
-
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.33]{sort-code.png}
-		\caption{Server: insert reviews}
+		\includegraphics[scale=0.67]{read-review-code.png}
+		\caption{Server: selecting review from database}
 	\end{figure}
 
 \newpage
 
 
-\subsubsection{Use Case: Download Content}
-	
+\subsubsection{Use Case: Favorite/ Download Content}
+	Once logged in, users can favorite or download any content. Users can "undo" a favorite but cannot "undo" a download. On the top of each content page, there are two buttons: Favorite and Download. These are actually HTML links which redirect to URLs indicating we need to add/remove a favorite or add a download to/from its appropriate table. Once a user "favorites" a content, the "favorite" button on top of the page becomes a "remove favorite" button. This is accomplished using the EJS templating system, we make a simple statement that says if the user has favorite this  content, show a different button (unfavorite).
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.33]{sort.png}
-		\caption{client's perspective: writing review}
+		\includegraphics[scale=0.30]{favdl.png}
+		\caption{client's perspective: downloading/ favoriting content}
 	\end{figure}
-
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.33]{sort-code.png}
-		\caption{Server: insert reviews}
+		\includegraphics[scale=0.30]{unfav.png}
+		\caption{client's perspective: un-favoriting content}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.45]{favdl-code.png}
+		\caption{Server: inserting favorites/ downloads into their tables}
 	\end{figure}
 
 \newpage
-
 
 
 

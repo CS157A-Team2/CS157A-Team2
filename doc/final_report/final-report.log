@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  1 DEC 2019 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  1 DEC 2019 21:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,12 +421,12 @@ Overfull \hbox (46.97708pt too wide) in paragraph at lines 785--786
 File: content-profile.png Graphic file (type png)
 <use content-profile.png>
 Package pdftex.def Info: content-profile.png  used on input line 796.
-(pdftex.def)             Requested size: 359.3938pt x 280.55902pt.
+(pdftex.def)             Requested size: 272.26653pt x 212.54353pt.
 <content-profile-code.png, id=140, 1025.8325pt x 329.23pt>
 File: content-profile-code.png Graphic file (type png)
 <use content-profile-code.png>
 Package pdftex.def Info: content-profile-code.png  used on input line 802.
-(pdftex.def)             Requested size: 338.52577pt x 108.64622pt.
+(pdftex.def)             Requested size: 328.27312pt x 105.35574pt.
  [27 <./content-profile.png> <./content-profile-code.png>]
 <review.png, id=146, 1009.7725pt x 266.9975pt>
 File: review.png Graphic file (type png)
@@ -444,67 +444,63 @@ Overfull \hbox (25.17065pt too wide) in paragraph at lines 821--822
  []
 
 [28 <./review.png> <./review-code.png>]
-File: sort.png Graphic file (type png)
-<use sort.png>
-Package pdftex.def Info: sort.png  used on input line 832.
-(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
-File: sort-code.png Graphic file (type png)
-<use sort-code.png>
-Package pdftex.def Info: sort-code.png  used on input line 838.
-(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+<read-review.png, id=153, 1068.99374pt x 420.57124pt>
+File: read-review.png Graphic file (type png)
+<use read-review.png>
+Package pdftex.def Info: read-review.png  used on input line 832.
+(pdftex.def)             Requested size: 481.04274pt x 189.25531pt.
 
-Overfull \hbox (46.97708pt too wide) in paragraph at lines 838--839
+Overfull \hbox (11.28772pt too wide) in paragraph at lines 832--833
  [][] 
  []
 
-[29]
-File: sort.png Graphic file (type png)
-<use sort.png>
-Package pdftex.def Info: sort.png  used on input line 849.
-(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
-File: sort-code.png Graphic file (type png)
-<use sort-code.png>
-Package pdftex.def Info: sort-code.png  used on input line 855.
-(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+<read-review-code.png, id=154, 778.91pt x 168.63pt>
+File: read-review-code.png Graphic file (type png)
+<use read-review-code.png>
+Package pdftex.def Info: read-review-code.png  used on input line 838.
+(pdftex.def)             Requested size: 521.867pt x 112.9815pt.
 
-Overfull \hbox (46.97708pt too wide) in paragraph at lines 855--856
+Overfull \hbox (52.11198pt too wide) in paragraph at lines 838--839
  [][] 
  []
 
-[30]
-File: sort.png Graphic file (type png)
-<use sort.png>
-Package pdftex.def Info: sort.png  used on input line 866.
-(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
-File: sort-code.png Graphic file (type png)
-<use sort-code.png>
-Package pdftex.def Info: sort-code.png  used on input line 872.
-(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
-
-Overfull \hbox (46.97708pt too wide) in paragraph at lines 872--873
- [][] 
- []
-
-[31] [32] [33] (./final-report.aux) ) 
+[29 <./read-review.png> <./read-review-code.png>]
+<favdl.png, id=160, 1036.87375pt x 387.4475pt>
+File: favdl.png Graphic file (type png)
+<use favdl.png>
+Package pdftex.def Info: favdl.png  used on input line 849.
+(pdftex.def)             Requested size: 311.06451pt x 116.23514pt.
+<unfav.png, id=161, 1054.94125pt x 396.48125pt>
+File: unfav.png Graphic file (type png)
+<use unfav.png>
+Package pdftex.def Info: unfav.png  used on input line 854.
+(pdftex.def)             Requested size: 316.48482pt x 118.94528pt.
+<favdl-code.png, id=162, 848.16875pt x 279.0425pt>
+File: favdl-code.png Graphic file (type png)
+<use favdl-code.png>
+Package pdftex.def Info: favdl-code.png  used on input line 859.
+(pdftex.def)             Requested size: 381.67241pt x 125.56795pt.
+ [30 <./favdl.png> <./unfav.png> <./favdl-code.png>] [31] [32] (./final-report.
+aux) ) 
 Here is how much of TeX's memory you used:
- 2671 strings out of 492982
- 37109 string characters out of 6134896
+ 2696 strings out of 492982
+ 37539 string characters out of 6134896
  103104 words of memory out of 5000000
- 6173 multiletter control sequences out of 15000+600000
+ 6193 multiletter control sequences out of 15000+600000
  12750 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,43p,856b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on final-report.pdf (34 pages, 925706 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on final-report.pdf (33 pages, 1059391 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 200 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
