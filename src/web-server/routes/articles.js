@@ -71,7 +71,7 @@ function processArticles(req, res, sql) {
 				" </td><td> " +
 				results[i].publication_name +
 				" </td><td> " +
-				results[i].publish_date +
+				results[i].publish_date.toString().substring(0,15) +
 				"</td></tr>\n ";
 		res.render("pages/articles");
 	});

@@ -867,7 +867,23 @@ Once logged in, users can view their profile. Users view their profile by clicki
 
 
 \subsection{Project Setup/ Configuration}
-
+	To set up the project, follow these steps:
+	\begin{enumerate}
+		\item Download + install MySQL
+		\item Download + install Node.js
+		\item Clone the repository https://github.com/CS157A-Team2/CS157A-Team2
+		\item Set up MySQL to allow remote access.
+		\item Set the MySQL root password to 'root'
+		\item cd to PATH/TO/PROJECT/src/model/ then login to MySQL command line using 'mysql -u root -p' then run the following commands:
+				\begin{enumerate}
+					\item 'source init.sql'
+					\item 'source loaddata.sql'
+					\item confirm success by typing 'source queryAll.sql'
+				\end{enumerate}
+		\item cd to  PATH/TO/PROJECT/src/web-server/ then run 'node server.js'
+		\item go to your web browser (while the node process is running) and go to http://localhost:8080
+		\item email brett.dispoto@sjsu.edu if any issues arise
+	\end{enumerate}
 
 \section{Project Conclusion}
 
