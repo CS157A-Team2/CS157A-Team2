@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  1 DEC 2019 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  1 DEC 2019 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -96,6 +96,14 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip45
 \dth@everypar=\toks22
 )
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen113
+\WF@size=\dimen114
+\c@WF@wrappedlines=\count90
+\WF@box=\box26
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
 s
@@ -131,17 +139,17 @@ LaTeX Font Info:    ... okay on input line 31.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count90
-\scratchdimen=\dimen113
-\scratchbox=\box26
-\nofMPsegments=\count91
-\nofMParguments=\count92
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count93
-\MPscratchDim=\dimen114
-\MPnumerator=\count94
-\makeMPintoPDFobject=\count95
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count91
+\scratchdimen=\dimen115
+\scratchbox=\box27
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen116
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -238,129 +246,265 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./final-report.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1]
-<3-tier.png, id=12, 686.565pt x 281.05pt>
+[1])
+\tf@toc=\write3
+\openout3 = `final-report.toc'.
+
+ [2] [3]
+<3-tier.png, id=18, 686.565pt x 281.05pt>
 File: 3-tier.png Graphic file (type png)
 <use 3-tier.png>
-Package pdftex.def Info: 3-tier.png  used on input line 52.
+Package pdftex.def Info: 3-tier.png  used on input line 54.
 (pdftex.def)             Requested size: 453.13431pt x 185.49356pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [2 <./3-tier.png>] [3] [4] [5] [6] [7]
-<erd-rev.png, id=35, 551.05875pt x 411.48732pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+ [4 <./3-tier.png>] [5] [6] [7] [8] [9]
+<erd-rev.png, id=41, 551.05875pt x 411.48732pt>
 File: erd-rev.png Graphic file (type png)
 <use erd-rev.png>
-Package pdftex.def Info: erd-rev.png  used on input line 297.
+Package pdftex.def Info: erd-rev.png  used on input line 291.
 (pdftex.def)             Requested size: 551.05739pt x 411.48631pt.
 
-Overfull \hbox (81.30237pt too wide) in paragraph at lines 297--298
+Overfull \hbox (81.30237pt too wide) in paragraph at lines 291--292
 [] 
  []
 
-[8 <./erd-rev.png>] [9] [10] [11] [12] [13]
-<users.png, id=58, 362.35374pt x 337.26pt>
+[10 <./erd-rev.png>] [11] [12] [13] [14] [15]
+<users.png, id=64, 362.35374pt x 337.26pt>
 File: users.png Graphic file (type png)
 <use users.png>
-Package pdftex.def Info: users.png  used on input line 657.
+Package pdftex.def Info: users.png  used on input line 651.
 (pdftex.def)             Requested size: 181.17642pt x 168.62958pt.
-<reviews.png, id=59, 824.07875pt x 352.31625pt>
+<reviews.png, id=65, 824.07875pt x 352.31625pt>
 File: reviews.png Graphic file (type png)
 <use reviews.png>
-Package pdftex.def Info: reviews.png  used on input line 659.
+Package pdftex.def Info: reviews.png  used on input line 653.
 (pdftex.def)             Requested size: 412.03836pt x 176.15768pt.
- [14 <./users.png>]
-<favorites.png, id=64, 221.82875pt x 339.2675pt>
+ [16 <./users.png>]
+<favorites.png, id=70, 221.82875pt x 339.2675pt>
 File: favorites.png Graphic file (type png)
 <use favorites.png>
-Package pdftex.def Info: favorites.png  used on input line 661.
+Package pdftex.def Info: favorites.png  used on input line 655.
 (pdftex.def)             Requested size: 110.9141pt x 169.63333pt.
-<downloads.png, id=65, 219.82124pt x 335.2525pt>
+<downloads.png, id=71, 219.82124pt x 335.2525pt>
 File: downloads.png Graphic file (type png)
 <use downloads.png>
-Package pdftex.def Info: downloads.png  used on input line 663.
+Package pdftex.def Info: downloads.png  used on input line 657.
 (pdftex.def)             Requested size: 109.91034pt x 167.62584pt.
-<poem.png, id=66, 417.56pt x 339.2675pt>
+<poem.png, id=72, 417.56pt x 339.2675pt>
 File: poem.png Graphic file (type png)
 <use poem.png>
-Package pdftex.def Info: poem.png  used on input line 665.
+Package pdftex.def Info: poem.png  used on input line 659.
 (pdftex.def)             Requested size: 187.90025pt x 152.66896pt.
- [15 <./reviews.png> <./favorites.png> <./downloads.png>]
-<content.png, id=73, 477.785pt x 951.555pt>
+ [17 <./reviews.png> <./favorites.png> <./downloads.png>]
+<content.png, id=79, 477.785pt x 951.555pt>
 File: content.png Graphic file (type png)
 <use content.png>
-Package pdftex.def Info: content.png  used on input line 667.
+Package pdftex.def Info: content.png  used on input line 661.
 (pdftex.def)             Requested size: 286.6732pt x 570.93741pt.
- [16 <./poem.png>]
-<magazine.png, id=78, 234.8775pt x 337.26pt>
+ [18 <./poem.png>]
+<magazine.png, id=85, 234.8775pt x 337.26pt>
 File: magazine.png Graphic file (type png)
 <use magazine.png>
-Package pdftex.def Info: magazine.png  used on input line 669.
+Package pdftex.def Info: magazine.png  used on input line 663.
 (pdftex.def)             Requested size: 117.43846pt x 168.62958pt.
- [17 <./content.png>]
-<article.png, id=83, 443.6575pt x 342.27875pt>
+ [19 <./content.png>]
+<article.png, id=90, 443.6575pt x 342.27875pt>
 File: article.png Graphic file (type png)
 <use article.png>
-Package pdftex.def Info: article.png  used on input line 671.
+Package pdftex.def Info: article.png  used on input line 665.
 (pdftex.def)             Requested size: 221.8282pt x 171.13895pt.
-<newspaper.png, id=84, 312.16624pt x 336.25626pt>
+<newspaper.png, id=91, 312.16624pt x 336.25626pt>
 File: newspaper.png Graphic file (type png)
 <use newspaper.png>
-Package pdftex.def Info: newspaper.png  used on input line 673.
+Package pdftex.def Info: newspaper.png  used on input line 667.
 (pdftex.def)             Requested size: 156.08273pt x 168.12772pt.
-<book.png, id=85, 716.6775pt x 339.2675pt>
+<book.png, id=92, 716.6775pt x 339.2675pt>
 File: book.png Graphic file (type png)
 <use book.png>
-Package pdftex.def Info: book.png  used on input line 675.
+Package pdftex.def Info: book.png  used on input line 669.
 (pdftex.def)             Requested size: 358.33788pt x 169.63333pt.
-[18 <./magazine.png> <./article.png> <./newspaper.png>]
-Overfull \hbox (1.07494pt too wide) in paragraph at lines 695--696
+ [20 <./magazine.png> <./article.png> <./newspaper.png>]
+Overfull \hbox (1.07494pt too wide) in paragraph at lines 689--690
 \OT1/cmr/m/n/12 SE-LECT, which are ex-e-cut-ing us-ing the MySQL mod-ule func-t
 ion database.query(string
  []
 
-[19 <./book.png>]
-<create-account-code.png, id=97, 1004.75375pt x 91.34125pt>
+[21 <./book.png>]
+<create-account.png, id=103, 272.01625pt x 376.40625pt>
+File: create-account.png Graphic file (type png)
+<use create-account.png>
+Package pdftex.def Info: create-account.png  used on input line 705.
+(pdftex.def)             Requested size: 136.00778pt x 188.20265pt.
+<create-account-code.png, id=104, 1004.75375pt x 91.34125pt>
 File: create-account-code.png Graphic file (type png)
 <use create-account-code.png>
-Package pdftex.def Info: create-account-code.png  used on input line 707.
+Package pdftex.def Info: create-account-code.png  used on input line 711.
 (pdftex.def)             Requested size: 502.37566pt x 45.6705pt.
 
-Overfull \hbox (32.62064pt too wide) in paragraph at lines 707--708
+Overfull \hbox (32.62064pt too wide) in paragraph at lines 711--712
+ [][] 
+ []
+
+[22 <./create-account.png> <./create-account-code.png>]
+<login.png, id=110, 286.06876pt x 217.81375pt>
+File: login.png Graphic file (type png)
+<use login.png>
+Package pdftex.def Info: login.png  used on input line 723.
+(pdftex.def)             Requested size: 143.03403pt x 108.9066pt.
+<login-code.png, id=111, 557.08125pt x 234.8775pt>
+File: login-code.png Graphic file (type png)
+<use login-code.png>
+Package pdftex.def Info: login-code.png  used on input line 729.
+(pdftex.def)             Requested size: 278.53995pt x 117.43846pt.
+ [23 <./login.png> <./login-code.png>]
+<search-results.png, id=117, 1092.08pt x 430.60875pt>
+File: search-results.png Graphic file (type png)
+<use search-results.png>
+Package pdftex.def Info: search-results.png  used on input line 741.
+(pdftex.def)             Requested size: 436.82426pt x 172.24043pt.
+<search-code.png, id=118, 1279.78125pt x 513.92pt>
+File: search-code.png Graphic file (type png)
+<use search-code.png>
+Package pdftex.def Info: search-code.png  used on input line 747.
+(pdftex.def)             Requested size: 511.90344pt x 205.56435pt.
+
+Overfull \hbox (42.14842pt too wide) in paragraph at lines 747--748
 [][] 
  []
 
-[20 <./create-account-code.png>] [21] (./final-report.aux) ) 
+[24 <./search-results.png> <./search-code.png>]
+<profile.png, id=125, 1115.16624pt x 929.4725pt>
+File: profile.png Graphic file (type png)
+<use profile.png>
+Package pdftex.def Info: profile.png  used on input line 759.
+(pdftex.def)             Requested size: 446.0586pt x 371.78242pt.
+<profile-code.png, id=126, 1277.77374pt x 166.6225pt>
+File: profile-code.png Graphic file (type png)
+<use profile-code.png>
+Package pdftex.def Info: profile-code.png  used on input line 765.
+(pdftex.def)             Requested size: 511.10045pt x 66.64781pt.
+
+Overfull \hbox (41.34543pt too wide) in paragraph at lines 765--766
+ [][] 
+ []
+
+[25 <./profile.png> <./profile-code.png>]
+<sort.png, id=132, 1087.06125pt x 510.90875pt>
+File: sort.png Graphic file (type png)
+<use sort.png>
+Package pdftex.def Info: sort.png  used on input line 779.
+(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
+<sort-code.png, id=133, 1565.85pt x 541.02126pt>
+File: sort-code.png Graphic file (type png)
+<use sort-code.png>
+Package pdftex.def Info: sort-code.png  used on input line 785.
+(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+
+Overfull \hbox (46.97708pt too wide) in paragraph at lines 785--786
+ [][] 
+ []
+
+[26 <./sort.png> <./sort-code.png>]
+<content-profile.png, id=139, 1089.06876pt x 850.17625pt>
+File: content-profile.png Graphic file (type png)
+<use content-profile.png>
+Package pdftex.def Info: content-profile.png  used on input line 796.
+(pdftex.def)             Requested size: 359.3938pt x 280.55902pt.
+<content-profile-code.png, id=140, 1025.8325pt x 329.23pt>
+File: content-profile-code.png Graphic file (type png)
+<use content-profile-code.png>
+Package pdftex.def Info: content-profile-code.png  used on input line 802.
+(pdftex.def)             Requested size: 338.52577pt x 108.64622pt.
+ [27 <./content-profile.png> <./content-profile-code.png>]
+<review.png, id=146, 1009.7725pt x 266.9975pt>
+File: review.png Graphic file (type png)
+<use review.png>
+Package pdftex.def Info: review.png  used on input line 815.
+(pdftex.def)             Requested size: 434.19371pt x 114.80667pt.
+<review-code.png, id=147, 1178.4025pt x 355.3275pt>
+File: review-code.png Graphic file (type png)
+<use review-code.png>
+Package pdftex.def Info: review-code.png  used on input line 821.
+(pdftex.def)             Requested size: 494.92567pt x 149.23653pt.
+
+Overfull \hbox (25.17065pt too wide) in paragraph at lines 821--822
+ [][] 
+ []
+
+[28 <./review.png> <./review-code.png>]
+File: sort.png Graphic file (type png)
+<use sort.png>
+Package pdftex.def Info: sort.png  used on input line 832.
+(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
+File: sort-code.png Graphic file (type png)
+<use sort-code.png>
+Package pdftex.def Info: sort-code.png  used on input line 838.
+(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+
+Overfull \hbox (46.97708pt too wide) in paragraph at lines 838--839
+ [][] 
+ []
+
+[29]
+File: sort.png Graphic file (type png)
+<use sort.png>
+Package pdftex.def Info: sort.png  used on input line 849.
+(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
+File: sort-code.png Graphic file (type png)
+<use sort-code.png>
+Package pdftex.def Info: sort-code.png  used on input line 855.
+(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+
+Overfull \hbox (46.97708pt too wide) in paragraph at lines 855--856
+ [][] 
+ []
+
+[30]
+File: sort.png Graphic file (type png)
+<use sort.png>
+Package pdftex.def Info: sort.png  used on input line 866.
+(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
+File: sort-code.png Graphic file (type png)
+<use sort-code.png>
+Package pdftex.def Info: sort-code.png  used on input line 872.
+(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+
+Overfull \hbox (46.97708pt too wide) in paragraph at lines 872--873
+ [][] 
+ []
+
+[31] [32] [33] (./final-report.aux) ) 
 Here is how much of TeX's memory you used:
- 2536 strings out of 492982
- 35036 string characters out of 6134896
- 99896 words of memory out of 5000000
- 6058 multiletter control sequences out of 15000+600000
+ 2671 strings out of 492982
+ 37109 string characters out of 6134896
+ 103104 words of memory out of 5000000
+ 6173 multiletter control sequences out of 15000+600000
  12750 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,43p,856b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msam10.pfb>
-Output written on final-report.pdf (22 pages, 465519 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on final-report.pdf (34 pages, 925706 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 193 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

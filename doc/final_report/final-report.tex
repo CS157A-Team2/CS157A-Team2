@@ -4,7 +4,7 @@
 \usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
 \usepackage{amssymb}
 \usepackage{amsthm}
-
+\usepackage{wrapfig}
 
 \author{
 	Dispoto, Brett\\
@@ -21,7 +21,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{CS157A Team 2}
-\rhead{Final Report}
+\rhead{Final Report, page \thepage}
 \cfoot{Brett Dispoto, Feiyu Cai, Adham Kamel}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -30,7 +30,9 @@
 
 \begin{document}
 \maketitle
-\section{Part I | Project Requirements}
+\tableofcontents
+\newpage
+\section{Project Requirements}
 \subsection{Project Description}
 \subsubsection{Application Overview}
 Our team will be developing a database application where users can find free books and are able to download them via multiple formats and leave reviews on those books for other customers to see. The books that the user can see will be ranging from textbooks to novels. A user will be given the option to create an account, or if they already registered, login to their account. After this, the user will be able to search for a specific book, whether that is by the title of the book or its ISBN number. If the user does not know the specific book they want to find, they can search for a specific author, or genre. Searches will include various filtering options such as date published, publisher, book length, user favorites, etc. Users can sort search results by the title alphabetically, the author alphabetically, or by book rating.
@@ -257,9 +259,6 @@ The Relational Database Management System (RDBMS), MySQL, will take care of all 
 \subparagraph{Types of Users}
 \begin{itemize}
 	\item \textbf{User}
-	      this type of accounts are registered by user themselves
-
-
 	      Users will only have read access to the following:
 	      \begin{itemize}
 		      \item  Their own account profile
@@ -271,19 +270,14 @@ The Relational Database Management System (RDBMS), MySQL, will take care of all 
 	      \begin{itemize}
 		      \item  Their own account profile information
 		      \item  Their favorites list
-		      \item  Reviews left for books under restrictions
+		      \item  Their downloads list
+		      \item  Reviews for books
 	      \end{itemize}
 
-	\item \textbf{Database Administrator}
-	      this type of accounts are created assigned by the system owners
-
-
-	      Database Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. DB admins have read/write access to the following:
+	\item \textbf{Administrator}
+	      Administrators have access \textbf{all user functionality} plus extra permissions to data which is not available to the general public. Admins have the following additional privilege:
 	      \begin{itemize}
-		      \item Read user profile
-		      \item Modify user profile including password with authentication from user
-		      \item Add and delete book repositories
-		      \item Delete comments by users that are not under restrictions
+		      \item Delete comments/reviews by users
 	      \end{itemize}
 \end{itemize}
 
@@ -291,7 +285,7 @@ The Relational Database Management System (RDBMS), MySQL, will take care of all 
 
 %------------------------------------------------------------------------Database stuff ----------------------------------------------
 
-\section{Part II | Database Project Deisgn}
+\section{Database Project Design}
 
 \subsection{Updated Entity-Relationship Diagram}
 \includegraphics[scale=1]{erd-rev.png}
@@ -697,14 +691,195 @@ We would like to keep track of user's download history. A user can download zero
 			EJS allows us to embed server-like JavaScript code into our HTML code. 
 			The templating engine then truncates the js/HTML hybrid into proper HTML code for the browser to parse.
 	\end{itemize}
-
+\newpage
 \subsection{Detailed Use-case Implementation}
-	\subsection{Use Case: Create Account}
-	For account creation, we use Google Firebase for storing and validatig user credentials. Once we extract the user information from the HTML form, we use the firebase.auth function, createUserWithEmailAndPassword(). If a user is sucessfully created, we can then extract the unique user ID which firebase provides us to store the user in our own MySQl bookstore.User table. Firebase ensures proper password encryption. 
-		%\includegraphics[scale=1.0]{create-account.png}
 
 
+
+	\subsubsection{Use Case: Create Account}
+For account creation, we use Google Firebase for storing and validatig user credentials. Once we extract the user information from the HTML form, we use the firebase.auth function, createUserWithEmailAndPassword(). If a user is sucessfully created, we can then extract the unique user ID which firebase provides us to store the user in our own MySQl bookstore.User table. Firebase ensures proper password encryption. 
+
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.50]{create-account.png}
+		\caption{client's perspective: user creating account}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
 		\includegraphics[scale=0.50]{create-account-code.png}
+		\caption{Server: user creating account | code}
+	\end{figure}
+
+
+\newpage
+	
+	\subsubsection{Use Case: Log In}
+For account log in, we use Google Firebase for storing and validatig user credentials. Once we extract the email and password from the HTML form, we use the firebase.auth function, signInWithEmailAndPassword(). If a user successfully logs in we can then extract the unique user ID which firebase provides us to retrieve information abut the user in our MySQL database. Upon login, the user is redirected to the homepage using the express.js function response.redirect(string path).
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.50]{login.png}
+		\caption{client's perspective: user logging in}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.50]{login-code.png}
+		\caption{Server: user logging in | code}
+	\end{figure}
+
+\newpage
+
+	\subsubsection{Use Case: Search for Content}
+To search for a book, user use the search bar found at the header of each page. Search queries are done via a HTTP POST request, which sends data from client to server. Once the server receives the POST request, it queries the database for the search term. Users are able to search by author, title, publisher, and more, therefore our SQL query must look check many attributes. For this reason, we use a LIKE clause to ensure that non-exact matches are still found, by using wildcard (\%) operators. Once the search results are found, we parse the JSON provided by the MySQL module, format it into an HTML table, then send the HTML to the EJS templating engine. Once the search is executed, users can decide if they want the results to be ordered.
+
+
+
+	\begin{figure}[h!]
+		\includegraphics[scale=0.4]{search-results.png}
+		\caption{client's perspective: search results}
+	\end{figure}
+
+
+	\begin{figure}[h!]
+		\includegraphics[scale=0.40]{search-code.png}
+		\caption{Server: searching through content/poem/book/magazine/newspaper/article tables}
+	\end{figure}
+
+\newpage
+
+	
+	\subsubsection{Use Case: View Profile}
+Once logged in, users can view their profile. Users view their profile by clicking the "Profile" link on the top right of the header. A users profile shows the content they've downloaded and favorited. To find the books which a user has favorited/downloaded JOIN the Users/Downloads tables and the Users/Favorties tables; in both cases we JOIN using the user\_id as the attribute to join on.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.40]{profile.png}
+		\caption{client's perspective: user profile}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.4]{profile-code.png}
+		\caption{Server: user profile | code}
+	\end{figure}
+
+\newpage
+
+	
+	\subsubsection{Use Case: Sorting Results}
+	Where applicable, the user can sort results of various content. Content is sorted in several contexts. For example, when a user clicks "search" or "browse all content", the available sort options are  title, content type, rating, number of downloads, number of favorites, or average rating. When specific content is being displayed, more options are available. For example, when a user is viewing the Poems page, they can sort by poem type or author. Books can be sorted by author, genre, publisher. Newspapers can be sorted by date or location. Articles can be sorted by author or publication. Magazines can be sorted by issue number. All content can be sorted by title.
+
+	Sorting is implemented using HTTP GET requests. For example, when is a user is on the Books page, and they click "Sort by Title", they are redirected to the URL /books/title. We then re-render the page, this time displaying the results, this time using an SQL ORDER BY clause.
+
+\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort.png}
+		\caption{client's perspective: sorting results}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort-code.png}
+		\caption{Server: user profile | code}
+	\end{figure}
+
+\newpage
+
+
+\subsubsection{Use Case: View Content Profile}
+	If a user is interesting in learning more about a piece of content, they can view the content's profile. The content profile contains extra information about the content such as when it was published, the publisher, the average rating, the number of favorites/downloads, and more. On the server, we query the database to find more information on the content the user is requesting. The user requests the content using an HTTP GET request. When a user clicks on a particular piece of content, first they are redirected to a URL which such as \$CONTENT\_TYPE/\$CONTENT\_ID. From there, we find extra information about the content depending on its subclass, then send all necessary information and redirect to /content-profile.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{content-profile.png}
+		\caption{client's perspective: viewing content profile}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.44]{content-profile-code.png}
+		\caption{Server:  querying database for content information}
+	\end{figure}
+
+\newpage
+
+
+
+
+\subsubsection{Use Case: Write Review}
+	Once logged in, users can add reviews for content. A review does not require a comment, but does require a rating. Reviews are implemented using HTML forms and HTTP POST requests. The server inserts the data directly from the form into the MySQL bookstore.Reviews table. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.43]{review.png}
+		\caption{client's perspective: writing review}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.42]{review-code.png}
+		\caption{Server: insert reviews}
+	\end{figure}
+
+\newpage
+
+
+\subsubsection{Use Case: Read Review}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort.png}
+		\caption{client's perspective: writing review}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort-code.png}
+		\caption{Server: insert reviews}
+	\end{figure}
+
+\newpage
+
+
+\subsubsection{Use Case: Favorite Content}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort.png}
+		\caption{client's perspective: writing review}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort-code.png}
+		\caption{Server: insert reviews}
+	\end{figure}
+
+\newpage
+
+
+\subsubsection{Use Case: Download Content}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort.png}
+		\caption{client's perspective: writing review}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.33]{sort-code.png}
+		\caption{Server: insert reviews}
+	\end{figure}
+
+\newpage
+
+
+
+
+
+
 \subsection{Project Setup/ Configuration}
 
 
