@@ -1,0 +1,520 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.4)  4 DEC 2019 12:50
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**final-report.tex
+(./final-report.tex
+LaTeX2e <2018-12-01>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@layoutwidth=\dimen109
+\Gm@layoutheight=\dimen110
+\Gm@layouthoffset=\dimen111
+\Gm@layoutvoffset=\dimen112
+\Gm@dimlist=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks17
+\thm@bodyfont=\toks18
+\thm@headfont=\toks19
+\thm@notefont=\toks20
+\thm@headpunct=\toks21
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen113
+\WF@size=\dimen114
+\c@WF@wrappedlines=\count91
+\WF@box=\box27
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip46
+\f@nch@O@elh=\skip47
+\f@nch@O@erh=\skip48
+\f@nch@O@olh=\skip49
+\f@nch@O@orh=\skip50
+\f@nch@O@elf=\skip51
+\f@nch@O@erf=\skip52
+\f@nch@O@olf=\skip53
+\f@nch@O@orf=\skip54
+)
+
+LaTeX Warning: Unused global option(s):
+    [letter].
+
+No file final-report.aux.
+\openout1 = `final-report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count92
+\scratchdimen=\dimen115
+\scratchbox=\box28
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen116
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+No file final-report.toc.
+\tf@toc=\write3
+\openout3 = `final-report.toc'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 14.49998pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[1] [2]
+<3-tier.png, id=15, 686.565pt x 281.05pt>
+File: 3-tier.png Graphic file (type png)
+<use 3-tier.png>
+Package pdftex.def Info: 3-tier.png  used on input line 54.
+(pdftex.def)             Requested size: 453.13431pt x 185.49356pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+ [3 <./3-tier.png>] [4] [5] [6] [7]
+<erd-rev.png, id=35, 551.05875pt x 411.48732pt>
+File: erd-rev.png Graphic file (type png)
+<use erd-rev.png>
+Package pdftex.def Info: erd-rev.png  used on input line 285.
+(pdftex.def)             Requested size: 551.05739pt x 411.48631pt.
+
+Overfull \hbox (81.30237pt too wide) in paragraph at lines 285--286
+[] 
+ []
+
+[8] [9 <./erd-rev.png>] [10] [11] [12] [13] [14]
+<users.png, id=61, 362.35374pt x 337.26pt>
+File: users.png Graphic file (type png)
+<use users.png>
+Package pdftex.def Info: users.png  used on input line 645.
+(pdftex.def)             Requested size: 181.17642pt x 168.62958pt.
+<reviews.png, id=62, 824.07875pt x 352.31625pt>
+File: reviews.png Graphic file (type png)
+<use reviews.png>
+Package pdftex.def Info: reviews.png  used on input line 647.
+(pdftex.def)             Requested size: 412.03836pt x 176.15768pt.
+ [15 <./users.png>]
+<favorites.png, id=67, 221.82875pt x 339.2675pt>
+File: favorites.png Graphic file (type png)
+<use favorites.png>
+Package pdftex.def Info: favorites.png  used on input line 649.
+(pdftex.def)             Requested size: 110.9141pt x 169.63333pt.
+<downloads.png, id=68, 219.82124pt x 335.2525pt>
+File: downloads.png Graphic file (type png)
+<use downloads.png>
+Package pdftex.def Info: downloads.png  used on input line 651.
+(pdftex.def)             Requested size: 109.91034pt x 167.62584pt.
+<poem.png, id=69, 417.56pt x 339.2675pt>
+File: poem.png Graphic file (type png)
+<use poem.png>
+Package pdftex.def Info: poem.png  used on input line 653.
+(pdftex.def)             Requested size: 187.90025pt x 152.66896pt.
+ [16 <./reviews.png> <./favorites.png> <./downloads.png>]
+<content.png, id=76, 477.785pt x 951.555pt>
+File: content.png Graphic file (type png)
+<use content.png>
+Package pdftex.def Info: content.png  used on input line 655.
+(pdftex.def)             Requested size: 286.6732pt x 570.93741pt.
+ [17 <./poem.png>]
+<magazine.png, id=81, 234.8775pt x 337.26pt>
+File: magazine.png Graphic file (type png)
+<use magazine.png>
+Package pdftex.def Info: magazine.png  used on input line 657.
+(pdftex.def)             Requested size: 117.43846pt x 168.62958pt.
+ [18 <./content.png>]
+<article.png, id=87, 443.6575pt x 342.27875pt>
+File: article.png Graphic file (type png)
+<use article.png>
+Package pdftex.def Info: article.png  used on input line 659.
+(pdftex.def)             Requested size: 221.8282pt x 171.13895pt.
+<newspaper.png, id=88, 312.16624pt x 336.25626pt>
+File: newspaper.png Graphic file (type png)
+<use newspaper.png>
+Package pdftex.def Info: newspaper.png  used on input line 661.
+(pdftex.def)             Requested size: 156.08273pt x 168.12772pt.
+<book.png, id=89, 716.6775pt x 339.2675pt>
+File: book.png Graphic file (type png)
+<use book.png>
+Package pdftex.def Info: book.png  used on input line 663.
+(pdftex.def)             Requested size: 358.33788pt x 169.63333pt.
+ [19 <./magazine.png> <./article.png> <./newspaper.png>]
+Overfull \hbox (1.07494pt too wide) in paragraph at lines 683--684
+\OT1/cmr/m/n/12 SE-LECT, which are ex-e-cut-ing us-ing the MySQL mod-ule func-t
+ion database.query(string
+ []
+
+[20 <./book.png>]
+<create-account.png, id=100, 272.01625pt x 376.40625pt>
+File: create-account.png Graphic file (type png)
+<use create-account.png>
+Package pdftex.def Info: create-account.png  used on input line 699.
+(pdftex.def)             Requested size: 136.00778pt x 188.20265pt.
+<create-account-code.png, id=101, 1004.75375pt x 91.34125pt>
+File: create-account-code.png Graphic file (type png)
+<use create-account-code.png>
+Package pdftex.def Info: create-account-code.png  used on input line 705.
+(pdftex.def)             Requested size: 502.37566pt x 45.6705pt.
+
+Overfull \hbox (32.62064pt too wide) in paragraph at lines 705--706
+ [][] 
+ []
+
+[21 <./create-account.png> <./create-account-code.png>]
+<login.png, id=107, 286.06876pt x 217.81375pt>
+File: login.png Graphic file (type png)
+<use login.png>
+Package pdftex.def Info: login.png  used on input line 717.
+(pdftex.def)             Requested size: 143.03403pt x 108.9066pt.
+<login-code.png, id=108, 557.08125pt x 234.8775pt>
+File: login-code.png Graphic file (type png)
+<use login-code.png>
+Package pdftex.def Info: login-code.png  used on input line 723.
+(pdftex.def)             Requested size: 278.53995pt x 117.43846pt.
+ [22 <./login.png> <./login-code.png>]
+<search-results.png, id=114, 1092.08pt x 430.60875pt>
+File: search-results.png Graphic file (type png)
+<use search-results.png>
+Package pdftex.def Info: search-results.png  used on input line 735.
+(pdftex.def)             Requested size: 436.82426pt x 172.24043pt.
+<search-code.png, id=115, 1279.78125pt x 513.92pt>
+File: search-code.png Graphic file (type png)
+<use search-code.png>
+Package pdftex.def Info: search-code.png  used on input line 741.
+(pdftex.def)             Requested size: 511.90344pt x 205.56435pt.
+
+Overfull \hbox (42.14842pt too wide) in paragraph at lines 741--742
+[][] 
+ []
+
+[23 <./search-results.png> <./search-code.png>]
+<profile.png, id=121, 1115.16624pt x 929.4725pt>
+File: profile.png Graphic file (type png)
+<use profile.png>
+Package pdftex.def Info: profile.png  used on input line 753.
+(pdftex.def)             Requested size: 446.0586pt x 371.78242pt.
+<profile-code.png, id=122, 1277.77374pt x 166.6225pt>
+File: profile-code.png Graphic file (type png)
+<use profile-code.png>
+Package pdftex.def Info: profile-code.png  used on input line 759.
+(pdftex.def)             Requested size: 511.10045pt x 66.64781pt.
+
+Overfull \hbox (41.34543pt too wide) in paragraph at lines 759--760
+ [][] 
+ []
+
+[24 <./profile.png> <./profile-code.png>]
+<sort.png, id=129, 1087.06125pt x 510.90875pt>
+File: sort.png Graphic file (type png)
+<use sort.png>
+Package pdftex.def Info: sort.png  used on input line 773.
+(pdftex.def)             Requested size: 358.73132pt x 168.6004pt.
+<sort-code.png, id=130, 1565.85pt x 541.02126pt>
+File: sort-code.png Graphic file (type png)
+<use sort-code.png>
+Package pdftex.def Info: sort-code.png  used on input line 779.
+(pdftex.def)             Requested size: 516.7321pt x 178.53755pt.
+
+Overfull \hbox (46.97708pt too wide) in paragraph at lines 779--780
+ [][] 
+ []
+
+[25 <./sort.png> <./sort-code.png>]
+<content-profile.png, id=136, 1089.06876pt x 850.17625pt>
+File: content-profile.png Graphic file (type png)
+<use content-profile.png>
+Package pdftex.def Info: content-profile.png  used on input line 790.
+(pdftex.def)             Requested size: 272.26653pt x 212.54353pt.
+<content-profile-code.png, id=137, 1025.8325pt x 329.23pt>
+File: content-profile-code.png Graphic file (type png)
+<use content-profile-code.png>
+Package pdftex.def Info: content-profile-code.png  used on input line 796.
+(pdftex.def)             Requested size: 328.27312pt x 105.35574pt.
+ [26 <./content-profile.png> <./content-profile-code.png>]
+<review.png, id=143, 1009.7725pt x 266.9975pt>
+File: review.png Graphic file (type png)
+<use review.png>
+Package pdftex.def Info: review.png  used on input line 809.
+(pdftex.def)             Requested size: 434.19371pt x 114.80667pt.
+<review-code.png, id=144, 1178.4025pt x 355.3275pt>
+File: review-code.png Graphic file (type png)
+<use review-code.png>
+Package pdftex.def Info: review-code.png  used on input line 815.
+(pdftex.def)             Requested size: 494.92567pt x 149.23653pt.
+
+Overfull \hbox (25.17065pt too wide) in paragraph at lines 815--816
+ [][] 
+ []
+
+[27 <./review.png> <./review-code.png>]
+<read-review.png, id=150, 1068.99374pt x 420.57124pt>
+File: read-review.png Graphic file (type png)
+<use read-review.png>
+Package pdftex.def Info: read-review.png  used on input line 826.
+(pdftex.def)             Requested size: 481.04274pt x 189.25531pt.
+
+Overfull \hbox (11.28772pt too wide) in paragraph at lines 826--827
+ [][] 
+ []
+
+<read-review-code.png, id=151, 778.91pt x 168.63pt>
+File: read-review-code.png Graphic file (type png)
+<use read-review-code.png>
+Package pdftex.def Info: read-review-code.png  used on input line 832.
+(pdftex.def)             Requested size: 521.867pt x 112.9815pt.
+
+Overfull \hbox (52.11198pt too wide) in paragraph at lines 832--833
+ [][] 
+ []
+
+[28 <./read-review.png> <./read-review-code.png>]
+<favdl.png, id=157, 1036.87375pt x 387.4475pt>
+File: favdl.png Graphic file (type png)
+<use favdl.png>
+Package pdftex.def Info: favdl.png  used on input line 843.
+(pdftex.def)             Requested size: 311.06451pt x 116.23514pt.
+<unfav.png, id=158, 1054.94125pt x 396.48125pt>
+File: unfav.png Graphic file (type png)
+<use unfav.png>
+Package pdftex.def Info: unfav.png  used on input line 848.
+(pdftex.def)             Requested size: 316.48482pt x 118.94528pt.
+<favdl-code.png, id=159, 848.16875pt x 279.0425pt>
+File: favdl-code.png Graphic file (type png)
+<use favdl-code.png>
+Package pdftex.def Info: favdl-code.png  used on input line 853.
+(pdftex.def)             Requested size: 381.67241pt x 125.56795pt.
+ [29 <./favdl.png> <./unfav.png> <./favdl-code.png>]
+<logout.png, id=166, 1116.17pt x 162.6075pt>
+File: logout.png Graphic file (type png)
+<use logout.png>
+Package pdftex.def Info: logout.png  used on input line 864.
+(pdftex.def)             Requested size: 558.08363pt x 81.30354pt.
+
+Overfull \hbox (88.32861pt too wide) in paragraph at lines 864--865
+ [][] 
+ []
+
+<logout-code.png, id=167, 540.0175pt x 213.79875pt>
+File: logout-code.png Graphic file (type png)
+<use logout-code.png>
+Package pdftex.def Info: logout-code.png  used on input line 870.
+(pdftex.def)             Requested size: 270.00809pt x 106.89911pt.
+[30 <./logout.png> <./logout-code.png>]
+Overfull \hbox (12.31636pt too wide) in paragraph at lines 895--896
+[]\OT1/cmr/m/n/12 go to your web browser (while the node pro-cess is run-ning) 
+and go to http://localhost:8080 
+ []
+
+[31] [32] [33] (./final-report.aux) ) 
+Here is how much of TeX's memory you used:
+ 2703 strings out of 492609
+ 37685 string characters out of 6131462
+ 108363 words of memory out of 5000000
+ 6557 multiletter control sequences out of 15000+600000
+ 12750 words of font info for 49 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,11n,43p,856b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on final-report.pdf (34 pages, 1131514 bytes).
+PDF statistics:
+ 207 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+
