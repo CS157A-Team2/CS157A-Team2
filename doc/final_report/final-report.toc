@@ -1,84 +1,84 @@
-\contentsline {section}{\numberline {1}Project Requirements}{2}% 
-\contentsline {subsection}{\numberline {1.1}Project Description}{2}% 
-\contentsline {subsubsection}{\numberline {1.1.1}Application Overview}{2}% 
-\contentsline {subsubsection}{\numberline {1.1.2}Project Motivation}{2}% 
-\contentsline {subsubsection}{\numberline {1.1.3}Project Goal}{2}% 
-\contentsline {subsubsection}{\numberline {1.1.4}Benefits to Users}{2}% 
-\contentsline {subsubsection}{\numberline {1.1.5}Stakeholders and Importance}{3}% 
-\contentsline {subsection}{\numberline {1.2}System Environment}{3}% 
-\contentsline {subsubsection}{\numberline {1.2.1}Presentation Layer}{3}% 
-\contentsline {subsubsection}{\numberline {1.2.2}Application Layer}{4}% 
-\contentsline {subsubsection}{\numberline {1.2.3}Data Layer}{4}% 
-\contentsline {subsubsection}{\numberline {1.2.4}Hardware/ Software Used}{4}% 
-\contentsline {subsection}{\numberline {1.3}Functional Requirements}{5}% 
-\contentsline {subsubsection}{\numberline {1.3.1}Comprehensive List of Features}{5}% 
-\contentsline {subsection}{\numberline {1.4}Non-Functional Issues}{7}% 
-\contentsline {subsubsection}{\numberline {1.4.1}Graphical User Interface}{7}% 
-\contentsline {subparagraph}{Attractiveness}{7}% 
-\contentsline {subparagraph}{Usability}{7}% 
-\contentsline {subparagraph}{Responsiveness}{7}% 
-\contentsline {subsubsection}{\numberline {1.4.2}Security}{7}% 
-\contentsline {subparagraph}{User Security}{7}% 
-\contentsline {subparagraph}{SQL Injection Protection}{8}% 
-\contentsline {subparagraph}{Encryption}{8}% 
-\contentsline {subparagraph}{Anonymity}{8}% 
-\contentsline {subsubsection}{\numberline {1.4.3}Concurrency Control}{8}% 
-\contentsline {subsubsection}{\numberline {1.4.4}Access Control}{8}% 
-\contentsline {subparagraph}{Types of Users}{8}% 
-\contentsline {section}{\numberline {2}Database Project Design}{9}% 
-\contentsline {subsection}{\numberline {2.1}Updated Entity-Relationship Diagram}{9}% 
-\contentsline {subsection}{\numberline {2.2}Database Schema}{9}% 
-\contentsline {subsection}{\numberline {2.3}Entities}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.1}Users}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.2}Content}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.3}Books}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.4}Magazines}{11}% 
-\contentsline {subsubsection}{\numberline {2.3.5}Newspapers}{11}% 
-\contentsline {subsubsection}{\numberline {2.3.6}Articles}{11}% 
-\contentsline {subsubsection}{\numberline {2.3.7}Poems}{11}% 
-\contentsline {subsection}{\numberline {2.4}Relationships}{11}% 
-\contentsline {subsubsection}{\numberline {2.4.1}User Reviews Content}{11}% 
-\contentsline {subsubsection}{\numberline {2.4.2}User Favorites Content}{12}% 
-\contentsline {subsubsection}{\numberline {2.4.3}User Downloads Content}{12}% 
-\contentsline {subsection}{\numberline {2.5}Boyce Codd Normal Form (BCNF) Proofs}{12}% 
-\contentsline {subsubsection}{\numberline {2.5.1}Users | BCNF Proof }{12}% 
-\contentsline {subsubsection}{\numberline {2.5.2}Reviews | BCNF Proof }{12}% 
-\contentsline {subsubsection}{\numberline {2.5.3}Favorites | BCNF Proof }{13}% 
-\contentsline {subsubsection}{\numberline {2.5.4}Downloads | BCNF Proof }{13}% 
-\contentsline {subsubsection}{\numberline {2.5.5}Poem | BCNF Proof }{13}% 
-\contentsline {subsubsection}{\numberline {2.5.6}Content | BCNF Proof }{13}% 
-\contentsline {subsubsection}{\numberline {2.5.7}Magazine | BCNF Proof }{14}% 
-\contentsline {subsubsection}{\numberline {2.5.8}Article | BCNF Proof }{14}% 
-\contentsline {subsubsection}{\numberline {2.5.9}Newspaper | BCNF Proof }{14}% 
-\contentsline {subsubsection}{\numberline {2.5.10}Book | BCNF Proof }{15}% 
-\contentsline {subsection}{\numberline {2.6}Database Table Instances}{15}% 
-\contentsline {subsubsection}{\numberline {2.6.1}Users}{15}% 
-\contentsline {subsubsection}{\numberline {2.6.2}Reviews}{16}% 
-\contentsline {subsubsection}{\numberline {2.6.3}Favorites}{16}% 
-\contentsline {subsubsection}{\numberline {2.6.4}Downloads}{16}% 
-\contentsline {subsubsection}{\numberline {2.6.5}Poem}{17}% 
-\contentsline {subsubsection}{\numberline {2.6.6}Content}{18}% 
-\contentsline {subsubsection}{\numberline {2.6.7}Magazine}{19}% 
-\contentsline {subsubsection}{\numberline {2.6.8}Article}{19}% 
-\contentsline {subsubsection}{\numberline {2.6.9}Newspaper}{19}% 
-\contentsline {subsubsection}{\numberline {2.6.10}Book}{20}% 
-\contentsline {section}{\numberline {3}Implementation}{20}% 
-\contentsline {subsection}{\numberline {3.1}Implementation Overview}{20}% 
-\contentsline {subsection}{\numberline {3.2}Detailed Use-case Implementation}{21}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Use Case: Create Account}{21}% 
-\contentsline {subsubsection}{\numberline {3.2.2}Use Case: Log In}{22}% 
-\contentsline {subsubsection}{\numberline {3.2.3}Use Case: Search for Content}{23}% 
-\contentsline {subsubsection}{\numberline {3.2.4}Use Case: View Profile}{24}% 
-\contentsline {subsubsection}{\numberline {3.2.5}Use Case: Sorting Results}{25}% 
-\contentsline {subsubsection}{\numberline {3.2.6}Use Case: View Content Profile}{26}% 
-\contentsline {subsubsection}{\numberline {3.2.7}Use Case: Write Review}{27}% 
-\contentsline {subsubsection}{\numberline {3.2.8}Use Case: Read Review}{28}% 
-\contentsline {subsubsection}{\numberline {3.2.9}Use Case: Favorite/ Download Content}{29}% 
-\contentsline {subsubsection}{\numberline {3.2.10}Use Case: Log Out}{30}% 
-\contentsline {subsection}{\numberline {3.3}Project Setup/ Configuration}{31}% 
-\contentsline {section}{\numberline {4}Project Conclusion}{31}% 
-\contentsline {subsection}{\numberline {4.1}Lessons from Project | Teammate Statements}{31}% 
-\contentsline {subsubsection}{\numberline {4.1.1}Brett Dispoto}{31}% 
-\contentsline {subsubsection}{\numberline {4.1.2}Feiyu Cai}{32}% 
-\contentsline {subsubsection}{\numberline {4.1.3}Adham Kamel}{32}% 
-\contentsline {subsection}{\numberline {4.2}Future Improvements | Discussion}{33}% 
+\contentsline {section}{\numberline {1}Project Requirements}{3}%
+\contentsline {subsection}{\numberline {1.1}Project Description}{3}%
+\contentsline {subsubsection}{\numberline {1.1.1}Application Overview}{3}%
+\contentsline {subsubsection}{\numberline {1.1.2}Project Motivation}{3}%
+\contentsline {subsubsection}{\numberline {1.1.3}Project Goal}{3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Benefits to Users}{3}%
+\contentsline {subsubsection}{\numberline {1.1.5}Stakeholders and Importance}{4}%
+\contentsline {subsection}{\numberline {1.2}System Environment}{4}%
+\contentsline {subsubsection}{\numberline {1.2.1}Presentation Layer}{4}%
+\contentsline {subsubsection}{\numberline {1.2.2}Application Layer}{5}%
+\contentsline {subsubsection}{\numberline {1.2.3}Data Layer}{5}%
+\contentsline {subsubsection}{\numberline {1.2.4}Hardware/ Software Used}{5}%
+\contentsline {subsection}{\numberline {1.3}Functional Requirements}{6}%
+\contentsline {subsubsection}{\numberline {1.3.1}Comprehensive List of Features}{6}%
+\contentsline {subsection}{\numberline {1.4}Non-Functional Issues}{8}%
+\contentsline {subsubsection}{\numberline {1.4.1}Graphical User Interface}{8}%
+\contentsline {subparagraph}{Attractiveness}{8}%
+\contentsline {subparagraph}{Usability}{8}%
+\contentsline {subparagraph}{Responsiveness}{8}%
+\contentsline {subsubsection}{\numberline {1.4.2}Security}{8}%
+\contentsline {subparagraph}{User Security}{8}%
+\contentsline {subparagraph}{SQL Injection Protection}{9}%
+\contentsline {subparagraph}{Encryption}{9}%
+\contentsline {subparagraph}{Anonymity}{9}%
+\contentsline {subsubsection}{\numberline {1.4.3}Concurrency Control}{9}%
+\contentsline {subsubsection}{\numberline {1.4.4}Access Control}{9}%
+\contentsline {subparagraph}{Types of Users}{9}%
+\contentsline {section}{\numberline {2}Database Project Design}{10}%
+\contentsline {subsection}{\numberline {2.1}Updated Entity-Relationship Diagram}{10}%
+\contentsline {subsection}{\numberline {2.2}Database Schema}{10}%
+\contentsline {subsection}{\numberline {2.3}Entities}{11}%
+\contentsline {subsubsection}{\numberline {2.3.1}Users}{11}%
+\contentsline {subsubsection}{\numberline {2.3.2}Content}{11}%
+\contentsline {subsubsection}{\numberline {2.3.3}Books}{11}%
+\contentsline {subsubsection}{\numberline {2.3.4}Magazines}{12}%
+\contentsline {subsubsection}{\numberline {2.3.5}Newspapers}{12}%
+\contentsline {subsubsection}{\numberline {2.3.6}Articles}{12}%
+\contentsline {subsubsection}{\numberline {2.3.7}Poems}{12}%
+\contentsline {subsection}{\numberline {2.4}Relationships}{12}%
+\contentsline {subsubsection}{\numberline {2.4.1}User Reviews Content}{12}%
+\contentsline {subsubsection}{\numberline {2.4.2}User Favorites Content}{13}%
+\contentsline {subsubsection}{\numberline {2.4.3}User Downloads Content}{13}%
+\contentsline {subsection}{\numberline {2.5}Boyce Codd Normal Form (BCNF) Proofs}{13}%
+\contentsline {subsubsection}{\numberline {2.5.1}Users | BCNF Proof }{13}%
+\contentsline {subsubsection}{\numberline {2.5.2}Reviews | BCNF Proof }{13}%
+\contentsline {subsubsection}{\numberline {2.5.3}Favorites | BCNF Proof }{14}%
+\contentsline {subsubsection}{\numberline {2.5.4}Downloads | BCNF Proof }{14}%
+\contentsline {subsubsection}{\numberline {2.5.5}Poem | BCNF Proof }{14}%
+\contentsline {subsubsection}{\numberline {2.5.6}Content | BCNF Proof }{14}%
+\contentsline {subsubsection}{\numberline {2.5.7}Magazine | BCNF Proof }{15}%
+\contentsline {subsubsection}{\numberline {2.5.8}Article | BCNF Proof }{15}%
+\contentsline {subsubsection}{\numberline {2.5.9}Newspaper | BCNF Proof }{15}%
+\contentsline {subsubsection}{\numberline {2.5.10}Book | BCNF Proof }{16}%
+\contentsline {subsection}{\numberline {2.6}Database Table Instances}{16}%
+\contentsline {subsubsection}{\numberline {2.6.1}Users}{16}%
+\contentsline {subsubsection}{\numberline {2.6.2}Reviews}{17}%
+\contentsline {subsubsection}{\numberline {2.6.3}Favorites}{17}%
+\contentsline {subsubsection}{\numberline {2.6.4}Downloads}{17}%
+\contentsline {subsubsection}{\numberline {2.6.5}Poem}{18}%
+\contentsline {subsubsection}{\numberline {2.6.6}Content}{19}%
+\contentsline {subsubsection}{\numberline {2.6.7}Magazine}{20}%
+\contentsline {subsubsection}{\numberline {2.6.8}Article}{20}%
+\contentsline {subsubsection}{\numberline {2.6.9}Newspaper}{20}%
+\contentsline {subsubsection}{\numberline {2.6.10}Book}{21}%
+\contentsline {section}{\numberline {3}Implementation}{21}%
+\contentsline {subsection}{\numberline {3.1}Implementation Overview}{21}%
+\contentsline {subsection}{\numberline {3.2}Detailed Use-case Implementation}{22}%
+\contentsline {subsubsection}{\numberline {3.2.1}Use Case: Create Account}{22}%
+\contentsline {subsubsection}{\numberline {3.2.2}Use Case: Log In}{23}%
+\contentsline {subsubsection}{\numberline {3.2.3}Use Case: Search for Content}{24}%
+\contentsline {subsubsection}{\numberline {3.2.4}Use Case: View Profile}{25}%
+\contentsline {subsubsection}{\numberline {3.2.5}Use Case: Sorting Results}{26}%
+\contentsline {subsubsection}{\numberline {3.2.6}Use Case: View Content Profile}{27}%
+\contentsline {subsubsection}{\numberline {3.2.7}Use Case: Write Review}{28}%
+\contentsline {subsubsection}{\numberline {3.2.8}Use Case: Read Review}{29}%
+\contentsline {subsubsection}{\numberline {3.2.9}Use Case: Favorite/ Download Content}{30}%
+\contentsline {subsubsection}{\numberline {3.2.10}Use Case: Log Out}{31}%
+\contentsline {subsection}{\numberline {3.3}Project Setup/ Configuration}{32}%
+\contentsline {section}{\numberline {4}Project Conclusion}{32}%
+\contentsline {subsection}{\numberline {4.1}Lessons from Project | Teammate Statements}{32}%
+\contentsline {subsubsection}{\numberline {4.1.1}Brett Dispoto}{32}%
+\contentsline {subsubsection}{\numberline {4.1.2}Feiyu Cai}{33}%
+\contentsline {subsubsection}{\numberline {4.1.3}Adham Kamel}{33}%
+\contentsline {subsection}{\numberline {4.2}Future Improvements | Discussion}{34}%
